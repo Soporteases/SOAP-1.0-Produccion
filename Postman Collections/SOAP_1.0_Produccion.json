@@ -1,0 +1,1468 @@
+{
+  "variables": [],
+  "info": {
+    "name": "SOAP 1.0 Produccion",
+    "_postman_id": "7cab8e1c-9c28-e8f6-cf33-c738f1ecb26c",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "141835c5-8439-53c0-0141-4b58e5497231",
+      "name": "Condicion Tributaria",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "be2d6a3b-34c1-4ae2-bd37-0e254f5c6836",
+          "name": "CondTributaria VA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuit>30707171282</cuit>\");",
+                  "tests[\"Condicion Tributaria OK-cuitInfo\"] = responseBody.has(\"<cuitInfo>30707171282</cuitInfo>\");",
+                  "tests[\"Condicion Tributaria OK-denominacion\"] = responseBody.has(\"<denominacion>ODFJELL ARGENTINA S.A.        </denominacion>\");",
+                  "tests[\"Condicion Tributaria OK-denominacion\"] = responseBody.has(\"<denominacionInfo></denominacionInfo>\");",
+                  "tests[\"Condicion Tributaria OK-empleador\"] = responseBody.has(\"<empleador>S00</empleador>\");",
+                  "tests[\"Condicion Tributaria OK-estado\"] = responseBody.has(\"<estado>VA</estado>\");",
+                  "tests[\"Condicion Tributaria OK-flagDenominacion\"] = responseBody.has(\"<flagDenominacion>NN</flagDenominacion>\");",
+                  "tests[\"Condicion Tributaria OK-ganancias\"] = responseBody.has(\"<ganancias>AC</ganancias>\");",
+                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>AC</iva>\");",
+                  "tests[\"Condicion Tributaria OK-monotributo\"] = responseBody.has(\"<monotributo>NI</monotributo>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Tributaria}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryCondtrib>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <cuit>30707171282</cuit>\r\n            <!--Optional:-->\r\n            <denominacion> </denominacion>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryCondtrib>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1f3b33be-b36b-d399-b177-fa6e82133328",
+          "name": "CondTributaria VA Monotributista",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuit>27165525413</cuit>\");",
+                  "tests[\"Condicion Tributaria OK-cuitInfo\"] = responseBody.has(\"<cuitInfo>27165525413</cuitInfo>\");",
+                  "tests[\"Condicion Tributaria OK-denominacion\"] = responseBody.has(\"<denominacion>SOSA MARTA INES               </denominacion>\");",
+                  "tests[\"Condicion Tributaria OK-denominacionInfo\"] = responseBody.has(\"<denominacionInfo></denominacionInfo>\");",
+                  "tests[\"Condicion Tributaria OK-empleador\"] = responseBody.has(\"<empleador>N08</empleador>\");",
+                  "tests[\"Condicion Tributaria OK-estado\"] = responseBody.has(\"<estado>VA</estado>\");",
+                  "tests[\"Condicion Tributaria OK-flagDenominacion\"] = responseBody.has(\"<flagDenominacion>NN</flagDenominacion>\");",
+                  "tests[\"Condicion Tributaria OK-ganancias\"] = responseBody.has(\"<ganancias>NI</ganancias>\");",
+                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>NI</iva>\");",
+                  "tests[\"Condicion Tributaria OK-monotributo\"] = responseBody.has(\"<monotributo>I </monotributo>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Tributaria}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryCondtrib>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <cuit>27165525413</cuit>\r\n            <!--Optional:-->\r\n            <denominacion> </denominacion>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryCondtrib>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b9d6dff3-73ca-2b73-6b13-649ced96b974",
+          "name": "CondTributaria NE Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuitInfo>30709013196</cuitInfo>\");",
+                  "tests[\"Condicion Tributaria OK-denominacion\"] = responseBody.has(\"<denominacionInfo></denominacionInfo>\");",
+                  "tests[\"Condicion Tributaria OK-estado\"] = responseBody.has(\"<estado>NE</estado>\");",
+                  "tests[\"Condicion Tributaria OK-flagDenominacion\"] = responseBody.has(\"<flagDenominacion>SM</flagDenominacion>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Tributaria}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryCondtrib>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <cuit>30709013196</cuit>\r\n            <!--Optional:-->\r\n            <denominacion> </denominacion>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryCondtrib>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "17216df6-3bb1-acd7-e9b4-e2e1aa8ee06c",
+      "name": "Geo",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "f9fe4869-1e3e-df21-defc-22a18f405344",
+          "name": "queryLayerByPostalCode",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Geo OK-empresaMusimundo\"] = responseBody.has(\"<name>empresaMusimundo</name><value>Carsa</value>\");",
+                  "tests[\"Geo OK-status\"] = responseBody.has(\"<status>CO</status>\");",
+                  "tests[\"Geo OK-level2\"] = responseBody.has(\"<level2>CHACO</level2>\");",
+                  "tests[\"Geo OK-level3\"] = responseBody.has(\"<level3>SAN FERNANDO</level3>\");",
+                  "tests[\"Geo OK-level4\"] = responseBody.has(\"<level4>COLONIA PALMIRA</level4>\");",
+                  "tests[\"Geo OK-level5\"] = responseBody.has(\"<level5></level5>\");",
+                  "tests[\"Geo OK-motive\"] = responseBody.has(\"<motive>SM</motive>\");",
+                  "tests[\"Geo OK-outputName\"] = responseBody.has(\"<outputName>empresaMusimundo</outputName>\");",
+                  "tests[\"Geo OK-zipCode\"] = responseBody.has(\"<zipCode>3500</zipCode>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{GEO}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.geo.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryLayerByPostalCode>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <zipCode>3500</zipCode>\r\n         </name>\r\n      </soap:queryLayerByPostalCode>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "41ae7beb-79cf-c0d2-e8cb-345629a9271f",
+      "name": "Domicilios",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "c966aafb-6577-d34c-f852-675cfb3842b6",
+          "name": "AR-Domicilios CO estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Domicilio OK1-Puerta\"] = responseBody.has(\"<name>puerta</name><value>SI</value>\");",
+                  "tests[\"Domicilio OK1-LongitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-58.445288</value>\");",
+                  "tests[\"Domicilio OK1-NivelDeRiesgo\"] = responseBody.has(\"<name>nivelRiesgo</name><value></value>\");",
+                  "tests[\"Domicilio OK1-Concepto\"] = responseBody.has(\"<name>concepto</name><value></value>\");",
+                  "tests[\"Domicilio OK1-ZonaDeRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>N</value>\");",
+                  "tests[\"Domicilio OK1-Inhibido\"] = responseBody.has(\"<name>inhibido</name><value>N</value>\");",
+                  "tests[\"Domicilio OK1-TipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
+                  "tests[\"Domicilio OK1-Portal\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
+                  "tests[\"Domicilio OK1-LatitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-34.607161</value>\");",
+                  "tests[\"Domicilio OK1-Latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.602308</value>\");",
+                  "tests[\"Domicilio OK1-InMaq\"] = responseBody.has(\"<name>inMaq</name><value>0</value>\");",
+                  "tests[\"Domicilio OK1-Longitd\"] = responseBody.has(\"<name>longitud</name><value>-58.373966</value>\");",
+                  "tests[\"Domicilio OK1-CPA\"] = responseBody.has(\"<name>cpa</name><value>C1004AAJ</value>\");",
+                  "tests[\"Domicilio OK1-Calle\"] = responseBody.has(\"<calle>SAN MARTIN</calle>\");",
+                  "tests[\"Domicilio OK1-Numero\"] = responseBody.has(\"<numero>500</numero>\");",
+                  "tests[\"Domicilio OK1-Piso\"] = responseBody.has(\"<piso></piso>\");",
+                  "tests[\"Domicilio OK1-Depto\"] = responseBody.has(\"<depto></depto>\");",
+                  "tests[\"Domicilio OK1-CP\"] = responseBody.has(\"<cp>1004</cp>\");",
+                  "tests[\"Domicilio OK1-Nivel2\"] = responseBody.has(\"<nivel2>CAPITAL FEDERAL</nivel2>\");",
+                  "tests[\"Domicilio OK1-Nivel3\"] = responseBody.has(\"<nivel3>CAPITAL FEDERAL</nivel3>\");",
+                  "tests[\"Domicilio OK1-Nivel4\"] = responseBody.has(\"<nivel4>CIUDAD AUTONOMA BUENOS AIRES</nivel4>\");",
+                  "tests[\"Domicilio OK1-Nivel5\"] = responseBody.has(\"<nivel5>SAN NICOLAS</nivel5>\");",
+                  "tests[\"Domicilio OK1-Tramo\"] = responseBody.has(\"<tramo></tramo>\");",
+                  "tests[\"Domicilio OK1-EntreCalle1\"] = responseBody.has(\"<entreCalle1>AVENIDA CORRIENTES</entreCalle1>\");",
+                  "tests[\"Domicilio OK1-EntreCalle2\"] = responseBody.has(\"<entreCalle2>GENERAL JUAN LAVALLE</entreCalle2>\");       ",
+                  "tests[\"Domicilio OK1-TipoGeo\"] = responseBody.has(\"<tipoGeocodificacion>1</tipoGeocodificacion>\");            ",
+                  "tests[\"Domicilio OK1-Referencia\"] = responseBody.has(\"<referencia></referencia>\");                ",
+                  "tests[\"Domicilio OK1-Observacion\"] = responseBody.has(\"<observacion></observacion>\");                ",
+                  "tests[\"Domicilio OK1-Locale\"] = responseBody.has(\"<locale></locale>\");                ",
+                  "tests[\"Domicilio OK1-Estado\"] = responseBody.has(\"<estado>CO</estado>\");               ",
+                  "tests[\"Domicilio OK1-Motivo\"] = responseBody.has(\"<motivo>SM</motivo>\");                ",
+                  "tests[\"Domicilio OK1-Nivel1\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "tests[\"Domicilio OK1-NISE\"] = responseBody.has(\"<name>NISE</name><value>8</value>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <calle>San Martin 500</calle>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <depto> </depto>\r\n            <!--Optional:-->\r\n            <entreCalle1> </entreCalle1>\r\n            <!--Optional:-->\r\n            <entreCalle2> </entreCalle2>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel10> </nivel10>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>CABA</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <piso> </piso>\r\n            <!--Optional:-->\r\n            <referencia> </referencia>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:addressNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "29011d3d-af66-f3a7-6d3a-27bb68fed9a2",
+          "name": "AR-Domicilios CO MAQ Telefonica",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Domicilio OK1-Puerta\"] = responseBody.has(\"<name>puerta</name><value>SI</value>\");",
+                  "tests[\"Domicilio OK1-LongitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-58.445288</value>\");",
+                  "tests[\"Domicilio OK1-NivelDeRiesgo\"] = responseBody.has(\"<name>nivelRiesgo</name><value>9</value>\");",
+                  "tests[\"Domicilio OK1-Concepto\"] = responseBody.has(\"<name>concepto</name><value>INHIBIDO</value>\");",
+                  "tests[\"Domicilio OK1-ZonaDeRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>N</value>\");",
+                  "tests[\"Domicilio OK1-Inhibido\"] = responseBody.has(\"<name>inhibido</name><value>S</value>\");",
+                  "tests[\"Domicilio OK1-TipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
+                  "tests[\"Domicilio OK1-Portal\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
+                  "tests[\"Domicilio OK1-LatitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-34.607161</value>\");",
+                  "tests[\"Domicilio OK1-Latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.614609</value>\");",
+                  "tests[\"Domicilio OK1-InMaq\"] = responseBody.has(\"<name>inMaq</name><value>1</value>\");",
+                  "tests[\"Domicilio OK1-Longitd\"] = responseBody.has(\"<name>longitud</name><value>-58.376134</value>\");",
+                  "tests[\"Domicilio OK1-CPA\"] = responseBody.has(\"<name>cpa</name><value>C1069AAK</value>\");",
+                  "tests[\"Domicilio OK1-Calle\"] = responseBody.has(\"<calle>BAT DE CHACABUCO</calle>\");",
+                  "tests[\"Domicilio OK1-Numero\"] = responseBody.has(\"<numero>567</numero>\");",
+                  "tests[\"Domicilio OK1-Piso\"] = responseBody.has(\"<piso>4</piso>\");",
+                  "tests[\"Domicilio OK1-Depto\"] = responseBody.has(\"<depto>25</depto>\");",
+                  "tests[\"Domicilio OK1-CP\"] = responseBody.has(\"<cp>1069</cp>\");",
+                  "tests[\"Domicilio OK1-Nivel2\"] = responseBody.has(\"<nivel2>CAPITAL FEDERAL</nivel2>\");",
+                  "tests[\"Domicilio OK1-Nivel3\"] = responseBody.has(\"<nivel3>CAPITAL FEDERAL</nivel3>\");",
+                  "tests[\"Domicilio OK1-Nivel4\"] = responseBody.has(\"<nivel4>CIUDAD AUTONOMA BUENOS AIRES</nivel4>\");",
+                  "tests[\"Domicilio OK1-Nivel5\"] = responseBody.has(\"<nivel5>MONSERRAT</nivel5>\");",
+                  "tests[\"Domicilio OK1-Tramo\"] = responseBody.has(\"<tramo></tramo>\");",
+                  "tests[\"Domicilio OK1-EntreCalle1\"] = responseBody.has(\"<entreCalle1>VENEZUELA</entreCalle1>\");",
+                  "tests[\"Domicilio OK1-EntreCalle2\"] = responseBody.has(\"<entreCalle2>MEXICO</entreCalle2>\");            ",
+                  "tests[\"Domicilio OK1-TipoGeo\"] = responseBody.has(\"<tipoGeocodificacion>1</tipoGeocodificacion>\");                ",
+                  "tests[\"Domicilio OK1-Referencia\"] = responseBody.has(\"<referencia></referencia>\");                ",
+                  "tests[\"Domicilio OK1-Observacion\"] = responseBody.has(\"<observacion></observacion>\");                ",
+                  "tests[\"Domicilio OK1-Locale\"] = responseBody.has(\"<locale></locale>\");                ",
+                  "tests[\"Domicilio OK1-Estado\"] = responseBody.has(\"<estado>CO</estado>\");               ",
+                  "tests[\"Domicilio OK1-Motivo\"] = responseBody.has(\"<motivo>SM</motivo>\");                ",
+                  "tests[\"Domicilio OK1-Nivel1\"] = responseBody.has(\"<nivel1></nivel1>\"); ",
+                  "tests[\"Domicilio OK1-NISE\"] = responseBody.has(\"<name>NISE</name><value>6</value>\");",
+                  "tests[\"Domicilio OK1-IdCliente\"] = responseBody.has(\"<name>idCliente</name><value>287</value>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <calle>chacabuco 567 piso 4 depto 25</calle>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <depto> </depto>\r\n            <!--Optional:-->\r\n            <entreCalle1> </entreCalle1>\r\n            <!--Optional:-->\r\n            <entreCalle2> </entreCalle2>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel10> </nivel10>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>CABA</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <piso> </piso>\r\n            <!--Optional:-->\r\n            <referencia> </referencia>\r\n            <!--Optional:-->\r\n            <clientAccessCode>4192c741e308f999d8aa2a226198102a</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:addressNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8681f2d3-a302-7079-d74e-20bca9deed54",
+          "name": "CL-Domicilios CO estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"CL-Domicilio CO-PORTAL\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
+                  "tests[\"CL-Domicilio CO-zonaRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>N</value>\");",
+                  "tests[\"CL-Domicilio CO-MatchLevel\"] = responseBody.has(\"<name>MatchLevel</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-nivelRiesgo\"] = responseBody.has(\"<name>nivelRiesgo</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-inMaq\"] = responseBody.has(\"<name>inMaq</name><value>0</value>\");",
+                  "tests[\"CL-Domicilio CO-concepto\"] = responseBody.has(\"<name>concepto</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-70.607703</value>\");",
+                  "tests[\"CL-Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
+                  "tests[\"CL-Domicilio CO-puerta\"] = responseBody.has(\"<name>puerta</name><value>SI</value>\");",
+                  "tests[\"CL-Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-ZONAENTREGACXP\"] = responseBody.has(\"<name>ZONAENTREGACXP</name><value>C FRANCISCO BILBAO-4</value>\");",
+                  "tests[\"CL-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-33.436248</value>\");",
+                  "tests[\"CL-Domicilio CO-cpa\"] = responseBody.has(\"<name>cpa</name><value>7510875</value>\");",
+                  "tests[\"CL-Domicilio CO-inhibido\"] = responseBody.has(\"<name>inhibido</name><value>N</value>\");",
+                  "tests[\"CL-Domicilio CO-calle\"] = responseBody.has(\"<calle>AVENIDA POCURO</calle>\");",
+                  "tests[\"CL-Domicilio CO-numero\"] = responseBody.has(\"<numero>2021</numero>\");",
+                  "tests[\"CL-Domicilio CO-piso\"] = responseBody.has(\"<piso></piso>\");",
+                  "tests[\"CL-Domicilio CO-depto\"] = responseBody.has(\"<depto></depto>\");",
+                  "tests[\"CL-Domicilio CO-cp\"] = responseBody.has(\"<cp>7500000</cp>\");",
+                  "tests[\"CL-Domicilio CO-nivel2\"] = responseBody.has(\"<nivel2>REGION METROPOLITANA DE SANTIAGO</nivel2>\");",
+                  "tests[\"CL-Domicilio CO-nivel3\"] = responseBody.has(\"<nivel3>SANTIAGO</nivel3>\");",
+                  "tests[\"CL-Domicilio CO-nivel4\"] = responseBody.has(\"<nivel4>PROVIDENCIA</nivel4>\");",
+                  "tests[\"CL-Domicilio CO-nivel5\"] = responseBody.has(\"<nivel5></nivel5>\");",
+                  "tests[\"CL-Domicilio CO-tramo\"] = responseBody.has(\"<tramo></tramo>\");",
+                  "tests[\"CL-Domicilio CO-entreCalle1\"] = responseBody.has(\"<entreCalle1>AVENIDA PEDRO DE VALDIVIA</entreCalle1>\");",
+                  "tests[\"CL-Domicilio CO-entreCalle2\"] = responseBody.has(\"<entreCalle2>AVENIDA RICARDO LYON</entreCalle2>\");",
+                  "tests[\"CL-Domicilio CO-tipoGeocodificacion\"] = responseBody.has(\"<tipoGeocodificacion>1</tipoGeocodificacion>\");",
+                  "tests[\"CL-Domicilio CO-referencia\"] = responseBody.has(\"<referencia></referencia>\");",
+                  "tests[\"CL-Domicilio CO-observacion\"] = responseBody.has(\"<observacion></observacion>\");",
+                  "tests[\"CL-Domicilio CO-locale\"] = responseBody.has(\"<locale>CL</locale>\");",
+                  "tests[\"CL-Domicilio CO-estado\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "tests[\"CL-Domicilio CO-motivo\"] = responseBody.has(\"<motivo>SM</motivo>\");",
+                  "tests[\"CL-Domicilio CO-nivel1\"] = responseBody.has(\"<nivel1>CL</nivel1>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <calle>Pocuro 2021</calle>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <depto> </depto>\r\n            <!--Optional:-->\r\n            <entreCalle1> </entreCalle1>\r\n            <!--Optional:-->\r\n            <entreCalle2> </entreCalle2>\r\n            <!--Optional:-->\r\n            <nivel1>CL</nivel1>\r\n            <!--Optional:-->\r\n            <nivel10> </nivel10>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>Providencia</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <piso> </piso>\r\n            <!--Optional:-->\r\n            <referencia> </referencia>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:addressNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e9938b53-5d86-bfed-d885-5d179758d215",
+          "name": "UY-Domicilios CO estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"CL-Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-56.119535</value>\");",
+                  "tests[\"CL-Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
+                  "tests[\"CL-Domicilio CO-MatchLevel\"] = responseBody.has(\"<name>MatchLevel</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.848090</value>\");",
+                  "tests[\"CL-Domicilio CO-calle\"] = responseBody.has(\"<calle>CELIAR</calle>\");",
+                  "tests[\"CL-Domicilio CO-numero\"] = responseBody.has(\"<numero>3137</numero>\");",
+                  "tests[\"CL-Domicilio CO-piso\"] = responseBody.has(\"<piso></piso>\");",
+                  "tests[\"CL-Domicilio CO-depto\"] = responseBody.has(\"<depto></depto>\");",
+                  "tests[\"CL-Domicilio CO-cp\"] = responseBody.has(\"<cp>12100</cp>\");",
+                  "tests[\"CL-Domicilio CO-nivel2\"] = responseBody.has(\"<nivel2>MONTEVIDEO</nivel2>\");",
+                  "tests[\"CL-Domicilio CO-nivel3\"] = responseBody.has(\"<nivel3>MONTEVIDEO</nivel3>\");",
+                  "tests[\"CL-Domicilio CO-nivel4\"] = responseBody.has(\"<nivel4>MONTEVIDEO</nivel4>\");",
+                  "tests[\"CL-Domicilio CO-nivel5\"] = responseBody.has(\"<nivel5></nivel5>\");",
+                  "tests[\"CL-Domicilio CO-tramo\"] = responseBody.has(\"<tramo></tramo>\");",
+                  "tests[\"CL-Domicilio CO-tipoGeocodificacion\"] = responseBody.has(\"<tipoGeocodificacion>1</tipoGeocodificacion>\");",
+                  "tests[\"CL-Domicilio CO-referencia\"] = responseBody.has(\"<referencia></referencia>\");",
+                  "tests[\"CL-Domicilio CO-observacion\"] = responseBody.has(\"<observacion></observacion>\");",
+                  "tests[\"CL-Domicilio CO-locale\"] = responseBody.has(\"<locale>UY</locale>\");",
+                  "tests[\"CL-Domicilio CO-estado\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "tests[\"CL-Domicilio CO-motivo\"] = responseBody.has(\"<motivo>SM</motivo>\");",
+                  "tests[\"CL-Domicilio CO-nivel1\"] = responseBody.has(\"<nivel1>UY</nivel1>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <calle>CELIAR 3137</calle>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <depto> </depto>\r\n            <!--Optional:-->\r\n            <entreCalle1> </entreCalle1>\r\n            <!--Optional:-->\r\n            <entreCalle2> </entreCalle2>\r\n            <!--Optional:-->\r\n            <nivel1>UY</nivel1>\r\n            <!--Optional:-->\r\n            <nivel10> </nivel10>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>montevideo</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <piso> </piso>\r\n            <!--Optional:-->\r\n            <referencia> </referencia>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter></customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:addressNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "51b42b58-b167-89b5-bd81-16dcc251f22d",
+          "name": "AR-Domicilios NE AI no terminado",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Domicilio OK1-LongitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-58.445288</value>\");",
+                  "tests[\"Domicilio OK1-ZonaDeRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>N</value>\");",
+                  "tests[\"Domicilio OK1-TipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>3</value>\");",
+                  "tests[\"Domicilio OK1-Portal\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
+                  "tests[\"Domicilio OK1-LatitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-34.607161</value>\");",
+                  "tests[\"Domicilio OK1-Latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.571850</value>\");",
+                  "tests[\"Domicilio OK1-Longitd\"] = responseBody.has(\"<name>longitud</name><value>-58.504890</value>\");",
+                  "tests[\"Domicilio OK1-CPA\"] = responseBody.has(\"<name>cpa</name><value></value>\");",
+                  "tests[\"Domicilio OK1-Calle\"] = responseBody.has(\"<calle>PEDRAZA 10000</calle>\");",
+                  "tests[\"Domicilio OK1-Numero\"] = responseBody.has(\"<numero></numero>\");",
+                  "tests[\"Domicilio OK1-Piso\"] = responseBody.has(\"<piso></piso>\");",
+                  "tests[\"Domicilio OK1-Depto\"] = responseBody.has(\"<depto></depto>\");",
+                  "tests[\"Domicilio OK1-CP\"] = responseBody.has(\"<cp>1431</cp>\");",
+                  "tests[\"Domicilio OK1-Nivel2\"] = responseBody.has(\"<nivel2>CAPITAL FEDERAL</nivel2>\");",
+                  "tests[\"Domicilio OK1-Nivel3\"] = responseBody.has(\"<nivel3>CAPITAL FEDERAL</nivel3>\");",
+                  "tests[\"Domicilio OK1-Nivel4\"] = responseBody.has(\"<nivel4>CIUDAD AUTONOMA BUENOS AIRES</nivel4>\");",
+                  "tests[\"Domicilio OK1-Nivel5\"] = responseBody.has(\"<nivel5>VILLA URQUIZA</nivel5>\");",
+                  "tests[\"Domicilio OK1-Tramo\"] = responseBody.has(\"<tramo></tramo>\");",
+                  "tests[\"Domicilio OK1-EntreCalle1\"] = responseBody.has(\"<entreCalle1>AVENIDA DE LOS CONSTITUYENTES</entreCalle1>\");",
+                  "tests[\"Domicilio OK1-EntreCalle2\"] = responseBody.has(\"<entreCalle2>PASAJE DIEGO BARAGAÑA ALVAREZ</entreCalle2>\");       ",
+                  "tests[\"Domicilio OK1-TipoGeo\"] = responseBody.has(\"<tipoGeocodificacion>3</tipoGeocodificacion>\");            ",
+                  "tests[\"Domicilio OK1-Referencia\"] = responseBody.has(\"<referencia></referencia>\");                ",
+                  "tests[\"Domicilio OK1-Observacion\"] = responseBody.has(\"<observacion></observacion>\");                ",
+                  "tests[\"Domicilio OK1-Locale\"] = responseBody.has(\"<locale></locale>\");                ",
+                  "tests[\"Domicilio OK1-Estado\"] = responseBody.has(\"<estado>NE</estado>\");               ",
+                  "tests[\"Domicilio OK1-Motivo\"] = responseBody.has(\"<motivo>AI</motivo>\");                ",
+                  "tests[\"Domicilio OK1-Nivel1\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "tests[\"Domicilio OK1-NISE\"] = responseBody.has(\"<name>NISE</name><value>0</value>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <calle>pedraza 10000</calle>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <depto> </depto>\r\n            <!--Optional:-->\r\n            <entreCalle1> </entreCalle1>\r\n            <!--Optional:-->\r\n            <entreCalle2> </entreCalle2>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel10> </nivel10>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>CABA</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <piso> </piso>\r\n            <!--Optional:-->\r\n            <referencia> </referencia>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:addressNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "61a97ce6-8bec-de7d-4dba-4b852ed3d7cd",
+      "name": "Enriquecimiento",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "d0f8e19b-3a14-7340-4cdc-06102c4c19ef",
+          "name": "Enriquecimiento",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>47717549</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD2\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA2\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO2\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>31446826</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD3\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA3\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO3\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>40699060</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD4\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA4\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO4\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>50281521</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD5\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA5\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO5\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>64404117</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-TELEFONOS\"] = responseBody.has(\"<count>0</count><index>0</index><mandatory>false</mandatory><name>TELEFONOS</name>\");",
+                  "tests[\"Enriquecimiento CO-EMAIL\"] = responseBody.has(\"<index>0</index><name>EMAIL</name><value>patocoppola@hotmail.com</value></columns><count>0</count><index>0</index><mandatory>false</mandatory><name>EMAIL</name>\");",
+                  "tests[\"Enriquecimiento CO-ID_PERSONA\"] = responseBody.has(\"<name>ID_PERSONA</name><value>14425172</value>\");",
+                  "tests[\"Enriquecimiento CO-DNI\"] = responseBody.has(\"<name>DNI</name><value>11958413</value>\");",
+                  "tests[\"Enriquecimiento CO-TIPO_DOCUMENTO\"] = responseBody.has(\"<name>TIPO_DOCUMENTO</name><value>DNI</value>\");",
+                  "tests[\"Enriquecimiento CO-NOMBRES\"] = responseBody.has(\"<name>NOMBRES</name><value>JULIO LUCAS</value>\");",
+                  "tests[\"Enriquecimiento CO-APELLIDOS\"] = responseBody.has(\"<name>APELLIDOS</name><value>MILLER</value>\");",
+                  "tests[\"Enriquecimiento CO-SEXO\"] = responseBody.has(\"<name>SEXO</name><value>M</value>\");",
+                  "tests[\"Enriquecimiento CO-EDO_CIVIL\"] = responseBody.has(\"<name>EDO_CIVIL</name><value>C</value>\");",
+                  "tests[\"Enriquecimiento CO-nse_consolidado\"] = responseBody.has(\"<name>nse_consolidado</name><value>-</value>\");",
+                  "tests[\"Enriquecimiento CO-NACIMIENTO\"] = responseBody.has(\"<name>NACIMIENTO</name><value>17/06/1956</value>\");",
+                  "tests[\"Enriquecimiento CO-PERSONAS\"] = responseBody.has(\"<mandatory>false</mandatory><name>PERSONAS</name>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD6\"] = responseBody.has(\"<name>CONFIABILIDAD</name><value>60</value>\");",
+                  "tests[\"Enriquecimiento CO-provincia\"] = responseBody.has(\"<name>provincia</name><value>CAPITAL FEDERAL</value>\");",
+                  "tests[\"Enriquecimiento CO-partido\"] = responseBody.has(\"<name>partido</name><value>CAPITAL FEDERAL</value>\");",
+                  "tests[\"Enriquecimiento CO-localidad\"] = responseBody.has(\"<name>localidad</name><value>CIUDAD AUTONOMA BUENOS AIRES</value>\");",
+                  "tests[\"Enriquecimiento CO-barrio\"] = responseBody.has(\"<name>barrio</name><value>BELGRANO</value>\");",
+                  "tests[\"Enriquecimiento CO-calle\"] = responseBody.has(\"<name>calle</name><value>GRAL BERNARDO O'HIGGINS</value>\");",
+                  "tests[\"Enriquecimiento CO-numero\"] = responseBody.has(\"<name>numero</name><value>1710</value>\");",
+                  "tests[\"Enriquecimiento CO-piso\"] = responseBody.has(\"<name>piso</name><value>PB</value>\");",
+                  "tests[\"Enriquecimiento CO-depto\"] = responseBody.has(\"<name>depto</name>\");",
+                  "tests[\"Enriquecimiento CO-cp\"] = responseBody.has(\"<name>cp</name><value>1426</value>\");",
+                  "tests[\"Enriquecimiento CO-observaciones\"] = responseBody.has(\"<name>observaciones</name><value> </value>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD7\"] = responseBody.has(\"<name>CONFIABILIDAD</name><value>50</value>\");",
+                  "tests[\"Enriquecimiento CO-provincia2\"] = responseBody.has(\"<name>provincia</name><value>CAPITAL FEDERAL</value>\");",
+                  "tests[\"Enriquecimiento CO-partido2\"] = responseBody.has(\"<name>partido</name><value>CAPITAL FEDERAL</value>\");",
+                  "tests[\"Enriquecimiento CO-localidad2\"] = responseBody.has(\"<name>localidad</name><value>CIUDAD AUTONOMA BUENOS AIRES</value>\");",
+                  "tests[\"Enriquecimiento CO-barrio2\"] = responseBody.has(\"<name>barrio</name><value>BELGRANO</value>\");",
+                  "tests[\"Enriquecimiento CO-calle2\"] = responseBody.has(\"<name>calle</name><value>GRAL BERNARDO O'HIGGINS</value>\");",
+                  "tests[\"Enriquecimiento CO-numero2\"] = responseBody.has(\"<name>numero</name><value>1841</value>\");",
+                  "tests[\"Enriquecimiento CO-piso2\"] = responseBody.has(\"<name>piso</name><value>4</value>\");",
+                  "tests[\"Enriquecimiento CO-depto2\"] = responseBody.has(\"<name>depto</name><value>F</value>\");",
+                  "tests[\"Enriquecimiento CO-cp2\"] = responseBody.has(\"<name>cp</name><value>1428</value>\");",
+                  "tests[\"Enriquecimiento CO-DIRECCIONES\"] = responseBody.has(\"<mandatory>false</mandatory><name>DIRECCIONES</name>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Enriquecimiento}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.enrichment.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:getConsultation>\r\n         <!--Optional:-->\r\n         <idCliente>62</idCliente>\r\n         <!--Optional:-->\r\n         <idUsuario>371</idUsuario>\r\n         <!--Optional:-->\r\n         <cedula>11958413</cedula>\r\n         <!--Optional:-->\r\n         <tipoDocumento> </tipoDocumento>\r\n         <!--Optional:-->\r\n         <access>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <status> </status>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </access>\r\n      </soap:getConsultation>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "6c2a341c-0e40-a244-e497-bc7e616031c1",
+      "name": "Busqueda Predictiva",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "25b0f005-e48f-f5a3-8cb4-a647c4758813",
+          "name": "Busqueda Predictiva Calles",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Predictiva CO-calleName\"] = responseBody.has(\"<calleName>AVENIDA LIBERTADOR GENERAL SAN MARTIN</calleName>\");",
+                  "tests[\"Predictiva CO-calleNameShort\"] = responseBody.has(\"<calleNameShort>AVDA LIBERTADOR GRAL SAN MARTIN</calleNameShort>\");",
+                  "tests[\"Predictiva CO-cp\"] = responseBody.has(\"<cp>6500</cp>\");",
+                  "tests[\"Predictiva CO-desde\"] = responseBody.has(\"<desde>601</desde>\");",
+                  "tests[\"Predictiva CO-hasta\"] = responseBody.has(\"<hasta>4400</hasta>\");",
+                  "tests[\"Predictiva CO-nivel2\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
+                  "tests[\"Predictiva CO-nivel3\"] = responseBody.has(\"<nivel3>9 DE JULIO</nivel3>\");",
+                  "tests[\"Predictiva CO-nivel4\"] = responseBody.has(\"<nivel4>9 DE JULIO</nivel4>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Busqueda Predictiva}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.cartoonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryCalle>\r\n         <!--Optional:-->\r\n         <nivel1>AR</nivel1>\r\n         <!--Optional:-->\r\n         <nivel2>Buenos aires</nivel2>\r\n         <!--Optional:-->\r\n         <nivel3> </nivel3>\r\n         <!--Optional:-->\r\n         <nivel4>9 de julio</nivel4>\r\n         <!--Optional:-->\r\n         <calle>san mar</calle>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <status> </status>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n         <!--Optional:-->\r\n         <listarTramos> </listarTramos>\r\n      </soap:queryCalle>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1a75dc1d-d78c-883b-d138-6acb24194d87",
+          "name": "Busqueda Predictiva Localidad N4",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Predictiva CO-id\"] = responseBody.has(\"<id>54100366004921</id>\");",
+                  "tests[\"Predictiva CO-name\"] = responseBody.has(\"<name>SAN VICENTE</name>\");",
+                  "tests[\"Predictiva CO-relieved\"] = responseBody.has(\"<relieved>true</relieved>\");",
+                  "tests[\"Predictiva CO-synonymous\"] = responseBody.has(\"<synonymous></synonymous>\");",
+                  "tests[\"Predictiva CO-x\"] = responseBody.has(\"<x>-58.420732</x>\");",
+                  "tests[\"Predictiva CO-y\"] = responseBody.has(\"<y>-35.026405</y>\");",
+                  "",
+                  "tests[\"Predictiva CO-id/2\"] = responseBody.has(\"<id>54100055005406</id>\");",
+                  "tests[\"Predictiva CO-name/2\"] = responseBody.has(\"<name>VICENTE CASARES</name>\");",
+                  "tests[\"Predictiva CO-relieved/2\"] = responseBody.has(\"<relieved>true</relieved>\");",
+                  "tests[\"Predictiva CO-synonymous/2\"] = responseBody.has(\"<synonymous></synonymous>\");",
+                  "tests[\"Predictiva CO-x/2\"] = responseBody.has(\"<x>-58.650336</x>\");",
+                  "tests[\"Predictiva CO-y/2\"] = responseBody.has(\"<y>-34.96742</y>\");",
+                  "",
+                  "tests[\"Predictiva CO-id/3\"] = responseBody.has(\"<id>54100420005407</id>\");",
+                  "tests[\"Predictiva CO-name/3\"] = responseBody.has(\"<name>VICENTE LOPEZ</name>\");",
+                  "tests[\"Predictiva CO-relieved/3\"] = responseBody.has(\"<relieved>true</relieved>\");",
+                  "tests[\"Predictiva CO-synonymous/3\"] = responseBody.has(\"<synonymous></synonymous>\");",
+                  "tests[\"Predictiva CO-x/3\"] = responseBody.has(\"<x>-58.474951</x>\");",
+                  "tests[\"Predictiva CO-y/3\"] = responseBody.has(\"<y>-34.525741</y>\");",
+                  "",
+                  "tests[\"Predictiva CO-id/4\"] = responseBody.has(\"<id>54100029005408</id>\");",
+                  "tests[\"Predictiva CO-name/4\"] = responseBody.has(\"<name>VICENTE PEREDA</name>\");",
+                  "tests[\"Predictiva CO-relieved/4\"] = responseBody.has(\"<relieved>false</relieved>\");",
+                  "tests[\"Predictiva CO-synonymous/4\"] = responseBody.has(\"<synonymous></synonymous>\");",
+                  "tests[\"Predictiva CO-x/4\"] = responseBody.has(\"<x>-59.780174</x>\");",
+                  "tests[\"Predictiva CO-y/4\"] = responseBody.has(\"<y>-36.696678</y>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Busqueda Predictiva}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.cartoonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryN4>\r\n         <!--Optional:-->\r\n         <nivel1>AR</nivel1>\r\n         <!--Optional:-->\r\n         <nivel2>Buenos Aires</nivel2>\r\n         <!--Optional:-->\r\n         <nivel4>vicent</nivel4>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <status> </status>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:queryN4>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "a454bfcc-4433-96c9-39fa-c0202f7c9fe8",
+      "name": "Nombres",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "11c70b6d-d954-c982-3bdd-33cd9e0d7c97",
+          "name": "Nombres CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Nombres CO-apellidos\"] = responseBody.has(\"<apellidos>GONCALVES</apellidos>\");",
+                  "tests[\"Nombres CO-estado\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "tests[\"Nombres CO-genero\"] = responseBody.has(\"<genero>M</genero>\");",
+                  "tests[\"Nombres CO-motivo\"] = responseBody.has(\"<motivo></motivo>\");",
+                  "tests[\"Nombres CO-nivel1\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "tests[\"Nombres CO-nombres\"] = responseBody.has(\"<nombres>ELVIS ANTONIO</nombres>\");",
+                  "tests[\"Nombres CO-tipoPersona\"] = responseBody.has(\"<tipoPersona>PF</tipoPersona>\");",
+                  "tests[\"Nombres CO-idTransaccionMerlin\"] = responseBody.has(\"<customValues><name>idTransaccionMerlin</name\");",
+                  "tests[\"Nombres CO-creditosRestantes\"] = responseBody.has(\"<customValues><name>creditosRestantes</name>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Nombres}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.nameonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:nameNormalize>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <apellidos> </apellidos>\r\n            <!--Optional:-->\r\n            <genero> </genero>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nombres>Elvis Antonio Goncalves</nombres>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:nameNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "959014cb-b7c4-68ea-21e4-208a7a9f5e53",
+          "name": "Nombres NP",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Nombres CO-apellidos\"] = responseBody.has(\"<apellidos>ROSA MARIA ROSA MARIA</apellidos>\");",
+                  "tests[\"Nombres CO-estado\"] = responseBody.has(\"<estado>NP</estado>\");",
+                  "tests[\"Nombres CO-genero\"] = responseBody.has(\"<genero></genero>\");",
+                  "tests[\"Nombres CO-motivo\"] = responseBody.has(\"<motivo></motivo>\");",
+                  "tests[\"Nombres CO-nivel1\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "tests[\"Nombres CO-nombres\"] = responseBody.has(\"<nombres></nombres>\");",
+                  "tests[\"Nombres CO-tipoPersona\"] = responseBody.has(\"<tipoPersona></tipoPersona>\");",
+                  "tests[\"Nombres CO-creditosRestantes\"] = responseBody.has(\"<customValues><name>creditosRestantes</name>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Nombres}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.nameonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:nameNormalize>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <apellidos> </apellidos>\r\n            <!--Optional:-->\r\n            <genero> </genero>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nombres>ROSA MARIA ROSA MARIA</nombres>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:nameNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "47515225-366a-e86e-36e3-1c3af272e9b5",
+          "name": "Nombres SD",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Nombres CO-apellidos\"] = responseBody.has(\"<apellidos></apellidos>\");",
+                  "tests[\"Nombres CO-estado\"] = responseBody.has(\"<estado>SD</estado>\");",
+                  "tests[\"Nombres CO-genero\"] = responseBody.has(\"<genero></genero>\");",
+                  "tests[\"Nombres CO-motivo\"] = responseBody.has(\"<motivo></motivo>\");",
+                  "tests[\"Nombres CO-nivel1\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "tests[\"Nombres CO-nombres\"] = responseBody.has(\"<nombres></nombres>\");",
+                  "tests[\"Nombres CO-tipoPersona\"] = responseBody.has(\"<tipoPersona></tipoPersona>\");",
+                  "tests[\"Nombres CO-creditosRestantes\"] = responseBody.has(\"<customValues><name>creditosRestantes</name>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Nombres}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.nameonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:nameNormalize>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <apellidos> </apellidos>\r\n            <!--Optional:-->\r\n            <genero> </genero>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nombres></nombres>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:nameNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "a532694e-02eb-39e6-3415-679682a9afa3",
+      "name": "Datos Filiatorios",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "7b7bd9dc-1eb1-3473-3142-8943c4ee5a3f",
+          "name": "Filiatorio VA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorio OK-Birthday\"] = responseBody.has(\"<birthDate>15/04/1925</birthDate>\");",
+                  "tests[\"Filiatorio OK-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>AP</birthDateFlg>\");",
+                  "tests[\"Filiatorio OK-contributorType\"] = responseBody.has(\"<contributorType>A</contributorType>\");",
+                  "tests[\"Filiatorio OK-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>AP</contributorTypeFlg>\");",
+                  "tests[\"Filiatorio OK-documentNumber\"] = responseBody.has(\"<documentNumber>93288885</documentNumber>\");",
+                  "tests[\"Filiatorio OK-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>VA</documentNumberFlg>\");",
+                  "tests[\"Filiatorio OK-documentType\"] = responseBody.has(\"<documentType>96</documentType>\");",
+                  "tests[\"Filiatorio OK-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>AP</documentTypeFlg>\");",
+                  "tests[\"Filiatorio OK-lastName\"] = responseBody.has(\"<lastName>LAZARO LUIS</lastName>\");",
+                  "tests[\"Filiatorio OK-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>AP</lastNameFlg>\");",
+                  "tests[\"Filiatorio OK-mtnDistance\"] = responseBody.has(\"<mtnDistance>0.0</mtnDistance>\");",
+                  "tests[\"Filiatorio OK-mtnStatus\"] = responseBody.has(\"<mtnStatus>ER</mtnStatus>\");",
+                  "tests[\"Filiatorio OK-name\"] = responseBody.has(\"<name></name>\");",
+                  "tests[\"Filiatorio OK-nameFlg\"] = responseBody.has(\"<nameFlg>AP</nameFlg>\");",
+                  "tests[\"Filiatorio OK-sex\"] = responseBody.has(\"<sex>M</sex>\");",
+                  "tests[\"Filiatorio OK-sexFlg\"] = responseBody.has(\"<sexFlg>AP</sexFlg>\");",
+                  "tests[\"Filiatorio OK-status\"] = responseBody.has(\"<status>OK</status>\");",
+                  "tests[\"Filiatorio OK-tributaryNumber\"] = responseBody.has(\"<tributaryNumber>20932888859</tributaryNumber>\");",
+                  "tests[\"Filiatorio OK-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>AP</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorio OK-tributaryType\"] = responseBody.has(\"<tributaryType>86</tributaryType>\");",
+                  "tests[\"Filiatorio OK-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>AP</tributaryTypeFlg>\");",
+                  "tests[\"Filiatorio OK-distanciaAfip\"] = responseBody.has(\"<name>distanciaAfip</name><value>1</value>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryFiliation>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <birthDate> </birthDate>\r\n            <!--Optional:-->\r\n            <contributaryType> </contributaryType>\r\n            <!--Optional:-->\r\n            <documentNumber>93288885</documentNumber>\r\n            <!--Optional:-->\r\n            <documentType> </documentType>\r\n            <!--Optional:-->\r\n            <lastName> </lastName>\r\n            <!--Optional:-->\r\n            <name> </name>\r\n            <!--Optional:-->\r\n            <sex> </sex>\r\n            <!--Optional:-->\r\n            <tributaryNumber> </tributaryNumber>\r\n            <!--Optional:-->\r\n            <tributaryType> </tributaryType>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryFiliation>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1bf474d0-32e8-6499-26e4-e3efa1b94b09",
+          "name": "Filiatorio VA Con nombre",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorio OK-Birthday\"] = responseBody.has(\"<birthDate>12/07/1936</birthDate>\");",
+                  "tests[\"Filiatorio OK-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>AP</birthDateFlg>\");",
+                  "tests[\"Filiatorio OK-contributorType\"] = responseBody.has(\"<contributorType>A</contributorType>\");",
+                  "tests[\"Filiatorio OK-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>AP</contributorTypeFlg>\");",
+                  "tests[\"Filiatorio OK-documentNumber\"] = responseBody.has(\"<documentNumber>2783891</documentNumber>\");",
+                  "tests[\"Filiatorio OK-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>VA</documentNumberFlg>\");",
+                  "tests[\"Filiatorio OK-documentType\"] = responseBody.has(\"<documentType>89</documentType>\");",
+                  "tests[\"Filiatorio OK-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>AP</documentTypeFlg>\");",
+                  "tests[\"Filiatorio OK-lastName\"] = responseBody.has(\"<lastName>CORDOBA</lastName>\");",
+                  "tests[\"Filiatorio OK-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>AP</lastNameFlg>\");",
+                  "tests[\"Filiatorio OK-mtnDistance\"] = responseBody.has(\"<mtnDistance>0.0</mtnDistance>\");",
+                  "tests[\"Filiatorio OK-mtnStatus\"] = responseBody.has(\"<mtnStatus>ER</mtnStatus>\");",
+                  "tests[\"Filiatorio OK-name\"] = responseBody.has(\"<name>JUANA RAMONA</name>\");",
+                  "tests[\"Filiatorio OK-nameFlg\"] = responseBody.has(\"<nameFlg>CO</nameFlg>\");",
+                  "tests[\"Filiatorio OK-sex\"] = responseBody.has(\"<sex>F</sex>\");",
+                  "tests[\"Filiatorio OK-sexFlg\"] = responseBody.has(\"<sexFlg>AP</sexFlg>\");",
+                  "tests[\"Filiatorio OK-status\"] = responseBody.has(\"<status>OK</status>\");",
+                  "tests[\"Filiatorio OK-tributaryNumber\"] = responseBody.has(\"<tributaryNumber>27027838915</tributaryNumber>\");",
+                  "tests[\"Filiatorio OK-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>AP</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorio OK-tributaryType\"] = responseBody.has(\"<tributaryType>86</tributaryType>\");",
+                  "tests[\"Filiatorio OK-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>AP</tributaryTypeFlg>\");",
+                  "tests[\"Filiatorio OK-distanciaAfip\"] = responseBody.has(\"<name>distanciaAfip</name><value>0</value>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryFiliation>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <birthDate> </birthDate>\r\n            <!--Optional:-->\r\n            <contributaryType> </contributaryType>\r\n            <!--Optional:-->\r\n            <documentNumber>2783891</documentNumber>\r\n            <!--Optional:-->\r\n            <documentType> </documentType>\r\n            <!--Optional:-->\r\n            <lastName> </lastName>\r\n            <!--Optional:-->\r\n            <name>CORDOBA JUANA RAMONA</name>\r\n            <!--Optional:-->\r\n            <sex> </sex>\r\n            <!--Optional:-->\r\n            <tributaryNumber> </tributaryNumber>\r\n            <!--Optional:-->\r\n            <tributaryType> </tributaryType>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryFiliation>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "50d5e184-6e31-b257-2fe1-747da667efb3",
+          "name": "Filiatorio DU Con nombre",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorio OK-Birthday\"] = responseBody.has(\"<birthDate></birthDate>\");",
+                  "tests[\"Filiatorio OK-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>NO</birthDateFlg>\");",
+                  "tests[\"Filiatorio OK-contributorType\"] = responseBody.has(\"<contributorType></contributorType>\");",
+                  "tests[\"Filiatorio OK-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>NO</contributorTypeFlg>\");",
+                  "tests[\"Filiatorio OK-documentNumber\"] = responseBody.has(\"<documentNumber>4111807</documentNumber>\");",
+                  "tests[\"Filiatorio OK-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NO</documentNumberFlg>\");",
+                  "tests[\"Filiatorio OK-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
+                  "tests[\"Filiatorio OK-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NO</documentTypeFlg>\");",
+                  "tests[\"Filiatorio OK-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
+                  "tests[\"Filiatorio OK-lastNameFlg\"] = responseBody.has(\"<lastNameFlg></lastNameFlg>\");",
+                  "tests[\"Filiatorio OK-mtnDistance\"] = responseBody.has(\"<mtnDistance>0.0</mtnDistance>\");",
+                  "tests[\"Filiatorio OK-mtnStatus\"] = responseBody.has(\"<mtnStatus>ER</mtnStatus>\");",
+                  "tests[\"Filiatorio OK-name\"] = responseBody.has(\"<name></name>\");",
+                  "tests[\"Filiatorio OK-nameFlg\"] = responseBody.has(\"<nameFlg></nameFlg>\");",
+                  "tests[\"Filiatorio OK-sex\"] = responseBody.has(\"<sex></sex>\");",
+                  "tests[\"Filiatorio OK-sexFlg\"] = responseBody.has(\"<sexFlg>NO</sexFlg>\");",
+                  "tests[\"Filiatorio OK-status\"] = responseBody.has(\"<status>DU</status>\");",
+                  "tests[\"Filiatorio OK-tributaryNumber\"] = responseBody.has(\"<tributaryNumber></tributaryNumber>\");",
+                  "tests[\"Filiatorio OK-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>NO</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorio OK-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
+                  "tests[\"Filiatorio OK-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NO</tributaryTypeFlg>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryFiliation>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <birthDate> </birthDate>\r\n            <!--Optional:-->\r\n            <contributaryType> </contributaryType>\r\n            <!--Optional:-->\r\n            <documentNumber>4111807</documentNumber>\r\n            <!--Optional:-->\r\n            <documentType> </documentType>\r\n            <!--Optional:-->\r\n            <lastName> </lastName>\r\n            <!--Optional:-->\r\n            <name>SANTOS OSCAR NERI</name>\r\n            <!--Optional:-->\r\n            <sex> </sex>\r\n            <!--Optional:-->\r\n            <tributaryNumber> </tributaryNumber>\r\n            <!--Optional:-->\r\n            <tributaryType> </tributaryType>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryFiliation>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9a396511-cf06-cce5-c93f-ecb96eda4517",
+          "name": "Filiatorio DU Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorio OK-Birthday\"] = responseBody.has(\"<birthDate></birthDate>\");",
+                  "tests[\"Filiatorio OK-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>NO</birthDateFlg>\");",
+                  "tests[\"Filiatorio OK-contributorType\"] = responseBody.has(\"<contributorType></contributorType>\");",
+                  "tests[\"Filiatorio OK-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>NO</contributorTypeFlg>\");",
+                  "tests[\"Filiatorio OK-documentNumber\"] = responseBody.has(\"<documentNumber>4356144</documentNumber>\");",
+                  "tests[\"Filiatorio OK-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NO</documentNumberFlg>\");",
+                  "tests[\"Filiatorio OK-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
+                  "tests[\"Filiatorio OK-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NO</documentTypeFlg>\");",
+                  "tests[\"Filiatorio OK-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
+                  "tests[\"Filiatorio OK-lastNameFlg\"] = responseBody.has(\"<lastNameFlg></lastNameFlg>\");",
+                  "tests[\"Filiatorio OK-mtnDistance\"] = responseBody.has(\"<mtnDistance>0.0</mtnDistance>\");",
+                  "tests[\"Filiatorio OK-mtnStatus\"] = responseBody.has(\"<mtnStatus>ER</mtnStatus>\");",
+                  "tests[\"Filiatorio OK-name\"] = responseBody.has(\"<name></name>\");",
+                  "tests[\"Filiatorio OK-nameFlg\"] = responseBody.has(\"<nameFlg></nameFlg>\");",
+                  "tests[\"Filiatorio OK-sex\"] = responseBody.has(\"<sex></sex>\");",
+                  "tests[\"Filiatorio OK-sexFlg\"] = responseBody.has(\"<sexFlg>NO</sexFlg>\");",
+                  "tests[\"Filiatorio OK-status\"] = responseBody.has(\"<status>DU</status>\");",
+                  "tests[\"Filiatorio OK-tributaryNumber\"] = responseBody.has(\"<tributaryNumber></tributaryNumber>\");",
+                  "tests[\"Filiatorio OK-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>NO</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorio OK-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
+                  "tests[\"Filiatorio OK-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NO</tributaryTypeFlg>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryFiliation>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <birthDate> </birthDate>\r\n            <!--Optional:-->\r\n            <contributaryType> </contributaryType>\r\n            <!--Optional:-->\r\n            <documentNumber>4356144</documentNumber>\r\n            <!--Optional:-->\r\n            <documentType> </documentType>\r\n            <!--Optional:-->\r\n            <lastName> </lastName>\r\n            <!--Optional:-->\r\n            <name> </name>\r\n            <!--Optional:-->\r\n            <sex> </sex>\r\n            <!--Optional:-->\r\n            <tributaryNumber> </tributaryNumber>\r\n            <!--Optional:-->\r\n            <tributaryType> </tributaryType>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryFiliation>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e8e1a1f7-3326-c5aa-56ef-191d1116049e",
+          "name": "Filiatorio NE Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorio OK-Birthday\"] = responseBody.has(\"<birthDate></birthDate>\");",
+                  "tests[\"Filiatorio OK-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>NO</birthDateFlg>\");",
+                  "tests[\"Filiatorio OK-contributorType\"] = responseBody.has(\"<contributorType></contributorType>\");",
+                  "tests[\"Filiatorio OK-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>NO</contributorTypeFlg>\");",
+                  "tests[\"Filiatorio OK-documentNumber\"] = responseBody.has(\"<documentNumber>2260449</documentNumber>\");",
+                  "tests[\"Filiatorio OK-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NO</documentNumberFlg>\");",
+                  "tests[\"Filiatorio OK-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
+                  "tests[\"Filiatorio OK-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NO</documentTypeFlg>\");",
+                  "tests[\"Filiatorio OK-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
+                  "tests[\"Filiatorio OK-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>NO</lastNameFlg>\");",
+                  "tests[\"Filiatorio OK-mtnDistance\"] = responseBody.has(\"<mtnDistance>0.0</mtnDistance>\");",
+                  "tests[\"Filiatorio OK-mtnStatus\"] = responseBody.has(\"<mtnStatus>ER</mtnStatus>\");",
+                  "tests[\"Filiatorio OK-name\"] = responseBody.has(\"<name>TELLO VICTORIA MARIA IGNA</name>\");",
+                  "tests[\"Filiatorio OK-nameFlg\"] = responseBody.has(\"<nameFlg>NO</nameFlg>\");",
+                  "tests[\"Filiatorio OK-sex\"] = responseBody.has(\"<sex></sex>\");",
+                  "tests[\"Filiatorio OK-sexFlg\"] = responseBody.has(\"<sexFlg>NO</sexFlg>\");",
+                  "tests[\"Filiatorio OK-status\"] = responseBody.has(\"<status>NE</status>\");",
+                  "tests[\"Filiatorio OK-tributaryNumber\"] = responseBody.has(\"<tributaryNumber></tributaryNumber>\");",
+                  "tests[\"Filiatorio OK-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>NO</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorio OK-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
+                  "tests[\"Filiatorio OK-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NO</tributaryTypeFlg>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryFiliation>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <birthDate> </birthDate>\r\n            <!--Optional:-->\r\n            <contributaryType> </contributaryType>\r\n            <!--Optional:-->\r\n            <documentNumber>2260449</documentNumber>\r\n            <!--Optional:-->\r\n            <documentType> </documentType>\r\n            <!--Optional:-->\r\n            <lastName> </lastName>\r\n            <!--Optional:-->\r\n            <name>TELLO VICTORIA MARIA IGNA</name>\r\n            <!--Optional:-->\r\n            <sex> </sex>\r\n            <!--Optional:-->\r\n            <tributaryNumber> </tributaryNumber>\r\n            <!--Optional:-->\r\n            <tributaryType> </tributaryType>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryFiliation>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "cf2fb41d-6e9c-7c2f-1054-72cc91101de8",
+      "name": "Patentes",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "df81ec63-fba8-267c-6585-1f5bdf9b43a8",
+          "name": "Patentes CO Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Dominio OK\"] = responseBody.has(\"<dominio>EYD785</dominio>\");",
+                  "tests[\"Marca OK\"] = responseBody.has(\"<marca>VOLKSWAGEN</marca>\");",
+                  "tests[\"Modelo OK\"] = responseBody.has(\"<modelo>POLO CLASSIC 1.9L SD 31A</modelo>\");",
+                  "tests[\"Anio OK\"] = responseBody.has(\"<ano>2005</ano>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor>1Y 961787</motor>\");",
+                  "tests[\"Chasis OK\"] = responseBody.has(\"<nroChasis>8AWZZZ9EZ5A699109</nroChasis>\");",
+                  "tests[\"Tipo OK\"] = responseBody.has(\"<tipo></tipo>\");",
+                  "tests[\"Estado OK\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleData>\r\n            <!--1 or more repetitions:-->\r\n            <customValues>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <value> </value>\r\n            </customValues>\r\n            <!--Optional:-->\r\n            <dominio>EYD785</dominio>\r\n            <!--Optional:-->\r\n            <motor> </motor>\r\n            <!--Optional:-->\r\n            <nroChasis> </nroChasis>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </vehicleData>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e46d19fe-15cc-1707-ee53-9139993e31db",
+          "name": "Patentes SD FedePat",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Dominio OK\"] = responseBody.has(\"<dominio>LLZ364</dominio>\");",
+                  "tests[\"Marca OK\"] = responseBody.has(\"<marca>VOLKSWAGEN</marca>\");",
+                  "tests[\"Modelo OK\"] = responseBody.has(\"<modelo>VOYAGE 1.6</modelo>\");",
+                  "tests[\"Anio OK\"] = responseBody.has(\"<ano>2012</ano>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
+                  "tests[\"Chasis OK\"] = responseBody.has(\"<nroChasis></nroChasis>\");",
+                  "tests[\"Tipo OK\"] = responseBody.has(\"<tipo></tipo>\");",
+                  "tests[\"Estado OK\"] = responseBody.has(\"<estado>SD</estado>\");",
+                  "",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleData>\r\n            <!--1 or more repetitions:-->\r\n            <customValues>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <value> </value>\r\n            </customValues>\r\n            <!--Optional:-->\r\n            <dominio>llz364</dominio>\r\n            <!--Optional:-->\r\n            <motor> </motor>\r\n            <!--Optional:-->\r\n            <nroChasis> </nroChasis>\r\n            <!--Optional:-->\r\n            <clientAccessCode>4f49aa8fd52671c87faa3ef747636714</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </vehicleData>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8e4cbba3-4e5f-d839-957b-5c60dcd8fca0",
+          "name": "Patentes CO FedePat",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Dominio OK\"] = responseBody.has(\"<dominio>AAD525</dominio>\");",
+                  "tests[\"Marca OK\"] = responseBody.has(\"<marca>VOLKSWAGEN</marca>\");",
+                  "tests[\"Modelo OK\"] = responseBody.has(\"<modelo>GOL GL</modelo>\");",
+                  "tests[\"Anio OK\"] = responseBody.has(\"<ano>1995</ano>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor>UN986530</motor>\");",
+                  "tests[\"Chasis OK\"] = responseBody.has(\"<nroChasis>8AWZZZ30ZRJ042746</nroChasis>\");",
+                  "tests[\"Tipo OK\"] = responseBody.has(\"<tipo></tipo>\");",
+                  "tests[\"Estado OK\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleData>\r\n            <!--1 or more repetitions:-->\r\n            <customValues>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <value> </value>\r\n            </customValues>\r\n            <!--Optional:-->\r\n            <dominio>AAD525</dominio>\r\n            <!--Optional:-->\r\n            <motor> </motor>\r\n            <!--Optional:-->\r\n            <nroChasis> </nroChasis>\r\n            <!--Optional:-->\r\n            <clientAccessCode>4f49aa8fd52671c87faa3ef747636714</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </vehicleData>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7d461a08-8574-dfdd-d9a7-4edcc4bbc7be",
+          "name": "Patentes CO Sin motor y serial",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Dominio OK\"] = responseBody.has(\"<dominio>AA004FG</dominio>\");",
+                  "tests[\"Marca OK\"] = responseBody.has(\"<marca>TOYOTA</marca>\");",
+                  "tests[\"Modelo OK\"] = responseBody.has(\"<modelo>ETIOS X 1.5 M/T</modelo>\");",
+                  "tests[\"Anio OK\"] = responseBody.has(\"<ano>2016</ano>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
+                  "tests[\"Chasis OK\"] = responseBody.has(\"<nroChasis></nroChasis>\");",
+                  "tests[\"Tipo OK\"] = responseBody.has(\"<tipo></tipo>\");",
+                  "tests[\"Estado OK\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleData>\r\n            <!--1 or more repetitions:-->\r\n            <customValues>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <value> </value>\r\n            </customValues>\r\n            <!--Optional:-->\r\n            <dominio>AA004FG</dominio>\r\n            <!--Optional:-->\r\n            <motor> </motor>\r\n            <!--Optional:-->\r\n            <nroChasis> </nroChasis>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </vehicleData>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e9d1741d-880f-02b3-203a-79ce1f4f4097",
+          "name": "Patentes SD Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Marca OK\"] = responseBody.has(\"<marca></marca>\");",
+                  "tests[\"Modelo OK\"] = responseBody.has(\"<modelo></modelo>\");",
+                  "tests[\"Anio OK\"] = responseBody.has(\"<ano></ano>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
+                  "tests[\"Chasis OK\"] = responseBody.has(\"<nroChasis></nroChasis>\");",
+                  "tests[\"Tipo OK\"] = responseBody.has(\"<tipo></tipo>\");",
+                  "tests[\"Estado OK\"] = responseBody.has(\"<estado>SD</estado>\");",
+                  "",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleData>\r\n            <!--1 or more repetitions:-->\r\n            <customValues>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <value> </value>\r\n            </customValues>\r\n            <!--Optional:-->\r\n            <dominio>AA048TN</dominio>\r\n            <!--Optional:-->\r\n            <motor> </motor>\r\n            <!--Optional:-->\r\n            <nroChasis> </nroChasis>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </vehicleData>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "fea670d7-4496-0fdb-f0b3-2bb9b0817072",
+      "name": "Telefonos",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "698382a8-bc2c-8dbb-0ee8-af8ae12dcff6",
+          "name": "Telefonos fijo No llame CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Telefono OK1-TelCompleto\"] = responseBody.has(\"<name>TEL_COMPLETO</name><value>44420390</value>\");",
+                  "tests[\"Telefono OK1-Validado\"] = responseBody.has(\"<name>validado</name><value>ok</value>\");",
+                  "tests[\"Telefono OK1-NoLlame\"] = responseBody.has(\"<name>registroNoLlame</name><value>SI</value>\");",
+                  "tests[\"Telefono OK1-Nivel2\"] = responseBody.has(\"<nivel2></nivel2>\");",
+                  "tests[\"Telefono OK1-Nivel4\"] = responseBody.has(\"<nivel4></nivel4>\");",
+                  "tests[\"Telefono OK1-CP\"] = responseBody.has(\"<cp>0</cp>\");",
+                  "tests[\"Telefono OK1-Ddi\"] = responseBody.has(\"<ddi></ddi>\");",
+                  "tests[\"Telefono OK1-Ddn\"] = responseBody.has(\"<ddn>011</ddn>\");",
+                  "tests[\"Telefono OK1-Caracteristica\"] = responseBody.has(\"<caracteristica>4442</caracteristica>\");",
+                  "tests[\"Telefono OK1-Numero\"] = responseBody.has(\"<numero>0390</numero>\");",
+                  "tests[\"Telefono OK1-Observaciones\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"Telefono OK1-Estado\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "tests[\"Telefono OK1-Motivo\"] = responseBody.has(\"<motivo></motivo>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Telefonos}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize>\r\n         <!--Optional:-->\r\n         <phone>\r\n            <!--Optional:-->\r\n            <caracteristica> </caracteristica>\r\n            <!--Optional:-->\r\n            <completeNumber>01144420390</completeNumber>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <ddi> </ddi>\r\n            <!--Optional:-->\r\n            <ddn> </ddn>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4> </nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <observaciones> </observaciones>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </phone>\r\n      </soap:phoneNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "908b3c90-e129-b214-b5cc-e6b58e198b2d",
+          "name": "Telefonos Celular No llame CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Telefono OK1-TelCompleto\"] = responseBody.has(\"<name>TEL_COMPLETO</name><value>1569338493</value>\");",
+                  "tests[\"Telefono OK1-Validado\"] = responseBody.has(\"<name>validado</name><value>ce</value>\");",
+                  "tests[\"Telefono OK1-NoLlame\"] = responseBody.has(\"<name>registroNoLlame</name><value>SI</value>\");",
+                  "tests[\"Telefono OK1-Nivel2\"] = responseBody.has(\"<nivel2></nivel2>\");",
+                  "tests[\"Telefono OK1-Nivel4\"] = responseBody.has(\"<nivel4></nivel4>\");",
+                  "tests[\"Telefono OK1-CP\"] = responseBody.has(\"<cp>0</cp>\");",
+                  "tests[\"Telefono OK1-Ddi\"] = responseBody.has(\"<ddi></ddi>\");",
+                  "tests[\"Telefono OK1-Ddn\"] = responseBody.has(\"<ddn>011</ddn>\");",
+                  "tests[\"Telefono OK1-Caracteristica\"] = responseBody.has(\"<caracteristica>6933</caracteristica>\");",
+                  "tests[\"Telefono OK1-Numero\"] = responseBody.has(\"<numero>8493</numero>\");",
+                  "tests[\"Telefono OK1-Observaciones\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"Telefono OK1-Estado\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "tests[\"Telefono OK1-Motivo\"] = responseBody.has(\"<motivo></motivo>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Telefonos}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize>\r\n         <!--Optional:-->\r\n         <phone>\r\n            <!--Optional:-->\r\n            <caracteristica> </caracteristica>\r\n            <!--Optional:-->\r\n            <completeNumber>1169338493</completeNumber>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <ddi> </ddi>\r\n            <!--Optional:-->\r\n            <ddn> </ddn>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4> </nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <observaciones> </observaciones>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </phone>\r\n      </soap:phoneNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f0c1e9aa-77cc-ea8d-3c33-4a3de2353200",
+          "name": "Telefonos fijo CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Telefono OK1-TelCompleto\"] = responseBody.has(\"<name>TEL_COMPLETO</name><value>49233521</value>\");",
+                  "tests[\"Telefono OK1-Validado\"] = responseBody.has(\"<name>validado</name><value>ok</value>\");",
+                  "tests[\"Telefono OK1-NoLlame\"] = responseBody.has(\"<name>registroNoLlame</name><value>NO</value>\");",
+                  "tests[\"Telefono OK1-Nivel2\"] = responseBody.has(\"<nivel2></nivel2>\");",
+                  "tests[\"Telefono OK1-Nivel4\"] = responseBody.has(\"<nivel4></nivel4>\");",
+                  "tests[\"Telefono OK1-CP\"] = responseBody.has(\"<cp>0</cp>\");",
+                  "tests[\"Telefono OK1-Ddi\"] = responseBody.has(\"<ddi></ddi>\");",
+                  "tests[\"Telefono OK1-Ddn\"] = responseBody.has(\"<ddn>011</ddn>\");",
+                  "tests[\"Telefono OK1-Caracteristica\"] = responseBody.has(\"<caracteristica>4923</caracteristica>\");",
+                  "tests[\"Telefono OK1-Numero\"] = responseBody.has(\"<numero>3521</numero>\");",
+                  "tests[\"Telefono OK1-Observaciones\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"Telefono OK1-Estado\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "tests[\"Telefono OK1-Motivo\"] = responseBody.has(\"<motivo></motivo>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Telefonos}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize>\r\n         <!--Optional:-->\r\n         <phone>\r\n            <!--Optional:-->\r\n            <caracteristica> </caracteristica>\r\n            <!--Optional:-->\r\n            <completeNumber>1149233521</completeNumber>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <ddi> </ddi>\r\n            <!--Optional:-->\r\n            <ddn> </ddn>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4> </nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <observaciones> </observaciones>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </phone>\r\n      </soap:phoneNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a0b98715-3761-56bd-d294-3697a00155d3",
+          "name": "Telefonos celular CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Telefono OK1-TelCompleto\"] = responseBody.has(\"<name>TEL_COMPLETO</name><value>1561755152</value>\");",
+                  "tests[\"Telefono OK1-Validado\"] = responseBody.has(\"<name>validado</name><value>ce</value>\");",
+                  "tests[\"Telefono OK1-NoLlame\"] = responseBody.has(\"<name>registroNoLlame</name><value>NO</value>\");",
+                  "tests[\"Telefono OK1-Nivel2\"] = responseBody.has(\"<nivel2></nivel2>\");",
+                  "tests[\"Telefono OK1-Nivel4\"] = responseBody.has(\"<nivel4></nivel4>\");",
+                  "tests[\"Telefono OK1-CP\"] = responseBody.has(\"<cp>0</cp>\");",
+                  "tests[\"Telefono OK1-Ddi\"] = responseBody.has(\"<ddi></ddi>\");",
+                  "tests[\"Telefono OK1-Ddn\"] = responseBody.has(\"<ddn>011</ddn>\");",
+                  "tests[\"Telefono OK1-Caracteristica\"] = responseBody.has(\"<caracteristica>6175</caracteristica>\");",
+                  "tests[\"Telefono OK1-Numero\"] = responseBody.has(\"<numero>5152</numero>\");",
+                  "tests[\"Telefono OK1-Observaciones\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"Telefono OK1-Estado\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "tests[\"Telefono OK1-Motivo\"] = responseBody.has(\"<motivo></motivo>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Telefonos}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize>\r\n         <!--Optional:-->\r\n         <phone>\r\n            <!--Optional:-->\r\n            <caracteristica> </caracteristica>\r\n            <!--Optional:-->\r\n            <completeNumber>1161755152</completeNumber>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <ddi> </ddi>\r\n            <!--Optional:-->\r\n            <ddn> </ddn>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4> </nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <observaciones> </observaciones>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </phone>\r\n      </soap:phoneNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "be6b6e0d-a1b5-d46e-ffa4-740f5a31799d",
+          "name": "Telefonos NE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Telefono OK1-TelCompleto\"] = responseBody.has(\"<name>TEL_COMPLETO</name><value>1105847852</value>\");",
+                  "tests[\"Telefono OK1-Validado\"] = responseBody.has(\"<name>validado</name><value></value>\");",
+                  "tests[\"Telefono OK1-NoLlame\"] = responseBody.has(\"<name>registroNoLlame</name><value>NO</value>\");",
+                  "tests[\"Telefono OK1-Nivel2\"] = responseBody.has(\"<nivel2></nivel2>\");",
+                  "tests[\"Telefono OK1-Nivel4\"] = responseBody.has(\"<nivel4></nivel4>\");",
+                  "tests[\"Telefono OK1-CP\"] = responseBody.has(\"<cp>0</cp>\");",
+                  "tests[\"Telefono OK1-Ddi\"] = responseBody.has(\"<ddi></ddi>\");",
+                  "tests[\"Telefono OK1-Ddn\"] = responseBody.has(\"<ddn></ddn>\");",
+                  "tests[\"Telefono OK1-Caracteristica\"] = responseBody.has(\"<caracteristica></caracteristica>\");",
+                  "tests[\"Telefono OK1-Numero\"] = responseBody.has(\"<numero>1105847852</numero>\");",
+                  "tests[\"Telefono OK1-Observaciones\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"Telefono OK1-Estado\"] = responseBody.has(\"<estado>NE</estado>\");",
+                  "tests[\"Telefono OK1-Motivo\"] = responseBody.has(\"<motivo></motivo>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Telefonos}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize>\r\n         <!--Optional:-->\r\n         <phone>\r\n            <!--Optional:-->\r\n            <caracteristica> </caracteristica>\r\n            <!--Optional:-->\r\n            <completeNumber>1105847852</completeNumber>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <ddi> </ddi>\r\n            <!--Optional:-->\r\n            <ddn> </ddn>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4> </nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <observaciones> </observaciones>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </phone>\r\n      </soap:phoneNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4e7b5fe9-c6fb-cb19-6a63-ba7df7b1d60d",
+          "name": "Telefonos SD",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Telefono OK1-TelCompleto\"] = responseBody.has(\"<name>TEL_COMPLETO</name><value>123</value>\");",
+                  "tests[\"Telefono OK1-Validado\"] = responseBody.has(\"<name>validado</name><value></value>\");",
+                  "tests[\"Telefono OK1-NoLlame\"] = responseBody.has(\"<name>registroNoLlame</name><value>NO</value>\");",
+                  "tests[\"Telefono OK1-Nivel2\"] = responseBody.has(\"<nivel2>CAPITAL FEDERAL</nivel2>\");",
+                  "tests[\"Telefono OK1-Nivel4\"] = responseBody.has(\"<nivel4>CIUDAD AUTONOMA BUENOS AIRES</nivel4>\");",
+                  "tests[\"Telefono OK1-CP\"] = responseBody.has(\"<cp>0</cp>\");",
+                  "tests[\"Telefono OK1-Ddi\"] = responseBody.has(\"<ddi></ddi>\");",
+                  "tests[\"Telefono OK1-Ddn\"] = responseBody.has(\"<ddn></ddn>\");",
+                  "tests[\"Telefono OK1-Caracteristica\"] = responseBody.has(\"<caracteristica></caracteristica>\");",
+                  "tests[\"Telefono OK1-Numero\"] = responseBody.has(\"<numero>123</numero>\");",
+                  "tests[\"Telefono OK1-Observaciones\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"Telefono OK1-Estado\"] = responseBody.has(\"<estado>SD</estado>\");",
+                  "tests[\"Telefono OK1-Motivo\"] = responseBody.has(\"<motivo></motivo>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Telefonos}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize>\r\n         <!--Optional:-->\r\n         <phone>\r\n            <!--Optional:-->\r\n            <caracteristica> </caracteristica>\r\n            <!--Optional:-->\r\n            <completeNumber>123</completeNumber>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <ddi> </ddi>\r\n            <!--Optional:-->\r\n            <ddn> </ddn>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>caba</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <observaciones> </observaciones>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </phone>\r\n      </soap:phoneNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
