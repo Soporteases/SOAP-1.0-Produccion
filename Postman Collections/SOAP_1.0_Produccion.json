@@ -544,6 +544,83 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "fbc90ec3-f086-8bb4-5afd-863732dcf6a7",
+          "name": "Enriquecimiento copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>47717549</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD2\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA2\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO2\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>31446826</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD3\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA3\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO3\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>40699060</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD4\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA4\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO4\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>50281521</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD5\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-COD_AREA5\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO5\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>64404117</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-TELEFONOS\"] = responseBody.has(\"<count>0</count><index>0</index><mandatory>false</mandatory><name>TELEFONOS</name>\");",
+                  "tests[\"Enriquecimiento CO-EMAIL\"] = responseBody.has(\"<index>0</index><name>EMAIL</name><value>patocoppola@hotmail.com</value></columns><count>0</count><index>0</index><mandatory>false</mandatory><name>EMAIL</name>\");",
+                  "tests[\"Enriquecimiento CO-ID_PERSONA\"] = responseBody.has(\"<name>ID_PERSONA</name><value>14425172</value>\");",
+                  "tests[\"Enriquecimiento CO-DNI\"] = responseBody.has(\"<name>DNI</name><value>11958413</value>\");",
+                  "tests[\"Enriquecimiento CO-TIPO_DOCUMENTO\"] = responseBody.has(\"<name>TIPO_DOCUMENTO</name><value>DNI</value>\");",
+                  "tests[\"Enriquecimiento CO-NOMBRES\"] = responseBody.has(\"<name>NOMBRES</name><value>JULIO LUCAS</value>\");",
+                  "tests[\"Enriquecimiento CO-APELLIDOS\"] = responseBody.has(\"<name>APELLIDOS</name><value>MILLER</value>\");",
+                  "tests[\"Enriquecimiento CO-SEXO\"] = responseBody.has(\"<name>SEXO</name><value>M</value>\");",
+                  "tests[\"Enriquecimiento CO-EDO_CIVIL\"] = responseBody.has(\"<name>EDO_CIVIL</name><value>C</value>\");",
+                  "tests[\"Enriquecimiento CO-nse_consolidado\"] = responseBody.has(\"<name>nse_consolidado</name><value>-</value>\");",
+                  "tests[\"Enriquecimiento CO-NACIMIENTO\"] = responseBody.has(\"<name>NACIMIENTO</name><value>17/06/1956</value>\");",
+                  "tests[\"Enriquecimiento CO-PERSONAS\"] = responseBody.has(\"<mandatory>false</mandatory><name>PERSONAS</name>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD6\"] = responseBody.has(\"<name>CONFIABILIDAD</name><value>60</value>\");",
+                  "tests[\"Enriquecimiento CO-provincia\"] = responseBody.has(\"<name>provincia</name><value>CAPITAL FEDERAL</value>\");",
+                  "tests[\"Enriquecimiento CO-partido\"] = responseBody.has(\"<name>partido</name><value>CAPITAL FEDERAL</value>\");",
+                  "tests[\"Enriquecimiento CO-localidad\"] = responseBody.has(\"<name>localidad</name><value>CIUDAD AUTONOMA BUENOS AIRES</value>\");",
+                  "tests[\"Enriquecimiento CO-barrio\"] = responseBody.has(\"<name>barrio</name><value>BELGRANO</value>\");",
+                  "tests[\"Enriquecimiento CO-calle\"] = responseBody.has(\"<name>calle</name><value>GRAL BERNARDO O'HIGGINS</value>\");",
+                  "tests[\"Enriquecimiento CO-numero\"] = responseBody.has(\"<name>numero</name><value>1710</value>\");",
+                  "tests[\"Enriquecimiento CO-piso\"] = responseBody.has(\"<name>piso</name><value>PB</value>\");",
+                  "tests[\"Enriquecimiento CO-depto\"] = responseBody.has(\"<name>depto</name>\");",
+                  "tests[\"Enriquecimiento CO-cp\"] = responseBody.has(\"<name>cp</name><value>1426</value>\");",
+                  "tests[\"Enriquecimiento CO-observaciones\"] = responseBody.has(\"<name>observaciones</name><value> </value>\");",
+                  "tests[\"Enriquecimiento CO-CONFIABILIDAD7\"] = responseBody.has(\"<name>CONFIABILIDAD</name><value>50</value>\");",
+                  "tests[\"Enriquecimiento CO-provincia2\"] = responseBody.has(\"<name>provincia</name><value>CAPITAL FEDERAL</value>\");",
+                  "tests[\"Enriquecimiento CO-partido2\"] = responseBody.has(\"<name>partido</name><value>CAPITAL FEDERAL</value>\");",
+                  "tests[\"Enriquecimiento CO-localidad2\"] = responseBody.has(\"<name>localidad</name><value>CIUDAD AUTONOMA BUENOS AIRES</value>\");",
+                  "tests[\"Enriquecimiento CO-barrio2\"] = responseBody.has(\"<name>barrio</name><value>BELGRANO</value>\");",
+                  "tests[\"Enriquecimiento CO-calle2\"] = responseBody.has(\"<name>calle</name><value>GRAL BERNARDO O'HIGGINS</value>\");",
+                  "tests[\"Enriquecimiento CO-numero2\"] = responseBody.has(\"<name>numero</name><value>1841</value>\");",
+                  "tests[\"Enriquecimiento CO-piso2\"] = responseBody.has(\"<name>piso</name><value>4</value>\");",
+                  "tests[\"Enriquecimiento CO-depto2\"] = responseBody.has(\"<name>depto</name><value>F</value>\");",
+                  "tests[\"Enriquecimiento CO-cp2\"] = responseBody.has(\"<name>cp</name><value>1428</value>\");",
+                  "tests[\"Enriquecimiento CO-DIRECCIONES\"] = responseBody.has(\"<mandatory>false</mandatory><name>DIRECCIONES</name>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Enriquecimiento}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.enrichment.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:getConsultation>\r\n         <!--Optional:-->\r\n         <idCliente>62</idCliente>\r\n         <!--Optional:-->\r\n         <idUsuario>371</idUsuario>\r\n         <!--Optional:-->\r\n         <cedula>11958413</cedula>\r\n         <!--Optional:-->\r\n         <tipoDocumento> </tipoDocumento>\r\n         <!--Optional:-->\r\n         <access>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <status> </status>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </access>\r\n      </soap:getConsultation>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
