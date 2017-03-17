@@ -407,7 +407,7 @@
         },
         {
           "_postman_id": "51b42b58-b167-89b5-bd81-16dcc251f22d",
-          "name": "AR-Domicilios NE AI no terminado",
+          "name": "AR-Domicilios NE AI",
           "event": [
             {
               "listen": "test",
