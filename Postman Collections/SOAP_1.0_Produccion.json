@@ -520,6 +520,85 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "1b7a94ad-81ba-e2e2-46b1-eadba8b2a4f0",
+          "name": "CL-Domicilios CO AI ",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"CL-Domicilio CO-PORTAL\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
+                  "tests[\"CL-Domicilio CO-zonaRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>N</value>\");",
+                  "tests[\"CL-Domicilio CO-MatchLevel\"] = responseBody.has(\"<name>MatchLevel</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-nivelRiesgo\"] = responseBody.has(\"<name>nivelRiesgo</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-inMaq\"] = responseBody.has(\"<name>inMaq</name><value>0</value>\");",
+                  "tests[\"CL-Domicilio CO-concepto\"] = responseBody.has(\"<name>concepto</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-70.644540</value>\");",
+                  "tests[\"CL-Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>3</value>\");",
+                  "tests[\"CL-Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-ZONAENTREGACXP\"] = responseBody.has(\"<name>ZONAENTREGACXP</name><value>N</value>\");",
+                  "tests[\"CL-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-33.442420</value>\");",
+                  "tests[\"CL-Domicilio CO-cpa\"] = responseBody.has(\"<name>cpa</name><value></value>\");",
+                  "tests[\"CL-Domicilio CO-inhibido\"] = responseBody.has(\"<name>inhibido</name><value>N</value>\");",
+                  "tests[\"CL-Domicilio CO-calle\"] = responseBody.has(\"<calle>AVENIDA LIBERTADOR BERNARDO OHIGGINS</calle>\");",
+                  "tests[\"CL-Domicilio CO-numero\"] = responseBody.has(\"<numero>540</numero>\");",
+                  "tests[\"CL-Domicilio CO-piso\"] = responseBody.has(\"<piso></piso>\");",
+                  "tests[\"CL-Domicilio CO-depto\"] = responseBody.has(\"<depto></depto>\");",
+                  "tests[\"CL-Domicilio CO-cp\"] = responseBody.has(\"<cp></cp>\");",
+                  "tests[\"CL-Domicilio CO-nivel2\"] = responseBody.has(\"<nivel2>REGION METROPOLITANA DE SANTIAGO</nivel2>\");",
+                  "tests[\"CL-Domicilio CO-nivel3\"] = responseBody.has(\"<nivel3>SANTIAGO</nivel3>\");",
+                  "tests[\"CL-Domicilio CO-nivel4\"] = responseBody.has(\"<nivel4>SANTIAGO</nivel4>\");",
+                  "tests[\"CL-Domicilio CO-nivel5\"] = responseBody.has(\"<nivel5></nivel5>\");",
+                  "tests[\"CL-Domicilio CO-tramo\"] = responseBody.has(\"<tramo></tramo>\");",
+                  "tests[\"CL-Domicilio CO-entreCalle1\"] = responseBody.has(\"<entreCalle1>CALLE CARMEN</entreCalle1>\");",
+                  "tests[\"CL-Domicilio CO-entreCalle2\"] = responseBody.has(\"<entreCalle2></entreCalle2>\");",
+                  "tests[\"CL-Domicilio CO-tipoGeocodificacion\"] = responseBody.has(\"<tipoGeocodificacion>3</tipoGeocodificacion>\");",
+                  "tests[\"CL-Domicilio CO-alturaDesde\"] = responseBody.has(\"<alturaDesde>3122</alturaDesde>\");",
+                  "tests[\"CL-Domicilio CO-alturaHasta\"] = responseBody.has(\"<alturaHasta>6078</alturaHasta>\");",
+                  "tests[\"CL-Domicilio CO-calle2\"] = responseBody.has(\"<calle>AVENIDA LIBERTADOR BERNARDO OHIGGINS</calle>\");",
+                  "tests[\"CL-Domicilio CO-cp2\"] = responseBody.has(\"<cp>0</cp>\");",
+                  "tests[\"CL-Domicilio CO-nivel1/2\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "tests[\"CL-Domicilio CO-nivel2/2\"] = responseBody.has(\"<nivel2>REGION METROPOLITANA DE SANTIAGO</nivel2>\");",
+                  "tests[\"CL-Domicilio CO-nivel3/2\"] = responseBody.has(\"<nivel3></nivel3>\");",
+                  "tests[\"CL-Domicilio CO-nivel4/2\"] = responseBody.has(\"<nivel4>ESTACION CENTRAL</nivel4>\");",
+                  "tests[\"CL-Domicilio CO-observaciones2\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"CL-Domicilio CO-alturaDesde/2\"] = responseBody.has(\"<alturaDesde>1</alturaDesde>\");",
+                  "tests[\"CL-Domicilio CO-alturaHasta/2\"] = responseBody.has(\"<alturaHasta>3339</alturaHasta>\");",
+                  "tests[\"CL-Domicilio CO-calle/3\"] = responseBody.has(\"<calle>AVENIDA LIBERTADOR BERNARDO OHIGGINS</calle>\");",
+                  "tests[\"CL-Domicilio CO-cp/3\"] = responseBody.has(\"<cp>0</cp>\");",
+                  "tests[\"CL-Domicilio CO-nivel1/3\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "tests[\"CL-Domicilio CO-nivel2/3\"] = responseBody.has(\"<nivel2>REGION METROPOLITANA DE SANTIAGO</nivel2>\");",
+                  "tests[\"CL-Domicilio CO-nivel3/3\"] = responseBody.has(\"<nivel3></nivel3>\");",
+                  "tests[\"CL-Domicilio CO-nivel4/3\"] = responseBody.has(\"<nivel4>SANTIAGO</nivel4>\");",
+                  "tests[\"CL-Domicilio CO-observaciones/3\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"CL-Domicilio CO-referencia\"] = responseBody.has(\"<referencia></referencia>\");",
+                  "tests[\"CL-Domicilio CO-observacion\"] = responseBody.has(\"<observacion></observacion>\");",
+                  "tests[\"CL-Domicilio CO-locale\"] = responseBody.has(\"<locale>CL</locale>\");",
+                  "tests[\"CL-Domicilio CO-cantidadResoluciones\"] = responseBody.has(\"<cantidadResoluciones>2</cantidadResoluciones>\");",
+                  "tests[\"CL-Domicilio CO-estado\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "tests[\"CL-Domicilio CO-motivo\"] = responseBody.has(\"<motivo>AI</motivo>\");",
+                  "tests[\"CL-Domicilio CO-nivel1\"] = responseBody.has(\"<nivel1>CL</nivel1>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <calle>avenida alameda 540</calle>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <depto> </depto>\r\n            <!--Optional:-->\r\n            <entreCalle1> </entreCalle1>\r\n            <!--Optional:-->\r\n            <entreCalle2> </entreCalle2>\r\n            <!--Optional:-->\r\n            <nivel1>CL</nivel1>\r\n            <!--Optional:-->\r\n            <nivel10> </nivel10>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>santiago</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <piso> </piso>\r\n            <!--Optional:-->\r\n            <referencia> </referencia>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:addressNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
