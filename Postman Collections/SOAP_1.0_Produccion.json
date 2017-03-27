@@ -539,7 +539,7 @@
                   "tests[\"CL-Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-70.644540</value>\");",
                   "tests[\"CL-Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>3</value>\");",
                   "tests[\"CL-Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
-                  "tests[\"CL-Domicilio CO-ZONAENTREGACXP\"] = responseBody.has(\"<name>ZONAENTREGACXP</name><value>N</value>\");",
+                  "tests[\"CL-Domicilio CO-ZONAENTREGACXP\"] = responseBody.has(\"<name>ZONAENTREGACXP</name><value>C LIRA-2</value>\");",
                   "tests[\"CL-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-33.442420</value>\");",
                   "tests[\"CL-Domicilio CO-cpa\"] = responseBody.has(\"<name>cpa</name><value></value>\");",
                   "tests[\"CL-Domicilio CO-inhibido\"] = responseBody.has(\"<name>inhibido</name><value>N</value>\");",
