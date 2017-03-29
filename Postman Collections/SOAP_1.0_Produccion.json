@@ -964,6 +964,42 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "b0e2888a-3f24-f7ff-c036-02eb92433429",
+          "name": "Busqueda Predictiva N4",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Predictiva CO-calleName\"] = responseBody.has(\"<calleName>AVENIDA LIBERTADOR GENERAL SAN MARTIN</calleName>\");",
+                  "tests[\"Predictiva CO-calleNameShort\"] = responseBody.has(\"<calleNameShort>AVDA LIBERTADOR GRAL SAN MARTIN</calleNameShort>\");",
+                  "tests[\"Predictiva CO-cp\"] = responseBody.has(\"<cp>6500</cp>\");",
+                  "tests[\"Predictiva CO-desde\"] = responseBody.has(\"<desde>601</desde>\");",
+                  "tests[\"Predictiva CO-hasta\"] = responseBody.has(\"<hasta>4400</hasta>\");",
+                  "tests[\"Predictiva CO-nivel2\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
+                  "tests[\"Predictiva CO-nivel3\"] = responseBody.has(\"<nivel3>9 DE JULIO</nivel3>\");",
+                  "tests[\"Predictiva CO-nivel4\"] = responseBody.has(\"<nivel4>9 DE JULIO</nivel4>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Busqueda Predictiva}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.cartoonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryCalle>\r\n         <!--Optional:-->\r\n         <nivel1>AR</nivel1>\r\n         <!--Optional:-->\r\n         <nivel2>Buenos aires</nivel2>\r\n         <!--Optional:-->\r\n         <nivel3> </nivel3>\r\n         <!--Optional:-->\r\n         <nivel4>9 de julio</nivel4>\r\n         <!--Optional:-->\r\n         <calle>san mar</calle>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <status> </status>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n         <!--Optional:-->\r\n         <listarTramos> </listarTramos>\r\n      </soap:queryCalle>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
