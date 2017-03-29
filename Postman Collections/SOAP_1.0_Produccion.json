@@ -386,6 +386,8 @@
                   "tests[\"CL-Domicilio CO-estado\"] = responseBody.has(\"<estado>CO</estado>\");",
                   "tests[\"CL-Domicilio CO-motivo\"] = responseBody.has(\"<motivo>SM</motivo>\");",
                   "tests[\"CL-Domicilio CO-nivel1\"] = responseBody.has(\"<nivel1>UY</nivel1>\");",
+                  "tests[\"UY-Domicilio CO-EntreCalle1\"] = responseBody.has(\"<entreCalle1></entreCalle1>\");",
+                  "tests[\"UY-Domicilio CO-EntreCalle2\"] = responseBody.has(\"<entreCalle2></entreCalle2>\"); ",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
