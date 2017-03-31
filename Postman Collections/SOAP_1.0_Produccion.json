@@ -893,6 +893,57 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "cdbb0c67-dd70-4ea5-9b1e-48c8270a0f20",
+          "name": "UY-Domicilios CO Ruta",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"UY-Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-57.561535</value>\");",
+                  "tests[\"UY-Domicilio CO-MatchLevel\"] = responseBody.has(\"<name>MatchLevel</name><value></value>\");",
+                  "tests[\"UY-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.374641</value>\");",
+                  "tests[\"UY-Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
+                  "tests[\"UY-Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
+                  "",
+                  "tests[\"UY-Domicilio CO-calle\"] = responseBody.has(\"<calle>RUTA NACIONAL 22</calle>\");",
+                  "tests[\"UY-Domicilio CO-numero\"] = responseBody.has(\"<numero>KM 42</numero>\");",
+                  "tests[\"UY-Domicilio CO-piso\"] = responseBody.has(\"<piso></piso>\");",
+                  "tests[\"UY-Domicilio CO-depto\"] = responseBody.has(\"<depto></depto>\");",
+                  "tests[\"UY-Domicilio CO-cp\"] = responseBody.has(\"<cp>70000</cp>\");",
+                  "tests[\"UY-Domicilio CO-nivel2\"] = responseBody.has(\"<nivel2>COLONIA</nivel2>\");",
+                  "tests[\"UY-Domicilio CO-nivel3\"] = responseBody.has(\"<nivel3>COLONIA</nivel3>\");",
+                  "tests[\"UY-Domicilio CO-nivel4\"] = responseBody.has(\"<nivel4>COLONIA DEL SACRAMENTO</nivel4>\");",
+                  "tests[\"UY-Domicilio CO-nivel5\"] = responseBody.has(\"<nivel5></nivel5>\");",
+                  "tests[\"UY-Domicilio CO-tramo\"] = responseBody.has(\"<tramo></tramo>\");",
+                  "tests[\"UY-Domicilio CO-tipoGeocodificacion\"] = responseBody.has(\"<tipoGeocodificacion>1</tipoGeocodificacion>\");",
+                  "tests[\"UY-Domicilio CO-referencia\"] = responseBody.has(\"<referencia></referencia>\");",
+                  "tests[\"UY-Domicilio CO-observacion\"] = responseBody.has(\"<observacion></observacion>\");",
+                  "tests[\"UY-Domicilio CO-locale\"] = responseBody.has(\"<locale>UY</locale>\");",
+                  "tests[\"UY-Domicilio CO-estado\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "tests[\"UY-Domicilio CO-motivo\"] = responseBody.has(\"<motivo>SM</motivo>\");",
+                  "tests[\"UY-Domicilio CO-nivel1\"] = responseBody.has(\"<nivel1>UY</nivel1>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <calle>ruta 22 km 42</calle>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <depto> </depto>\r\n            <!--Optional:-->\r\n            <entreCalle1> </entreCalle1>\r\n            <!--Optional:-->\r\n            <entreCalle2> </entreCalle2>\r\n            <!--Optional:-->\r\n            <nivel1>UY</nivel1>\r\n            <!--Optional:-->\r\n            <nivel10> </nivel10>\r\n            <!--Optional:-->\r\n            <nivel2>COLONIA</nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>TARARIRAS</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <piso> </piso>\r\n            <!--Optional:-->\r\n            <referencia> </referencia>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter></customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:addressNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
