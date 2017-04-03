@@ -158,7 +158,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.geo.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryLayerByPostalCode>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <clientAccessCode>bb7210305de1b37c21fe7864b148a338</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <zipCode>3500</zipCode>\r\n         </name>\r\n      </soap:queryLayerByPostalCode>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.geo.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryLayerByPostalCode>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <clientAccessCode>f008eb302b32941f6391d50118920b41</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <zipCode>3500</zipCode>\r\n         </name>\r\n      </soap:queryLayerByPostalCode>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },
