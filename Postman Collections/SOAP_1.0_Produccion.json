@@ -313,7 +313,7 @@
                   "tests[\"CL-Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
                   "tests[\"CL-Domicilio CO-puerta\"] = responseBody.has(\"<name>puerta</name><value>SI</value>\");",
                   "tests[\"CL-Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
-                  "tests[\"CL-Domicilio CO-ZONAENTREGACXP\"] = responseBody.has(\"<name>ZONAENTREGACXP</name><value>C FRANCISCO BILBAO-4</value>\");",
+                  "tests[\"CL-Domicilio CO-ZONAENTREGACXP\"] = responseBody.has(\"<name>ZONAENTREGACXP</name><value>N</value>\");",
                   "tests[\"CL-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-33.436248</value>\");",
                   "tests[\"CL-Domicilio CO-cpa\"] = responseBody.has(\"<name>cpa</name><value>7510875</value>\");",
                   "tests[\"CL-Domicilio CO-inhibido\"] = responseBody.has(\"<name>inhibido</name><value>N</value>\");",
