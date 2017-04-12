@@ -1089,6 +1089,81 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "ee8f6bc2-cee4-5262-3701-06c52c0809b6",
+          "name": "AR-Domicilios DU DC estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Domicilio DU-latitud\"] = responseBody.has(\"<name>latitud</name><value>00.000000</value>\");",
+                  "tests[\"Domicilio DU-longitud\"] = responseBody.has(\"<name>longitud</name><value>00.000000</value>\");",
+                  "tests[\"Domicilio DU-NISE\"] = responseBody.has(\"<name>NISE</name><value>0</value>\");",
+                  "tests[\"Domicilio DU-cpa\"] = responseBody.has(\"<cp></cp>\");",
+                  "tests[\"Domicilio DU-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-26.84972</value>\");",
+                  "tests[\"Domicilio DU-longitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-65.28306</value>\");",
+                  "tests[\"Domicilio DU-zonaRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>N</value>\");",
+                  "tests[\"Domicilio DU-tipoGeo\"] = responseBody.has(\"<tipoGeo></tipoGeo>\");",
+                  "tests[\"Domicilio DU-calle\"] = responseBody.has(\"<calle>BELGRANO</calle>\");",
+                  "tests[\"Domicilio DU-numero\"] = responseBody.has(\"<numero>629</numero>\");",
+                  "tests[\"Domicilio DU-piso\"] = responseBody.has(\"<piso></piso>\");",
+                  "tests[\"Domicilio DU-depto\"] = responseBody.has(\"<depto></depto>\");",
+                  "tests[\"Domicilio DU-cp\"] = responseBody.has(\"<cp>4105</cp>\");   ",
+                  "tests[\"Domicilio DU-nivel2\"] = responseBody.has(\"<nivel2>TUCUMAN</nivel2>\");",
+                  "tests[\"Domicilio DU-nivel3\"] = responseBody.has(\"<nivel3></nivel3>\");",
+                  "tests[\"Domicilio DU-nivel4\"] = responseBody.has(\"<nivel4>SAN ALBERTO</nivel4>\");",
+                  "tests[\"Domicilio DU-nivel5\"] = responseBody.has(\"<nivel5></nivel5>\");",
+                  "tests[\"Domicilio DU-tramo\"] = responseBody.has(\"<tramo></tramo>\");",
+                  "tests[\"Domicilio DU-entreCalle1\"] = responseBody.has(\"<entreCalle1></entreCalle1>\");",
+                  "tests[\"Domicilio DU-entreCalle2\"] = responseBody.has(\"<entreCalle2></entreCalle2>\");",
+                  "tests[\"Domicilio DU-tipoGeocodificacion\"] = responseBody.has(\"<tipoGeocodificacion>0</tipoGeocodificacion>\");       ",
+                  "         ",
+                  "tests[\"Domicilio DU-alturaDesde/1\"] = responseBody.has(\"<alturaDesde>1</alturaDesde>\");                ",
+                  "tests[\"Domicilio DU-alturaHasta/1\"] = responseBody.has(\"<alturaHasta>2</alturaHasta>\"); ",
+                  "tests[\"Domicilio DU-calle/1\"] = responseBody.has(\"<calle>AVDA DR MANUEL BELGRANO</calle>\");                ",
+                  "tests[\"Domicilio DU-cp/1\"] = responseBody.has(\"<cp>4105</cp>\");               ",
+                  "tests[\"Domicilio DU-nivel1/1\"] = responseBody.has(\"<nivel1></nivel1>\");                ",
+                  "tests[\"Domicilio DU-nivel2/1\"] = responseBody.has(\"<nivel2>TUCUMAN</nivel2>\");",
+                  "tests[\"Domicilio DU-nivel3/1\"] = responseBody.has(\"<nivel3>LULES</nivel3>\");",
+                  "tests[\"Domicilio DU-nivel4/1\"] = responseBody.has(\"<nivel4>EL MANANTIAL</nivel4>\");",
+                  "tests[\"Domicilio DU-observaciones/1\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"Domicilio DU-alturaDesde/2\"] = responseBody.has(\"<alturaDesde>1</alturaDesde>\");",
+                  "tests[\"Domicilio DU-alturaHasta/2\"] = responseBody.has(\"<alturaHasta>2</alturaHasta>\");",
+                  "tests[\"Domicilio DU-calle/2\"] = responseBody.has(\"<calle>DR MANUEL BELGRANO</calle>\");",
+                  "tests[\"Domicilio DU-cp/2\"] = responseBody.has(\"<cp>4105</cp>\");",
+                  "tests[\"Domicilio DU-nivel1/2\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "tests[\"Domicilio DU-nivel2/2\"] = responseBody.has(\"<nivel2>TUCUMAN</nivel2>\");",
+                  "tests[\"Domicilio DU-nivel3/2\"] = responseBody.has(\"<nivel3>YERBA BUENA</nivel3>\");",
+                  "tests[\"Domicilio DU-nivel4/2\"] = responseBody.has(\"<nivel4>CEVIL REDONDO</nivel4>\");",
+                  "tests[\"Domicilio DU-observaciones/2\"] = responseBody.has(\"<observaciones></observaciones>\");",
+                  "tests[\"Domicilio DU-referencia\"] = responseBody.has(\"<referencia></referencia>\");",
+                  "tests[\"Domicilio DU-observacion\"] = responseBody.has(\"<observacion></observacion>\");",
+                  "tests[\"Domicilio DU-locale\"] = responseBody.has(\"<locale></locale>\");",
+                  "tests[\"Domicilio DU-cantidadResoluciones\"] = responseBody.has(\"<cantidadResoluciones>2</cantidadResoluciones>\");",
+                  "tests[\"Domicilio DU-estado\"] = responseBody.has(\"<estado>DU</estado>\");",
+                  "tests[\"Domicilio DU-motivo\"] = responseBody.has(\"<motivo>DS</motivo>\");",
+                  "tests[\"Domicilio DU-nivel1\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <calle>BELGRANO\t629</calle>\r\n            <!--Optional:-->\r\n            <cp>4105</cp>\r\n            <!--Optional:-->\r\n            <depto> </depto>\r\n            <!--Optional:-->\r\n            <entreCalle1> </entreCalle1>\r\n            <!--Optional:-->\r\n            <entreCalle2> </entreCalle2>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel10> </nivel10>\r\n            <!--Optional:-->\r\n            <nivel2>TUCUMAN</nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>SAN ALBERTO</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <piso> </piso>\r\n            <!--Optional:-->\r\n            <referencia> </referencia>\r\n            <!--Optional:-->\r\n            <clientAccessCode>601cee1a85c49470d3e884a0c7d7bcb7</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:addressNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
