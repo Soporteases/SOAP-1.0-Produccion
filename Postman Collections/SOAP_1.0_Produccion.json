@@ -1260,7 +1260,7 @@
                   "tests[\"Domicilio CO-Tramo\"] = responseBody.has(\"<tramo></tramo>\");",
                   "tests[\"Domicilio CO-entreCalle1\"] = responseBody.has(\"<entreCalle1></entreCalle1>\");",
                   "tests[\"Domicilio CO-entreCalle2\"] = responseBody.has(\"<entreCalle2></entreCalle2>\");",
-                  "tests[\"Domicilio CO-tipoGeocodificacion\"] = responseBody.has(\"<tipoGeocodificacion>5</tipoGeocodificacion>\");",
+                  "",
                   "tests[\"Domicilio CO-Referencia\"] = responseBody.has(\"<referencia></referencia>\");                ",
                   "tests[\"Domicilio CO-Observacion\"] = responseBody.has(\"<observacion></observacion>\");                ",
                   "tests[\"Domicilio CO-Locale\"] = responseBody.has(\"<locale></locale>\");  ",
