@@ -1436,7 +1436,7 @@
                   "tests[\"Domicilio DU-tramo\"] = responseBody.has(\"<tramo></tramo>\");",
                   "tests[\"Domicilio DU-entreCalle1\"] = responseBody.has(\"<entreCalle1></entreCalle1>\");",
                   "tests[\"Domicilio DU-entreCalle2\"] = responseBody.has(\"<entreCalle2></entreCalle2>\");",
-                  "tests[\"Domicilio DU-tipoGeocodificacion\"] = responseBody.has(\"<tipoGeocodificacion>0</tipoGeocodificacion>\");       ",
+                  "     ",
                   "         ",
                   "tests[\"Domicilio DU-alturaDesde/1\"] = responseBody.has(\"<alturaDesde>1</alturaDesde>\");                ",
                   "tests[\"Domicilio DU-alturaHasta/1\"] = responseBody.has(\"<alturaHasta>2</alturaHasta>\"); ",
