@@ -1507,7 +1507,7 @@
                   "tests[\"Domicilio DU-nivel4\"] = responseBody.has(\"<nivel4>INGENIERO MASCHWITZ</nivel4>\");",
                   "tests[\"Domicilio DU-nivel5\"] = responseBody.has(\"<nivel5></nivel5>\");",
                   "tests[\"Domicilio DU-tramo\"] = responseBody.has(\"<tramo></tramo>\");",
-                  "tests[\"Domicilio DU-tipoGeocodificacion\"] = responseBody.has(\"<tipoGeocodificacion>6</tipoGeocodificacion>\");",
+                  "",
                   "tests[\"Domicilio DU-alturaDesde/1\"] = responseBody.has(\"<alturaDesde>0</alturaDesde>\");                ",
                   "tests[\"Domicilio DU-alturaHasta/1\"] = responseBody.has(\"<alturaHasta>0</alturaHasta>\"); ",
                   "tests[\"Domicilio DU-calle/1\"] = responseBody.has(\"<calle>BO MASCHWITZ CLUB</calle>\");                ",
