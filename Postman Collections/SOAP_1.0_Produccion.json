@@ -559,7 +559,7 @@
         },
         {
           "_postman_id": "faf46781-e1f0-2c39-981e-e0b07287a1bd",
-          "name": "Filiatorio VA copy",
+          "name": "Filiatorio VA consulta por cuit",
           "event": [
             {
               "listen": "test",
@@ -601,7 +601,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryFiliation>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <birthDate> </birthDate>\r\n            <!--Optional:-->\r\n            <contributaryType> </contributaryType>\r\n            <!--Optional:-->\r\n            <documentNumber>93-28888-5</documentNumber>\r\n            <!--Optional:-->\r\n            <documentType> </documentType>\r\n            <!--Optional:-->\r\n            <lastName> </lastName>\r\n            <!--Optional:-->\r\n            <name> </name>\r\n            <!--Optional:-->\r\n            <sex> </sex>\r\n            <!--Optional:-->\r\n            <tributaryNumber> </tributaryNumber>\r\n            <!--Optional:-->\r\n            <tributaryType> </tributaryType>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryFiliation>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:queryFiliation>\r\n         <!--Optional:-->\r\n         <name>\r\n            <!--Optional:-->\r\n            <birthDate> </birthDate>\r\n            <!--Optional:-->\r\n            <contributaryType> </contributaryType>\r\n            <!--Optional:-->\r\n            <documentNumber>27245639355</documentNumber>\r\n            <!--Optional:-->\r\n            <documentType> </documentType>\r\n            <!--Optional:-->\r\n            <lastName> </lastName>\r\n            <!--Optional:-->\r\n            <name> </name>\r\n            <!--Optional:-->\r\n            <sex> </sex>\r\n            <!--Optional:-->\r\n            <tributaryNumber></tributaryNumber>\r\n            <!--Optional:-->\r\n            <tributaryType> </tributaryType>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </name>\r\n      </soap:queryFiliation>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },
