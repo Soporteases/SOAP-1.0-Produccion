@@ -1629,7 +1629,7 @@
                   "tests[\"Enriquecimiento CO-NUMERO\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>47717549</value></columns>\");",
                   "tests[\"Enriquecimiento CO-CONFIABILIDAD2\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
                   "tests[\"Enriquecimiento CO-COD_AREA2\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
-                  "tests[\"Enriquecimiento CO-NUMERO2\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>59542323</value></columns>\");",
+                  "tests[\"Enriquecimiento CO-NUMERO2\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>31446826</value></columns>\");",
                   "tests[\"Enriquecimiento CO-CONFIABILIDAD3\"] = responseBody.has(\"<columns><index>0</index><name>CONFIABILIDAD</name><value>80</value></columns>\");",
                   "tests[\"Enriquecimiento CO-COD_AREA3\"] = responseBody.has(\"<columns><index>0</index><name>COD_AREA</name><value>11</value></columns>\");",
                   "tests[\"Enriquecimiento CO-NUMERO3\"] = responseBody.has(\"<columns><index>0</index><name>NUMERO</name><value>40699060</value></columns>\");",
