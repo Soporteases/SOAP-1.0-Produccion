@@ -1648,7 +1648,7 @@
                   "tests[\"Enriquecimiento CO-APELLIDOS\"] = responseBody.has(\"<name>APELLIDOS</name><value>MILLER</value>\");",
                   "tests[\"Enriquecimiento CO-SEXO\"] = responseBody.has(\"<name>SEXO</name><value>M</value>\");",
                   "tests[\"Enriquecimiento CO-EDO_CIVIL\"] = responseBody.has(\"<name>EDO_CIVIL</name><value>C</value>\");",
-                  "tests[\"Enriquecimiento CO-nse_consolidado\"] = responseBody.has(\"<name>nse_consolidado</name><value>-</value>\");",
+                  "tests[\"Enriquecimiento CO-nse_consolidado\"] = responseBody.has(\"<name>nse_consolidado</name><value>D2</value>\");",
                   "tests[\"Enriquecimiento CO-NACIMIENTO\"] = responseBody.has(\"<name>NACIMIENTO</name><value>17/06/1956</value>\");",
                   "tests[\"Enriquecimiento CO-PERSONAS\"] = responseBody.has(\"<mandatory>false</mandatory><name>PERSONAS</name>\");",
                   "tests[\"Enriquecimiento CO-CONFIABILIDAD6\"] = responseBody.has(\"<name>CONFIABILIDAD</name><value>60</value>\");",
