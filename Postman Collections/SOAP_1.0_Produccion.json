@@ -1196,7 +1196,7 @@
                   "tests[\"Domicilio CO-Numero\"] = responseBody.has(\"<numero></numero>\");",
                   "tests[\"Domicilio CO-Piso\"] = responseBody.has(\"<piso></piso>\");",
                   "tests[\"Domicilio CO-Depto\"] = responseBody.has(\"<depto></depto>\");",
-                  "tests[\"Domicilio CO-CP\"] = responseBody.has(\"<cp>3016</cp>\");",
+                  "tests[\"Domicilio CO-CP\"] = responseBody.has(\"<cp>0</cp>\");",
                   "tests[\"Domicilio CO-Nivel2\"] = responseBody.has(\"<nivel2>SANTA FE</nivel2>\");",
                   "tests[\"Domicilio CO-Nivel3\"] = responseBody.has(\"<nivel3>LA CAPITAL</nivel3>\");",
                   "tests[\"Domicilio CO-Nivel4\"] = responseBody.has(\"<nivel4>SANTO TOME</nivel4>\");",
