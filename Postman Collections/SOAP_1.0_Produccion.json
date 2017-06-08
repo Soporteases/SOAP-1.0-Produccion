@@ -1527,7 +1527,7 @@
                   "tests[\"Domicilio DU-referencia\"] = responseBody.has(\"<referencia></referencia>\");",
                   "tests[\"Domicilio DU-observacion\"] = responseBody.has(\"<observacion></observacion>\");",
                   "tests[\"Domicilio DU-locale\"] = responseBody.has(\"<locale></locale>\");",
-                  "tests[\"Domicilio DU-cantidadResoluciones\"] = responseBody.has(\"<cantidadResoluciones>2</cantidadResoluciones>\");",
+                  "tests[\"Domicilio DU-cantidadResoluciones\"] = responseBody.has(\"<cantidadResoluciones>3</cantidadResoluciones>\");",
                   "tests[\"Domicilio DU-estado\"] = responseBody.has(\"<estado>DU</estado>\");",
                   "tests[\"Domicilio DU-motivo\"] = responseBody.has(\"<motivo>DC</motivo>\");",
                   "tests[\"Domicilio DU-nivel1\"] = responseBody.has(\"<nivel1></nivel1>\");",
