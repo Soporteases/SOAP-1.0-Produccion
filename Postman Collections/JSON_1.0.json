@@ -1,0 +1,2101 @@
+{
+  "variables": [],
+  "info": {
+    "name": "JSON 1.0",
+    "_postman_id": "0b93ff02-ff43-8d6f-79a6-12ee60245c7d",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "fda7e7ca-6c88-891c-05be-6c6c8bfae8f0",
+      "name": "Domicilios",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "504ca163-4b42-3c25-3310-87436eecefee",
+          "name": "AR-Domicilios CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"1\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"CIUDAD AUTONOMA BUENOS AIRES\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"SAN NICOLAS\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"SAN MARTIN\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"500\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.602308\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.373966\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1004\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"1400\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"AVENIDA CORRIENTES\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"GENERAL JUAN LAVALLE\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"inMaq\"] = responseBody.has(\"inMaq\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"concepto\"] = responseBody.has(\"concepto\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"nivelRiesgo\"] = responseBody.has(\"nivelRiesgo\");",
+                  "tests[\"puerta\"] = responseBody.has(\"puerta\");",
+                  "tests[\"inhibido\"] = responseBody.has(\"inhibido\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=San Martin 500&level4=CABA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": "Pais"
+                },
+                {
+                  "key": "street",
+                  "value": "San Martin 500",
+                  "equals": true,
+                  "description": "Calle, Barrio, Ruta, Etc"
+                },
+                {
+                  "key": "level4",
+                  "value": "CABA",
+                  "equals": true,
+                  "description": "Localidad"
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": "Codigo Unico de Cliente"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9dd91a6b-59e5-75d3-b9ae-fb2acc83aa79",
+          "name": "AR-Domicilios CO MAQ Telefonica",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"1\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"ALMIRANTE BROWN\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"BURZACO\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"APECECHEA\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"87\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.827127\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.370503\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1852\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"1200\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"PARANA\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"AVENIDA MONTEVERDE\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=APECECHEA\t87&level4=BURZACO&clientAccessCode=0584ef48a0282697e836e15c6a62d91a",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0fc79deb-e073-02e5-2a7e-be4bb58e769f",
+          "name": "CL-Domicilios CO estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"1\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"CL\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"REGION METROPOLITANA DE SANTIAGO\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"SANTIAGO\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"PROVIDENCIA\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"AVENIDA POCURO\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"2021\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-33.436248\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-70.607703\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"7500000\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1523\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"3095\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"AVENIDA PEDRO DE VALDIVIA\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"AVENIDA RICARDO LYON\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"inMaq\"] = responseBody.has(\"inMaq\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"concepto\"] = responseBody.has(\"concepto\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"nivelRiesgo\"] = responseBody.has(\"nivelRiesgo\");",
+                  "tests[\"puerta\"] = responseBody.has(\"puerta\");",
+                  "tests[\"inhibido\"] = responseBody.has(\"inhibido\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=CL&street=Pocuro 2021&level4=Providencia&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a0aff18a-0a58-4509-2433-6b8f823ec91d",
+          "name": "UY-Domicilios CO estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"1\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"CIUDAD AUTONOMA BUENOS AIRES\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"SAN NICOLAS\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"SAN MARTIN\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"500\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.602308\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.373966\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1004\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"1400\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"AVENIDA CORRIENTES\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"GENERAL JUAN LAVALLE\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"inMaq\"] = responseBody.has(\"inMaq\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"concepto\"] = responseBody.has(\"concepto\");",
+                  "tests[\"calle24\"] = responseBody.has(\"calle24\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"nivelRiesgo\"] = responseBody.has(\"nivelRiesgo\");",
+                  "tests[\"puerta\"] = responseBody.has(\"puerta\");",
+                  "tests[\"inhibido\"] = responseBody.has(\"inhibido\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "tests[\"riskArea\"] = responseBody.has(\"riskArea\");",
+                  "tests[\"distributionZone\"] = responseBody.has(\"distributionZone\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=UY&street=CELIAR 3137&level4=montevideo&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "bce1976a-f803-4cd1-1f4e-753f60712dfa",
+          "name": "AR-Domicilios NE AI",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"AI\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"3\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"CIUDAD AUTONOMA BUENOS AIRES\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"VILLA URQUIZA\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"PEDRAZA 10000\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.571850\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.504890\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1431\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1501\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"6400\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"AVENIDA DE LOS CONSTITUYENTES\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"PASAJE DIEGO BARAGAÑA ALVAREZ\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"calle24\"] = responseBody.has(\"calle24\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "tests[\"riskArea\"] = responseBody.has(\"riskArea\");",
+                  "tests[\"distributionZone\"] = responseBody.has(\"distributionZone\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=pedraza 10000&level4=CABA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "52777037-07d3-8e5a-2289-2fbe51bc4aa2",
+          "name": "AR-Domicilios NE CI",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"CI\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"JUJUY\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"PEATONAL 30 B.C ARIAS 322\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"00.000000\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"00.000000\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"4600\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"0\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"C ARIAS 322\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"calle24\"] = responseBody.has(\"calle24\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "tests[\"riskArea\"] = responseBody.has(\"riskArea\");",
+                  "tests[\"distributionZone\"] = responseBody.has(\"distributionZone\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=PEATONAL 30 B.C ARIAS 322&postalCode=4600&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ec0a454c-1c3b-21b7-21e8-c94f02a0870d",
+          "name": "CL-Domicilios CO AI",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"AI\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"3\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"CL\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"REGION METROPOLITANA DE SANTIAGO\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"SANTIAGO\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"SANTIAGO\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"AVENIDA LIBERTADOR BERNARDO OHIGGINS\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"540\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-33.442420\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-70.644540\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"3339\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"CALLE CARMEN\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"2\";",
+                  "",
+                  "tests[\"geoType/1\"] = jsonData.nAddress.alternativeAddresses[0].geoType == \"8\";",
+                  "tests[\"level1/1\"] = jsonData.nAddress.alternativeAddresses[0].level1 == \"\";",
+                  "tests[\"level2/1\"] = jsonData.nAddress.alternativeAddresses[0].level2 == \"REGION METROPOLITANA DE SANTIAGO\";",
+                  "tests[\"level3/1\"] = jsonData.nAddress.alternativeAddresses[0].level3 == \"\";",
+                  "tests[\"level4/1\"] = jsonData.nAddress.alternativeAddresses[0].level4 == \"ESTACION CENTRAL\";",
+                  "tests[\"level5/1\"] = jsonData.nAddress.alternativeAddresses[0].level5 == \"\";",
+                  "tests[\"street/1\"] = jsonData.nAddress.alternativeAddresses[0].street == \"AVENIDA LIBERTADOR BERNARDO OHIGGINS\";",
+                  "tests[\"houseNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].houseNumber == \"540\";",
+                  "tests[\"latitude/1\"] = jsonData.nAddress.alternativeAddresses[0].latitude == \"00.000000\";",
+                  "tests[\"longitude/1\"] = jsonData.nAddress.alternativeAddresses[0].longitude == \"00.000000\";",
+                  "tests[\"postalCode/1\"] = jsonData.nAddress.alternativeAddresses[0].postalCode == \"0\";",
+                  "tests[\"fromStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].fromStreetNumber == \"3122\";",
+                  "tests[\"toStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].toStreetNumber == \"6078\";",
+                  "",
+                  "tests[\"geoType/2\"] = jsonData.nAddress.alternativeAddresses[1].geoType == \"8\";",
+                  "tests[\"level1/2\"] = jsonData.nAddress.alternativeAddresses[1].level1 == \"\";",
+                  "tests[\"level2/2\"] = jsonData.nAddress.alternativeAddresses[1].level2 == \"REGION METROPOLITANA DE SANTIAGO\";",
+                  "tests[\"level3/2\"] = jsonData.nAddress.alternativeAddresses[1].level3 == \"\";",
+                  "tests[\"level4/2\"] = jsonData.nAddress.alternativeAddresses[1].level4 == \"SANTIAGO\";",
+                  "tests[\"level5/2\"] = jsonData.nAddress.alternativeAddresses[1].level5 == \"\";",
+                  "tests[\"street/2\"] = jsonData.nAddress.alternativeAddresses[1].street == \"AVENIDA LIBERTADOR BERNARDO OHIGGINS\";",
+                  "tests[\"houseNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].houseNumber == \"540\";",
+                  "tests[\"latitude/2\"] = jsonData.nAddress.alternativeAddresses[1].latitude == \"00.000000\";",
+                  "tests[\"longitude/2\"] = jsonData.nAddress.alternativeAddresses[1].longitude == \"00.000000\";",
+                  "tests[\"postalCode/2\"] = jsonData.nAddress.alternativeAddresses[1].postalCode == \"0\";",
+                  "tests[\"fromStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].toStreetNumber == \"3339\";",
+                  "",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"inhibido\"] = responseBody.has(\"inhibido\");",
+                  "tests[\"inMaq\"] = responseBody.has(\"inMaq\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"nivelRiesgo\"] = responseBody.has(\"nivelRiesgo\");",
+                  "tests[\"concepto\"] = responseBody.has(\"concepto\");",
+                  "tests[\"zonaRiesgo\"] = responseBody.has(\"zonaRiesgo\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=CL&street=avenida alameda 540&level4=santiago&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2b289b94-9085-7336-8fe2-f0d5303d720d",
+          "name": "AR-Domicilios NP SM estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NP\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"BERISSO\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"MZ 5  141 BARRIO NAUTICO\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"00.000000\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"00.000000\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"0\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=MZ 5 141 BARRIO NAUTICO&level4=BERISSO&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5b820235-3e47-92fa-0e46-d1473940e9c8",
+          "name": "AR-Domicilios DU DA estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"DU\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"DA\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"VILLA BALLESTER\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"SAN JOSE DE FLORES\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"6001\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"00.000000\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"00.000000\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1653\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"0\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"7\";",
+                  "",
+                  "tests[\"geoType/1\"] = jsonData.nAddress.alternativeAddresses[0].geoType == \"8\";",
+                  "tests[\"level1/1\"] = jsonData.nAddress.alternativeAddresses[0].level1 == \"\";",
+                  "tests[\"level2/1\"] = jsonData.nAddress.alternativeAddresses[0].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/1\"] = jsonData.nAddress.alternativeAddresses[0].level3 == \"\";",
+                  "tests[\"level4/1\"] = jsonData.nAddress.alternativeAddresses[0].level4 == \"VILLA GODOY CRUZ\";",
+                  "tests[\"level5/1\"] = jsonData.nAddress.alternativeAddresses[0].level5 == \"\";",
+                  "tests[\"street/1\"] = jsonData.nAddress.alternativeAddresses[0].street == \"SAN JOSE DE FLORES\";",
+                  "tests[\"houseNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].houseNumber == \"6001\";",
+                  "tests[\"latitude/1\"] = jsonData.nAddress.alternativeAddresses[0].latitude == \"00.000000\";",
+                  "tests[\"longitude/1\"] = jsonData.nAddress.alternativeAddresses[0].longitude == \"00.000000\";",
+                  "tests[\"postalCode/1\"] = jsonData.nAddress.alternativeAddresses[0].postalCode == \"\";",
+                  "tests[\"fromStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].fromStreetNumber == \"6201\";",
+                  "tests[\"toStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].toStreetNumber == \"6900\";",
+                  "",
+                  "tests[\"geoType/2\"] = jsonData.nAddress.alternativeAddresses[1].geoType == \"8\";",
+                  "tests[\"level1/2\"] = jsonData.nAddress.alternativeAddresses[1].level1 == \"\";",
+                  "tests[\"level2/2\"] = jsonData.nAddress.alternativeAddresses[1].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/2\"] = jsonData.nAddress.alternativeAddresses[1].level3 == \"\";",
+                  "tests[\"level4/2\"] = jsonData.nAddress.alternativeAddresses[1].level4 == \"VILLA GENERAL JOSE TOMAS GUIDO\";",
+                  "tests[\"level5/2\"] = jsonData.nAddress.alternativeAddresses[1].level5 == \"\";",
+                  "tests[\"street/2\"] = jsonData.nAddress.alternativeAddresses[1].street == \"SAN JOSE DE FLORES\";",
+                  "tests[\"houseNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].houseNumber == \"6001\";",
+                  "tests[\"latitude/2\"] = jsonData.nAddress.alternativeAddresses[1].latitude == \"00.000000\";",
+                  "tests[\"longitude/2\"] = jsonData.nAddress.alternativeAddresses[1].longitude == \"00.000000\";",
+                  "tests[\"postalCode/2\"] = jsonData.nAddress.alternativeAddresses[1].postalCode == \"\";",
+                  "tests[\"fromStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].fromStreetNumber == \"4701\";",
+                  "tests[\"toStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].toStreetNumber == \"6200\";",
+                  "",
+                  "tests[\"geoType/3\"] = jsonData.nAddress.alternativeAddresses[2].geoType == \"8\";",
+                  "tests[\"level1/3\"] = jsonData.nAddress.alternativeAddresses[2].level1 == \"\";",
+                  "tests[\"level2/3\"] = jsonData.nAddress.alternativeAddresses[2].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/3\"] = jsonData.nAddress.alternativeAddresses[2].level3 == \"\";",
+                  "tests[\"level4/3\"] = jsonData.nAddress.alternativeAddresses[2].level4 == \"VILLA GRANADEROS DE SAN MARTIN\";",
+                  "tests[\"level5/3\"] = jsonData.nAddress.alternativeAddresses[2].level5 == \"\";",
+                  "tests[\"street/3\"] = jsonData.nAddress.alternativeAddresses[2].street == \"SAN JOSE\";",
+                  "tests[\"houseNumber/3\"] = jsonData.nAddress.alternativeAddresses[2].houseNumber == \"6001\";",
+                  "tests[\"latitude/3\"] = jsonData.nAddress.alternativeAddresses[2].latitude == \"00.000000\";",
+                  "tests[\"longitude/3\"] = jsonData.nAddress.alternativeAddresses[2].longitude == \"00.000000\";",
+                  "tests[\"postalCode/3\"] = jsonData.nAddress.alternativeAddresses[2].postalCode == \"\";",
+                  "tests[\"fromStreetNumber/3\"] = jsonData.nAddress.alternativeAddresses[2].fromStreetNumber == \"1301\";",
+                  "tests[\"toStreetNumber/3\"] = jsonData.nAddress.alternativeAddresses[2].toStreetNumber == \"1600\";",
+                  "",
+                  "tests[\"geoType/4\"] = jsonData.nAddress.alternativeAddresses[3].geoType == \"8\";",
+                  "tests[\"level1/4\"] = jsonData.nAddress.alternativeAddresses[3].level1 == \"\";",
+                  "tests[\"level2/4\"] = jsonData.nAddress.alternativeAddresses[3].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/4\"] = jsonData.nAddress.alternativeAddresses[3].level3 == \"\";",
+                  "tests[\"level4/4\"] = jsonData.nAddress.alternativeAddresses[3].level4 == \"VILLA GENERAL EUGENIO NECOCHEA\";",
+                  "tests[\"level5/4\"] = jsonData.nAddress.alternativeAddresses[3].level5 == \"\";",
+                  "tests[\"street/4\"] = jsonData.nAddress.alternativeAddresses[3].street == \"SAN JOSE\";",
+                  "tests[\"houseNumber/4\"] = jsonData.nAddress.alternativeAddresses[3].houseNumber == \"6001\";",
+                  "tests[\"latitude/4\"] = jsonData.nAddress.alternativeAddresses[3].latitude == \"00.000000\";",
+                  "tests[\"longitude/4\"] = jsonData.nAddress.alternativeAddresses[3].longitude == \"00.000000\";",
+                  "tests[\"postalCode/4\"] = jsonData.nAddress.alternativeAddresses[3].postalCode == \"\";",
+                  "tests[\"fromStreetNumber/4\"] = jsonData.nAddress.alternativeAddresses[3].fromStreetNumber == \"1201\";",
+                  "tests[\"toStreetNumber/4\"] = jsonData.nAddress.alternativeAddresses[3].toStreetNumber == \"1800\";",
+                  "",
+                  "tests[\"geoType/5\"] = jsonData.nAddress.alternativeAddresses[4].geoType == \"8\";",
+                  "tests[\"level1/5\"] = jsonData.nAddress.alternativeAddresses[4].level1 == \"\";",
+                  "tests[\"level2/5\"] = jsonData.nAddress.alternativeAddresses[4].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/5\"] = jsonData.nAddress.alternativeAddresses[4].level3 == \"\";",
+                  "tests[\"level4/5\"] = jsonData.nAddress.alternativeAddresses[4].level4 == \"JOSE LEON SUAREZ\";",
+                  "tests[\"level5/5\"] = jsonData.nAddress.alternativeAddresses[4].level5 == \"\";",
+                  "tests[\"street/5\"] = jsonData.nAddress.alternativeAddresses[4].street == \"SAN JOSE\";",
+                  "tests[\"houseNumber/5\"] = jsonData.nAddress.alternativeAddresses[4].houseNumber == \"6001\";",
+                  "tests[\"latitude/5\"] = jsonData.nAddress.alternativeAddresses[4].latitude == \"00.000000\";",
+                  "tests[\"longitude/5\"] = jsonData.nAddress.alternativeAddresses[4].longitude == \"00.000000\";",
+                  "tests[\"postalCode/5\"] = jsonData.nAddress.alternativeAddresses[4].postalCode == \"\";",
+                  "tests[\"fromStreetNumber/5\"] = jsonData.nAddress.alternativeAddresses[4].fromStreetNumber == \"1901\";",
+                  "tests[\"toStreetNumber/5\"] = jsonData.nAddress.alternativeAddresses[4].toStreetNumber == \"2000\";",
+                  "",
+                  "tests[\"geoType/6\"] = jsonData.nAddress.alternativeAddresses[5].geoType == \"8\";",
+                  "tests[\"level1/6\"] = jsonData.nAddress.alternativeAddresses[5].level1 == \"\";",
+                  "tests[\"level2/6\"] = jsonData.nAddress.alternativeAddresses[5].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/6\"] = jsonData.nAddress.alternativeAddresses[5].level3 == \"\";",
+                  "tests[\"level4/6\"] = jsonData.nAddress.alternativeAddresses[5].level4 == \"VILLA BALLESTER\";",
+                  "tests[\"level5/6\"] = jsonData.nAddress.alternativeAddresses[5].level5 == \"\";",
+                  "tests[\"street/6\"] = jsonData.nAddress.alternativeAddresses[5].street == \"SAN JOSE\";",
+                  "tests[\"houseNumber/6\"] = jsonData.nAddress.alternativeAddresses[5].houseNumber == \"6001\";",
+                  "tests[\"latitude/6\"] = jsonData.nAddress.alternativeAddresses[5].latitude == \"00.000000\";",
+                  "tests[\"longitude/6\"] = jsonData.nAddress.alternativeAddresses[5].longitude == \"00.000000\";",
+                  "tests[\"postalCode/6\"] = jsonData.nAddress.alternativeAddresses[5].postalCode == \"\";",
+                  "tests[\"fromStreetNumber/6\"] = jsonData.nAddress.alternativeAddresses[5].fromStreetNumber == \"2001\";",
+                  "tests[\"toStreetNumber/6\"] = jsonData.nAddress.alternativeAddresses[5].toStreetNumber == \"2300\";",
+                  "",
+                  "tests[\"geoType/7\"] = jsonData.nAddress.alternativeAddresses[6].geoType == \"8\";",
+                  "tests[\"level1/7\"] = jsonData.nAddress.alternativeAddresses[6].level1 == \"\";",
+                  "tests[\"level2/7\"] = jsonData.nAddress.alternativeAddresses[6].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/7\"] = jsonData.nAddress.alternativeAddresses[6].level3 == \"GENERAL SAN MARTIN\";",
+                  "tests[\"level4/7\"] = jsonData.nAddress.alternativeAddresses[6].level4 == \"VILLA GENERAL ANTONIO JOSE DE SUCRE\";",
+                  "tests[\"level5/7\"] = jsonData.nAddress.alternativeAddresses[6].level5 == \"\";",
+                  "tests[\"street/7\"] = jsonData.nAddress.alternativeAddresses[6].street == \"SAN JOSE DE FLORES\";",
+                  "tests[\"houseNumber/7\"] = jsonData.nAddress.alternativeAddresses[6].houseNumber == \"6001\";",
+                  "tests[\"latitude/7\"] = jsonData.nAddress.alternativeAddresses[6].latitude == \"00.000000\";",
+                  "tests[\"longitude/7\"] = jsonData.nAddress.alternativeAddresses[6].longitude == \"00.000000\";",
+                  "tests[\"postalCode/7\"] = jsonData.nAddress.alternativeAddresses[6].postalCode == \"1653\";",
+                  "tests[\"fromStreetNumber/7\"] = jsonData.nAddress.alternativeAddresses[6].fromStreetNumber == \"5801\";",
+                  "tests[\"toStreetNumber/7\"] = jsonData.nAddress.alternativeAddresses[6].toStreetNumber == \"6199\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=SAN JOSE DE FLORES 6001&level4=Villa Ballester&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=1653",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "df0c1e46-9282-4873-daf7-3ef007001c58",
+          "name": "AR-Domicilios CO BARRIO CERRADO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"11\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"SANTA FE\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"LA CAPITAL\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"SANTO TOME\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"CLUB DE CAMPO EL PASO\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"BO CLUB DE CAMPO EL PASO\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-31.636417\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-60.758961\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"3016\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"0\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == null;",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == null;",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"-31.6364; -60.759\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"alturaEntrada\"] = responseBody.has(\"alturaEntrada\");",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"calleEntrada\"] = responseBody.has(\"calleEntrada\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=BO CLUB DE CAMPO EL PASO &level4=Santo Tome&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=Santa Fe",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0819ec2f-b616-e9dc-38eb-56f265825410",
+          "name": "AR-Domicilios CO Sin Altura Tipogeo5",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"AI\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"5\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"TUCUMAN\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"TAFI VIEJO\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"TAFI VIEJO\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"9 DE JULIO\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-26.730999\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-65.256403\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"1100\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=9 de julio&level4=tafi viejo&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=Tucuman",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "363bd8f9-d0bb-2d11-8b35-5ff2dfd010f2",
+          "name": "UY-Domicilios CO Ruta",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"AI\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"5\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"TUCUMAN\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"TAFI VIEJO\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"TAFI VIEJO\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"9 DE JULIO\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-26.730999\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-65.256403\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"1100\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"calle24\"] = responseBody.has(\"calle24\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "tests[\"riskArea\"] = responseBody.has(\"riskArea\");",
+                  "tests[\"distributionZone\"] = responseBody.has(\"distributionZone\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=UY&street=ruta 022 km 42&level4=TARARIRAS&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=COLONIA",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "af1085d6-6717-182e-a075-748aec5d740f",
+          "name": "AR-Domicilios DU DZ estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"DU\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"DZ\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"12\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"MISIONES\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"CAPITAL\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"POSADAS\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"BARRIO 25 DE MAYO\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-27.368742\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-55.894215\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"3300\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"0\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == null;",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == null;",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"2\";",
+                  "",
+                  "tests[\"geoType/1\"] = jsonData.nAddress.alternativeAddresses[0].geoType == \"8\";",
+                  "tests[\"level1/1\"] = jsonData.nAddress.alternativeAddresses[0].level1 == \"\";",
+                  "tests[\"level2/1\"] = jsonData.nAddress.alternativeAddresses[0].level2 == \"MISIONES\";",
+                  "tests[\"level3/1\"] = jsonData.nAddress.alternativeAddresses[0].level3 == \"CAPITAL\";",
+                  "tests[\"level4/1\"] = jsonData.nAddress.alternativeAddresses[0].level4 == \"POSADAS\";",
+                  "tests[\"level5/1\"] = jsonData.nAddress.alternativeAddresses[0].level5 == \"25 DE MAYO\";",
+                  "tests[\"street/1\"] = jsonData.nAddress.alternativeAddresses[0].street == \"Barrio 25 DE MAYO\";",
+                  "tests[\"houseNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].houseNumber == \"0\";",
+                  "tests[\"latitude/1\"] = jsonData.nAddress.alternativeAddresses[0].latitude == \"-27.392435\";",
+                  "tests[\"longitude/1\"] = jsonData.nAddress.alternativeAddresses[0].longitude == \"-55.902977\";",
+                  "tests[\"postalCode/1\"] = jsonData.nAddress.alternativeAddresses[0].postalCode == \"3300\";",
+                  "tests[\"fromStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].toStreetNumber == \"0\";",
+                  "",
+                  "tests[\"geoType/2\"] = jsonData.nAddress.alternativeAddresses[1].geoType == \"8\";",
+                  "tests[\"level1/2\"] = jsonData.nAddress.alternativeAddresses[1].level1 == \"\";",
+                  "tests[\"level2/2\"] = jsonData.nAddress.alternativeAddresses[1].level2 == \"MISIONES\";",
+                  "tests[\"level3/2\"] = jsonData.nAddress.alternativeAddresses[1].level3 == \"CAPITAL\";",
+                  "tests[\"level4/2\"] = jsonData.nAddress.alternativeAddresses[1].level4 == \"POSADAS\";",
+                  "tests[\"level5/2\"] = jsonData.nAddress.alternativeAddresses[1].level5 == \"1 DE MAYO\";",
+                  "tests[\"street/2\"] = jsonData.nAddress.alternativeAddresses[1].street == \"Barrio 1 DE MAYO\";",
+                  "tests[\"houseNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].houseNumber == \"0\";",
+                  "tests[\"latitude/2\"] = jsonData.nAddress.alternativeAddresses[1].latitude == \"-27.362871\";",
+                  "tests[\"longitude/2\"] = jsonData.nAddress.alternativeAddresses[1].longitude == \"-55.925472\";",
+                  "tests[\"postalCode/2\"] = jsonData.nAddress.alternativeAddresses[1].postalCode == \"3300\";",
+                  "tests[\"fromStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].toStreetNumber == \"0\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=BARRIO 25 DE MAYO&level4=POSADAS&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=3300",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "72db8a54-3998-1867-462c-6148eb85c173",
+          "name": "AR-Domicilios DU DS estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"DU\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"DS\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"TUCUMAN\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"SAN ALBERTO\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"BELGRANO\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"629\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"00.000000\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"00.000000\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"4105\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"0\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"2\";",
+                  "",
+                  "tests[\"geoType/1\"] = jsonData.nAddress.alternativeAddresses[0].geoType == \"8\";",
+                  "tests[\"level1/1\"] = jsonData.nAddress.alternativeAddresses[0].level1 == \"\";",
+                  "tests[\"level2/1\"] = jsonData.nAddress.alternativeAddresses[0].level2 == \"TUCUMAN\";",
+                  "tests[\"level3/1\"] = jsonData.nAddress.alternativeAddresses[0].level3 == \"LULES\";",
+                  "tests[\"level4/1\"] = jsonData.nAddress.alternativeAddresses[0].level4 == \"EL MANANTIAL\";",
+                  "tests[\"level5/1\"] = jsonData.nAddress.alternativeAddresses[0].level5 == \"\";",
+                  "tests[\"street/1\"] = jsonData.nAddress.alternativeAddresses[0].street == \"AVDA DR MANUEL BELGRANO\";",
+                  "tests[\"houseNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].houseNumber == \"629\";",
+                  "tests[\"latitude/1\"] = jsonData.nAddress.alternativeAddresses[0].latitude == \"00.000000\";",
+                  "tests[\"longitude/1\"] = jsonData.nAddress.alternativeAddresses[0].longitude == \"00.000000\";",
+                  "tests[\"postalCode/1\"] = jsonData.nAddress.alternativeAddresses[0].postalCode == \"4105\";",
+                  "tests[\"fromStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].toStreetNumber == \"2\";",
+                  "",
+                  "tests[\"geoType/2\"] = jsonData.nAddress.alternativeAddresses[1].geoType == \"8\";",
+                  "tests[\"level1/2\"] = jsonData.nAddress.alternativeAddresses[1].level1 == \"\";",
+                  "tests[\"level2/2\"] = jsonData.nAddress.alternativeAddresses[1].level2 == \"TUCUMAN\";",
+                  "tests[\"level3/2\"] = jsonData.nAddress.alternativeAddresses[1].level3 == \"YERBA BUENA\";",
+                  "tests[\"level4/2\"] = jsonData.nAddress.alternativeAddresses[1].level4 == \"CEVIL REDONDO\";",
+                  "tests[\"level5/2\"] = jsonData.nAddress.alternativeAddresses[1].level5 == \"\";",
+                  "tests[\"street/2\"] = jsonData.nAddress.alternativeAddresses[1].street == \"DR MANUEL BELGRANO\";",
+                  "tests[\"houseNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].houseNumber == \"629\";",
+                  "tests[\"latitude/2\"] = jsonData.nAddress.alternativeAddresses[1].latitude == \"00.000000\";",
+                  "tests[\"longitude/2\"] = jsonData.nAddress.alternativeAddresses[1].longitude == \"00.000000\";",
+                  "tests[\"postalCode/2\"] = jsonData.nAddress.alternativeAddresses[1].postalCode == \"4105\";",
+                  "tests[\"fromStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].toStreetNumber == \"2\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=BELGRANO\t629&level4=SAN ALBERTO&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=4105&level2=TUCUMAN",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f1b4c64f-18f2-6bf6-af72-524cffbdcb7d",
+          "name": "AR-Domicilios DU DC estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"DU\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"DC\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"11\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"ESCOBAR\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"INGENIERO MASCHWITZ\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"ING MASCHWITZ\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"1387\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.383353\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.750027\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1623\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"2\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == null;",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == null;",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"3\";",
+                  "",
+                  "tests[\"geoType/1\"] = jsonData.nAddress.alternativeAddresses[0].geoType == \"8\";",
+                  "tests[\"level1/1\"] = jsonData.nAddress.alternativeAddresses[0].level1 == \"\";",
+                  "tests[\"level2/1\"] = jsonData.nAddress.alternativeAddresses[0].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/1\"] = jsonData.nAddress.alternativeAddresses[0].level3 == \"ESCOBAR\";",
+                  "tests[\"level4/1\"] = jsonData.nAddress.alternativeAddresses[0].level4 == \"MAQUINISTA F SAVIO\";",
+                  "tests[\"level5/1\"] = jsonData.nAddress.alternativeAddresses[0].level5 == \"MASCHWITZ PRIVADO\";",
+                  "tests[\"street/1\"] = jsonData.nAddress.alternativeAddresses[0].street == \"BO MASCHWITZ PRIVADO\";",
+                  "tests[\"houseNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].houseNumber == \"0\";",
+                  "tests[\"latitude/1\"] = jsonData.nAddress.alternativeAddresses[0].latitude == \"-34.392925\";",
+                  "tests[\"longitude/1\"] = jsonData.nAddress.alternativeAddresses[0].longitude == \"-58.766693\";",
+                  "tests[\"postalCode/1\"] = jsonData.nAddress.alternativeAddresses[0].postalCode == \"1619\";",
+                  "tests[\"fromStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].toStreetNumber == \"0\";",
+                  "",
+                  "tests[\"geoType/2\"] = jsonData.nAddress.alternativeAddresses[1].geoType == \"8\";",
+                  "tests[\"level1/2\"] = jsonData.nAddress.alternativeAddresses[1].level1 == \"\";",
+                  "tests[\"level2/2\"] = jsonData.nAddress.alternativeAddresses[1].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/2\"] = jsonData.nAddress.alternativeAddresses[1].level3 == \"ESCOBAR\";",
+                  "tests[\"level4/2\"] = jsonData.nAddress.alternativeAddresses[1].level4 == \"INGENIERO MASCHWITZ\";",
+                  "tests[\"level5/2\"] = jsonData.nAddress.alternativeAddresses[1].level5 == \"MASCHWITZ CLUB\";",
+                  "tests[\"street/2\"] = jsonData.nAddress.alternativeAddresses[1].street == \"BO MASCHWITZ CLUB\";",
+                  "tests[\"houseNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].houseNumber == \"0\";",
+                  "tests[\"latitude/2\"] = jsonData.nAddress.alternativeAddresses[1].latitude == \"-34.377518\";",
+                  "tests[\"longitude/2\"] = jsonData.nAddress.alternativeAddresses[1].longitude == \"-58.754642\";",
+                  "tests[\"postalCode/2\"] = jsonData.nAddress.alternativeAddresses[1].postalCode == \"1619\";",
+                  "tests[\"fromStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].toStreetNumber == \"0\";",
+                  "",
+                  "tests[\"geoType/3\"] = jsonData.nAddress.alternativeAddresses[2].geoType == \"8\";",
+                  "tests[\"level1/3\"] = jsonData.nAddress.alternativeAddresses[2].level1 == \"\";",
+                  "tests[\"level2/3\"] = jsonData.nAddress.alternativeAddresses[2].level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3/3\"] = jsonData.nAddress.alternativeAddresses[2].level3 == \"ESCOBAR\";",
+                  "tests[\"level4/3\"] = jsonData.nAddress.alternativeAddresses[2].level4 == \"INGENIERO MASCHWITZ\";",
+                  "tests[\"level5/3\"] = jsonData.nAddress.alternativeAddresses[2].level5 == \"MASCHWITZ VILLAGE\";",
+                  "tests[\"street/3\"] = jsonData.nAddress.alternativeAddresses[2].street == \"BO MASCHWITZ VILLAGE\";",
+                  "tests[\"houseNumber/3\"] = jsonData.nAddress.alternativeAddresses[2].houseNumber == \"0\";",
+                  "tests[\"latitude/3\"] = jsonData.nAddress.alternativeAddresses[2].latitude == \"-34.373932\";",
+                  "tests[\"longitude/3\"] = jsonData.nAddress.alternativeAddresses[2].longitude == \"-58.745571\";",
+                  "tests[\"postalCode/3\"] = jsonData.nAddress.alternativeAddresses[2].postalCode == \"1619\";",
+                  "tests[\"fromStreetNumber/3\"] = jsonData.nAddress.alternativeAddresses[2].fromStreetNumber == \"0\";",
+                  "tests[\"toStreetNumber/3\"] = jsonData.nAddress.alternativeAddresses[2].toStreetNumber == \"0\";",
+                  "",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=INGENIERO MASCHWITZ 1387&level4=INGENIERO MASCHWITZ&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=1623",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "04b499b6-d6a9-af38-cfb2-85258aca28c4",
+          "name": "AR-Domicilios CO Tarjeta naranja",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"1\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"CIUDAD AUTONOMA BUENOS AIRES\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"FLORES\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"AVDA NORBERTO DE LA RIESTRA\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"1820\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.646470\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.435449\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1437\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1101\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"6350\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"PRESIDENTE CAMILO TORRES Y TENORIO\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"AGUSTIN DE VEDIA\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"barrioAbreviado\"] = responseBody.has(\"barrioAbreviado\");",
+                  "tests[\"puerta\"] = responseBody.has(\"puerta\");",
+                  "tests[\"localidadAbreviada\"] = responseBody.has(\"localidadAbreviada\");",
+                  "tests[\"zonaRiesgo\"] = responseBody.has(\"zonaRiesgo\");",
+                  "tests[\"calleAbreviada\"] = responseBody.has(\"calleAbreviada\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=AVENIDA NORBERTO DE LA RIESTRA 1820&level4=CABA&clientAccessCode=2f769577cfc40b284bfd2fa0e1ffd013",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "915d33eb-891d-5c26-4f3e-b6c1ca81f3f9",
+      "name": "Nombres",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "3ca71dff-464f-b36d-fdea-f64a7fca56a0",
+          "name": "Nombres CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"ELVIS ANTONIO\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"GONCALVES\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"PF\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"M\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{nombresJSON}}?name=Elvis Antonio Goncalves&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a187e7f7-3dd7-6a0b-58c5-a30a57671398",
+          "name": "Nombres NP",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NP\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"ROSA MARIA ROSA MARIA\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{nombresJSON}}?name=ROSA MARIA ROSA MARIA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "28a80a5b-3e36-0368-08d4-e84cd1660986",
+          "name": "Nombres SD",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"SD\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{nombresJSON}}?name=&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "f562f8ef-c180-6075-c5a6-2881ecdf53ef",
+      "name": "Telefonos",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "f06ebbfe-5b85-6073-4240-a4aa15f82d44",
+          "name": "Telefono fijo no llame CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"4442\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"0390\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ok\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{phoneJSON}}?phoneNumber=01144420390&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5050d4a7-6ef5-3e23-16da-f988b1ba1ef0",
+          "name": "Telefono Celolar no llame CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"6933\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"8493\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{phoneJSON}}?phoneNumber=1169338493&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6d9d42c4-6d1f-c1b7-0de8-90eab0384be3",
+          "name": "Telefono fijo CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"4923\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"3521\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ok\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{phoneJSON}}?phoneNumber=1149233521&level1=&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "29e6ecf5-1115-8fc0-c8db-6ee22f4de5e5",
+          "name": "Telefono celular CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"6175\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"5152\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{phoneJSON}}?phoneNumber=1161755152&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a2953173-cc12-f61a-4631-5e466623efdf",
+          "name": "Telefono NE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"6933\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"8493\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{phoneJSON}}?phoneNumber=1105847852&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c153458e-cf14-8590-76db-7854da2a940f",
+          "name": "Telefono SD",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"SD\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"null123\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{phoneJSON}}?phoneNumber=123&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "500725de-fe17-9fbb-eaf6-101407cbfc16",
+      "name": "Datos Filiatorios",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "3c976972-81a7-21e4-413d-c73764de521a",
+          "name": "Filiatorio VA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"OK\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"96\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"AP\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"93288885\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"VA\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"86\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"AP\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"20932888859\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"AP\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"A\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"AP\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"LAZARO LUIS\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"AP\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NI\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"M\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"AP\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"15/04/1925\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=93-28888-5&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "bbf88e3b-28de-9387-5b2c-4bfcf221847a",
+          "name": "Filiatorio VA Con nombre",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"OK\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"89\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"AP\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"2783891\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"VA\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"86\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"AP\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"27027838915\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"AP\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"A\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"AP\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"CORDOBA\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"AP\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"JUANA RAMONA\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"CO\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"F\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"AP\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"12/07/1936\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=2783891&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=CORDOBA JUANA RAMONA",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ccf82dce-c988-b4ee-74d0-a2a61b0f527c",
+          "name": "Filiatorio DU Con nombre",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"DU\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NV\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NV\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"NV\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"NV\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"NV\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NV\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NV\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NV\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NV\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=4111807&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=SANTOS OSCAR NERI",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "94e281bb-57f1-44bd-a18a-22783289b779",
+          "name": "Filiatorio DU Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"DU\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NV\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NV\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"NV\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"NV\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"NV\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NV\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NV\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NV\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NV\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=4356144&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b5c18615-25af-90a1-4df3-d6d5d7e2b0e9",
+          "name": "Filiatorio NE Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NO\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"92808826\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NO\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"NO\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"NO\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"NO\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NO\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NO\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NO\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NO\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=92808826&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a87fd0e0-b550-de02-e0c7-14a099ae351b",
+          "name": "Filiatorio VA Empresa",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"OK\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NA\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"0\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NA\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"80\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"AP\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"30676235309\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"VA\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"C\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"AP\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NI\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"ASES CONSULTING S.A.\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"AP\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NA\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"01/10/1993\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?tributaryNumber=30676235309&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "143e1cef-94cc-e647-2239-dec2adf9fd7c",
+      "name": "Enriquecimiento",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "a5d44741-21bd-738c-d586-ef6fa8286995",
+          "name": "Enriquecimiento con CUIL",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"service1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].service == \"PERSONAS\";",
+                  "tests[\"name/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].name == \"TipoCUIT\";",
+                  "tests[\"label/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].label == \"\";",
+                  "tests[\"value/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].value == \"CUIL\";",
+                  "tests[\"index/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].index == \"0\";",
+                  "tests[\"dataType/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].dataType == \"\";",
+                  "",
+                  "tests[\"name/1.1\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].name == \"Id\";",
+                  "tests[\"label/1.4\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].label == \"\";",
+                  "tests[\"value/1.1\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].value == \"15419302\";",
+                  "tests[\"index/1.1\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].index == \"1\";",
+                  "tests[\"dataType/1.1\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].dataType == \"\";",
+                  "",
+                  "tests[\"name/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].name == \"CUIT\";",
+                  "tests[\"label/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].label == \"\";",
+                  "tests[\"value/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].value == \"20367271982\";",
+                  "tests[\"index/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].index == \"2\";",
+                  "tests[\"dataType/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].dataType == \"\";",
+                  "",
+                  "tests[\"name/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[3].name == \"DNI\";",
+                  "tests[\"label/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[3].label == \"\";",
+                  "tests[\"value/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[3].value == \"36727198\";",
+                  "tests[\"index/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[3].index == \"3\";",
+                  "tests[\"dataType/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[3].dataType == \"\";",
+                  "",
+                  "tests[\"name/1.4\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[4].name == \"NombreCompleto\";",
+                  "tests[\"label/1.4\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[4].label == \"\";",
+                  "tests[\"value/1.4\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[4].value == \"MILLER YANNICK LUCAS\";",
+                  "tests[\"index/1.4\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[4].index == \"4\";",
+                  "tests[\"dataType/1.4\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[4].dataType == \"\";",
+                  "",
+                  "tests[\"name/1.5\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[5].name == \"Sexo\";",
+                  "tests[\"label/1.5\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[5].label == \"\";",
+                  "tests[\"value/1.5\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[5].value == \"M\";",
+                  "tests[\"index/1.5\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[5].index == \"5\";",
+                  "tests[\"dataType/1.5\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[5].dataType == \"\";",
+                  "",
+                  "tests[\"name/1.6\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[6].name == \"FechaNacimiento\";",
+                  "tests[\"label/1.6\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[6].label == \"\";",
+                  "tests[\"value/1.6\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[6].value == \"11/03/1992\";",
+                  "tests[\"index/1.6\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[6].index == \"6\";",
+                  "tests[\"dataType/1.6\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[6].dataType == \"\";",
+                  "",
+                  "tests[\"service/2.0\"] = jsonData.nPersonEnrichment.dataRows.row[1].service == \"DIRECCIONES\";",
+                  "tests[\"name/2.0\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[0].name == \"Calle\";",
+                  "tests[\"label/2.0\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[0].label == \"\";",
+                  "tests[\"value/2.0\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[0].value == \"OLLEROS 2268\";",
+                  "tests[\"index/2.0\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[0].index == \"7\";",
+                  "tests[\"dataType/2.0\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[0].dataType == \"\";",
+                  "",
+                  "tests[\"name/2.1\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[1].name == \"Numero\";",
+                  "tests[\"label/2.1\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[1].label == \"\";",
+                  "tests[\"value/2.1\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[1].value == null;",
+                  "tests[\"index/2.1\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[1].index == \"8\";",
+                  "tests[\"dataType/2.1\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[1].dataType == \"\";",
+                  "",
+                  "tests[\"name/2.2\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[2].name == \"Piso\";",
+                  "tests[\"label/2.2\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[2].label == \"\";",
+                  "tests[\"value/2.2\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[2].value == null;",
+                  "tests[\"index/2.2\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[2].index == \"9\";",
+                  "tests[\"dataType/2.2\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[2].dataType == \"\";",
+                  "",
+                  "tests[\"name/2.3\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[3].name == \"Depto\";",
+                  "tests[\"label/2.3\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[3].label == \"\";",
+                  "tests[\"value/2.3\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[3].value == null;",
+                  "tests[\"index/2.3\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[3].index == \"10\";",
+                  "tests[\"dataType/2.3\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[3].dataType == \"\";",
+                  "",
+                  "tests[\"name/2.4\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[4].name == \"Localidad\";",
+                  "tests[\"label/2.4\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[4].label == \"\";",
+                  "tests[\"value/2.4\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[4].value == null;",
+                  "tests[\"index/2.4\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[4].index == \"11\";",
+                  "tests[\"dataType/2.4\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[4].dataType == \"\";",
+                  "",
+                  "tests[\"name/2.5\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[5].name == \"Provincia\";",
+                  "tests[\"label/2.5\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[5].label == \"\";",
+                  "tests[\"value/2.5\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[5].value == null;",
+                  "tests[\"index/2.5\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[5].index == \"12\";",
+                  "tests[\"dataType/2.5\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[5].dataType == \"\";",
+                  "",
+                  "tests[\"name/2.6\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[6].name == \"CodigoPostal\";",
+                  "tests[\"label/2.6\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[6].label == \"\";",
+                  "tests[\"value/2.6\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[6].value == null;",
+                  "tests[\"index/2.6\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[6].index == \"13\";",
+                  "tests[\"dataType/2.6\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[6].dataType == \"\";",
+                  "",
+                  "tests[\"name/2.7\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[7].name == \"Latitud\";",
+                  "tests[\"label/2.7\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[7].label == \"\";",
+                  "tests[\"value/2.7\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[7].value == \"00.000000\";",
+                  "tests[\"index/2.7\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[7].index == \"14\";",
+                  "tests[\"dataType/2.7\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[7].dataType == \"\";",
+                  "",
+                  "tests[\"name/2.8\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[8].name == \"Longitud\";",
+                  "tests[\"label/2.8\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[8].label == \"\";",
+                  "tests[\"value/2.8\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[8].value == \"00.000000\";",
+                  "tests[\"index/2.8\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[8].index == \"15\";",
+                  "tests[\"dataType/2.8\"] = jsonData.nPersonEnrichment.dataRows.row[1].element[8].dataType == \"\";",
+                  "",
+                  "tests[\"dataType/3.0\"] = jsonData.nPersonEnrichment.dataRows.row[2].service == \"TELEFONOS\";",
+                  "tests[\"name/3.0\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[0].name == \"NumeroCompleto1\";",
+                  "tests[\"label/3.0\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[0].label == \"\";",
+                  "tests[\"value/3.0\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[0].value == null;",
+                  "tests[\"index/3.0\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[0].index == \"16\";",
+                  "tests[\"dataType/3.0\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[0].dataType == \"\";",
+                  "",
+                  "tests[\"name/3.1\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[1].name == \"NumeroCompleto2\";",
+                  "tests[\"label/3.1\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[1].label == \"\";",
+                  "tests[\"value/3.1\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[1].value == null;",
+                  "tests[\"index/3.1\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[1].index == \"17\";",
+                  "tests[\"dataType/3.1\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[1].dataType == \"\";",
+                  "",
+                  "tests[\"name/3.2\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[2].name == \"NumeroCompleto3\";",
+                  "tests[\"label/3.2\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[2].label == \"\";",
+                  "tests[\"value/3.2\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[2].value == null;",
+                  "tests[\"index/3.2\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[2].index == \"18\";",
+                  "tests[\"dataType/3.2\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[2].dataType == \"\";",
+                  "",
+                  "tests[\"name/3.3\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[3].name == \"NumeroCompleto4\";",
+                  "tests[\"label/3.3\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[3].label == \"\";",
+                  "tests[\"value/3.3\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[3].value == null;",
+                  "tests[\"index/3.3\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[3].index == \"19\";",
+                  "tests[\"dataType/3.3\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[3].dataType == \"\";",
+                  "",
+                  "tests[\"name/3.4\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[4].name == \"NumeroCompleto5\";",
+                  "tests[\"label/3.4\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[4].label == \"\";",
+                  "tests[\"value/3.4\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[4].value == null;",
+                  "tests[\"index/3.4\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[4].index == \"20\";",
+                  "tests[\"dataType/3.4\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[4].dataType == \"\";",
+                  "",
+                  "tests[\"name/3.5\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[5].name == \"NumeroCompleto6\";",
+                  "tests[\"label/3.5\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[5].label == \"\";",
+                  "tests[\"value/3.5\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[5].value == null;",
+                  "tests[\"index/3.5\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[5].index == \"21\";",
+                  "tests[\"dataType/3.5\"] = jsonData.nPersonEnrichment.dataRows.row[2].element[5].dataType == \"\";",
+                  "",
+                  "tests[\"dataType/4.0\"] = jsonData.nPersonEnrichment.dataRows.row[3].service == \"EMAILS\";",
+                  "tests[\"name/4.0\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[0].name == \"Email1\";",
+                  "tests[\"label/4.0\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[0].label == \"\";",
+                  "tests[\"value/4.0\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[0].value == \"ymiller@asesconsulting.com\";",
+                  "tests[\"index/4.0\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[0].index == \"22\";",
+                  "tests[\"dataType/4.0\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[0].dataType == \"\";",
+                  "",
+                  "tests[\"name/4.1\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[1].name == \"Email2\";",
+                  "tests[\"label/4.1\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[1].label == \"\";",
+                  "tests[\"value/4.1\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[1].value == null;",
+                  "tests[\"index/4.1\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[1].index == \"23\";",
+                  "tests[\"dataType/4.1\"] = jsonData.nPersonEnrichment.dataRows.row[3].element[1].dataType == \"\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{EnriquecimientoJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level1=AR&tributaryNumber=20367271982&queryId=2",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
