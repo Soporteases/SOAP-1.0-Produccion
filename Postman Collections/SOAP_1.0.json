@@ -1617,8 +1617,8 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Domicilio CO-localidadAbreviada\"] = responseBody.has(\"<name>localidadAbreviada</name><value>CAPITAL FEDERAL</value>\");",
-                  "tests[\"Domicilio CO-calleAbreviada\"] = responseBody.has(\"<name>calleAbreviada</name><value>NORBERTO LA RIESTRA</value>\");",
+                  "tests[\"Domicilio CO-calle15\"] = responseBody.has(\"<name>localidadAbreviada</name><value>AVDA N RIESTRA</value>\");",
+                  "tests[\"Domicilio CO-calle24\"] = responseBody.has(\"<name>calleAbreviada</name><value>AVDA NORBERTO RIESTRA</value>\");",
                   "tests[\"Domicilio CO-cpa\"] = responseBody.has(\"<name>cpa</name><value>C1437HIU</value>\");",
                   "tests[\"Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
                   "tests[\"Domicilio CO-NISE\"] = responseBody.has(\"<name>NISE</name><value>3</value>\");",
