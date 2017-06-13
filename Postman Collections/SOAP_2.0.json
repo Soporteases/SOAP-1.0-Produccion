@@ -1220,7 +1220,6 @@
                   "tests[\"Domicilio CO-PORTAL\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
                   "tests[\"Domicilio CO-puerta\"] = responseBody.has(\"<name>puerta</name><value>NO RELEVADO</value>\");",
                   "tests[\"Domicilio CO-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-34.607161</value>\");",
-                  "tests[\"Domicilio CO-zonaRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>BARRIO PRESIDENTE ILLIA</value>\");",
                   "tests[\"Domicilio CO-inMaq\"] = responseBody.has(\"<name>inMaq</name><value>0</value>\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
