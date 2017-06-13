@@ -1607,6 +1607,64 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "da171bcc-11d3-8aac-a37a-a7cd8da028bb",
+          "name": "AR-Domicilios CO HSBC",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Domicilio CO-localidadAbreviada\"] = responseBody.has(\"<name>localidadAbreviada</name><value>CAPITAL FEDERAL</value>\");",
+                  "tests[\"Domicilio CO-calleAbreviada\"] = responseBody.has(\"<name>calleAbreviada</name><value>NORBERTO LA RIESTRA</value>\");",
+                  "tests[\"Domicilio CO-cpa\"] = responseBody.has(\"<name>cpa</name><value>C1437HIU</value>\");",
+                  "tests[\"Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
+                  "tests[\"Domicilio CO-NISE\"] = responseBody.has(\"<name>NISE</name><value>3</value>\");",
+                  "tests[\"Domicilio CO-barrioAbreviado\"] = responseBody.has(\"<name>barrioAbreviado</name><value>FLORES</value>\");",
+                  "tests[\"Domicilio CO-Portal\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
+                  "tests[\"Domicilio CO-puerta\"] = responseBody.has(\"<name>puerta</name><value>NO RELEVADO</value>\");",
+                  "tests[\"Domicilio CO-zonaRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>BARRIO PRESIDENTE ILLIA</value>\");",
+                  "tests[\"Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.646470</value>\");",
+                  "tests[\"Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-58.435449</value>\");",
+                  "tests[\"Domicilio CO-Calle\"] = responseBody.has(\"<calle>AVDA NORBERTO DE LA RIESTRA</calle>\");",
+                  "tests[\"Domicilio CO-Numero\"] = responseBody.has(\"<numero>1820</numero>\");",
+                  "tests[\"Domicilio CO-Piso\"] = responseBody.has(\"<piso></piso>\");",
+                  "tests[\"Domicilio CO-Depto\"] = responseBody.has(\"<depto></depto>\");",
+                  "tests[\"Domicilio CO-CP\"] = responseBody.has(\"<cp>1437</cp>\");",
+                  "tests[\"Domicilio CO-Nivel2\"] = responseBody.has(\"<nivel2>CAPITAL FEDERAL</nivel2>\");",
+                  "tests[\"Domicilio CO-Nivel3\"] = responseBody.has(\"<nivel3>CAPITAL FEDERAL</nivel3>\");",
+                  "tests[\"Domicilio CO-Nivel4\"] = responseBody.has(\"<nivel4>CIUDAD AUTONOMA BUENOS AIRES</nivel4>\");",
+                  "tests[\"Domicilio CO-Nivel5\"] = responseBody.has(\"<nivel5>FLORES</nivel5>\");",
+                  "tests[\"Domicilio CO-Tramo\"] = responseBody.has(\"<tramo></tramo>\");",
+                  "tests[\"Domicilio CO-EntreCalle1\"] = responseBody.has(\"<entreCalle1>PRESIDENTE CAMILO TORRES Y TENORIO</entreCalle1>\");",
+                  "tests[\"Domicilio CO-EntreCalle2\"] = responseBody.has(\"<entreCalle2>AGUSTIN DE VEDIA</entreCalle2>\");       ",
+                  "            ",
+                  "tests[\"Domicilio CO-Referencia\"] = responseBody.has(\"<referencia></referencia>\");                ",
+                  "tests[\"Domicilio CO-Observacion\"] = responseBody.has(\"<observacion></observacion>\");                ",
+                  "tests[\"Domicilio CO-Locale\"] = responseBody.has(\"<locale></locale>\");                ",
+                  "tests[\"Domicilio CO-Estado\"] = responseBody.has(\"<estado>CO</estado>\");               ",
+                  "tests[\"Domicilio CO-Motivo\"] = responseBody.has(\"<motivo>SM</motivo>\");                ",
+                  "tests[\"Domicilio CO-Nivel1\"] = responseBody.has(\"<nivel1></nivel1>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize>\r\n         <!--Optional:-->\r\n         <address>\r\n            <!--Optional:-->\r\n            <calle>AVENIDA NORBERTO DE LA RIESTRA 1820</calle>\r\n            <!--Optional:-->\r\n            <cp> </cp>\r\n            <!--Optional:-->\r\n            <depto> </depto>\r\n            <!--Optional:-->\r\n            <entreCalle1> </entreCalle1>\r\n            <!--Optional:-->\r\n            <entreCalle2> </entreCalle2>\r\n            <!--Optional:-->\r\n            <nivel1> </nivel1>\r\n            <!--Optional:-->\r\n            <nivel10> </nivel10>\r\n            <!--Optional:-->\r\n            <nivel2> </nivel2>\r\n            <!--Optional:-->\r\n            <nivel3> </nivel3>\r\n            <!--Optional:-->\r\n            <nivel4>CABA</nivel4>\r\n            <!--Optional:-->\r\n            <nivel5> </nivel5>\r\n            <!--Optional:-->\r\n            <numero> </numero>\r\n            <!--Optional:-->\r\n            <piso> </piso>\r\n            <!--Optional:-->\r\n            <referencia> </referencia>\r\n            <!--Optional:-->\r\n            <clientAccessCode>2f769577cfc40b284bfd2fa0e1ffd013</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </address>\r\n      </soap:addressNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
