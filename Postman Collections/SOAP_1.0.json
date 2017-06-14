@@ -200,9 +200,9 @@
                   "tests[\"Condicion Tributaria OK-empleador\"] = responseBody.has(\"<empleador>N08</empleador>\");",
                   "tests[\"Condicion Tributaria OK-estado\"] = responseBody.has(\"<estado>VA</estado>\");",
                   "tests[\"Condicion Tributaria OK-flagDenominacion\"] = responseBody.has(\"<flagDenominacion>NN</flagDenominacion>\");",
-                  "tests[\"Condicion Tributaria OK-ganancias\"] = responseBody.has(\"<ganancias>NI</ganancias>\");",
-                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>NI</iva>\");",
-                  "tests[\"Condicion Tributaria OK-monotributo\"] = responseBody.has(\"<monotributo>I </monotributo>\");",
+                  "tests[\"Condicion Tributaria OK-ganancias\"] = responseBody.has(\"<ganancias>AC</ganancias>\");",
+                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>AC</iva>\");",
+                  "tests[\"Condicion Tributaria OK-monotributo\"] = responseBody.has(\"<monotributo>NI</monotributo>\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
