@@ -1580,7 +1580,7 @@
                   "tests[\"Telefono OK1-postalCode\"] = responseBody.has(\"<postalCode>0</postalCode>\");",
                   "tests[\"Telefono OK1-validated\"] = responseBody.has(\"<validated></validated>\");",
                   "tests[\"Telefono OK1-doNotCallRegistry\"] = responseBody.has(\"<name>doNotCallRegistry</name><value>NO</value>\");",
-                  "tests[\"Telefono OK1-fullPhone\"] = responseBody.has(\"<name>fullPhone</name><value> 123</value>\");",
+                  "tests[\"Telefono OK1-fullPhone\"] = responseBody.has(\"<name>fullPhone</name><value>123</value>\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
