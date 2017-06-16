@@ -1552,21 +1552,20 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"\";",
                   "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
                   "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
                   "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
-                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"6933\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"8493\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1105847852\";",
                   "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
                   "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
                   "",
                   "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
                   "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-                  "tests[\"directory\"] = responseBody.has(\"directory\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
@@ -1575,7 +1574,31 @@
             }
           ],
           "request": {
-            "url": "{{phoneJSON}}?phoneNumber=1105847852&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "url": {
+              "raw": "{{phoneJSON}}?phoneNumber=1105847852&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{phoneJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "1105847852",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
