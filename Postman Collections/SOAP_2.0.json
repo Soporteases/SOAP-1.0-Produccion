@@ -1991,6 +1991,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "768c4923-6196-500d-e6c2-fe073b1a8b0f",
+      "name": "Email",
+      "description": "",
+      "item": []
     }
   ]
 }
