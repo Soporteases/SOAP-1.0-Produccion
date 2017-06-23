@@ -1996,7 +1996,42 @@
       "_postman_id": "768c4923-6196-500d-e6c2-fe073b1a8b0f",
       "name": "Email",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "58bb142f-abe7-a110-32e5-4e3f3d61014d",
+          "name": "Email CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Nombres CO-apellidos\"] = responseBody.has(\"<status>NP</status>\");",
+                  "tests[\"Nombres CO-estado\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Nombres CO-genero\"] = responseBody.has(\"<name></name>\");",
+                  "tests[\"Nombres CO-motivo\"] = responseBody.has(\"<lastName>ROSA MARIA ROSA MARIA</lastName>\");",
+                  "tests[\"Nombres CO-nivel1\"] = responseBody.has(\"<personType></personType>\");",
+                  "tests[\"Nombres CO-nombres\"] = responseBody.has(\"<gender></gender>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Email2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.emailonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:emailNormalize>\r\n         <!--Optional:-->\r\n         <emailNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xEmail>\r\n               <!--Optional:-->\r\n               <email>egoncalves@asesconsulting.com</email>\r\n            </xEmail>\r\n         </emailNormalize>\r\n      </soap:emailNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
