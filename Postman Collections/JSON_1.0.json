@@ -1294,19 +1294,19 @@
                   "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
                   "tests[\"place\"] = jsonData.nAddress.place == \"\";",
                   "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
-                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"3\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"2\";",
                   "",
                   "tests[\"geoType/1\"] = jsonData.nAddress.alternativeAddresses[0].geoType == \"8\";",
                   "tests[\"level1/1\"] = jsonData.nAddress.alternativeAddresses[0].level1 == \"\";",
                   "tests[\"level2/1\"] = jsonData.nAddress.alternativeAddresses[0].level2 == \"BUENOS AIRES\";",
                   "tests[\"level3/1\"] = jsonData.nAddress.alternativeAddresses[0].level3 == \"ESCOBAR\";",
-                  "tests[\"level4/1\"] = jsonData.nAddress.alternativeAddresses[0].level4 == \"MAQUINISTA F SAVIO\";",
-                  "tests[\"level5/1\"] = jsonData.nAddress.alternativeAddresses[0].level5 == \"MASCHWITZ PRIVADO\";",
-                  "tests[\"street/1\"] = jsonData.nAddress.alternativeAddresses[0].street == \"BO MASCHWITZ PRIVADO\";",
+                  "tests[\"level4/1\"] = jsonData.nAddress.alternativeAddresses[0].level4 == \"INGENIERO MASCHWITZ\";",
+                  "tests[\"level5/1\"] = jsonData.nAddress.alternativeAddresses[0].level5 == \"MASCHWITZ VILLAGE\";",
+                  "tests[\"street/1\"] = jsonData.nAddress.alternativeAddresses[0].street == \"BO MASCHWITZ VILLAGE\";",
                   "tests[\"houseNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].houseNumber == \"0\";",
-                  "tests[\"latitude/1\"] = jsonData.nAddress.alternativeAddresses[0].latitude == \"-34.392925\";",
-                  "tests[\"longitude/1\"] = jsonData.nAddress.alternativeAddresses[0].longitude == \"-58.766693\";",
-                  "tests[\"postalCode/1\"] = jsonData.nAddress.alternativeAddresses[0].postalCode == \"1619\";",
+                  "tests[\"latitude/1\"] = jsonData.nAddress.alternativeAddresses[0].latitude == \"-34.373932\";",
+                  "tests[\"longitude/1\"] = jsonData.nAddress.alternativeAddresses[0].longitude == \"-58.745571\";",
+                  "tests[\"postalCode/1\"] = jsonData.nAddress.alternativeAddresses[0].postalCode == \"1623\";",
                   "tests[\"fromStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].fromStreetNumber == \"0\";",
                   "tests[\"toStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].toStreetNumber == \"0\";",
                   "",
@@ -1320,23 +1320,9 @@
                   "tests[\"houseNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].houseNumber == \"0\";",
                   "tests[\"latitude/2\"] = jsonData.nAddress.alternativeAddresses[1].latitude == \"-34.377518\";",
                   "tests[\"longitude/2\"] = jsonData.nAddress.alternativeAddresses[1].longitude == \"-58.754642\";",
-                  "tests[\"postalCode/2\"] = jsonData.nAddress.alternativeAddresses[1].postalCode == \"1619\";",
+                  "tests[\"postalCode/2\"] = jsonData.nAddress.alternativeAddresses[1].postalCode == \"1623\";",
                   "tests[\"fromStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].fromStreetNumber == \"0\";",
                   "tests[\"toStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].toStreetNumber == \"0\";",
-                  "",
-                  "tests[\"geoType/3\"] = jsonData.nAddress.alternativeAddresses[2].geoType == \"8\";",
-                  "tests[\"level1/3\"] = jsonData.nAddress.alternativeAddresses[2].level1 == \"\";",
-                  "tests[\"level2/3\"] = jsonData.nAddress.alternativeAddresses[2].level2 == \"BUENOS AIRES\";",
-                  "tests[\"level3/3\"] = jsonData.nAddress.alternativeAddresses[2].level3 == \"ESCOBAR\";",
-                  "tests[\"level4/3\"] = jsonData.nAddress.alternativeAddresses[2].level4 == \"INGENIERO MASCHWITZ\";",
-                  "tests[\"level5/3\"] = jsonData.nAddress.alternativeAddresses[2].level5 == \"MASCHWITZ VILLAGE\";",
-                  "tests[\"street/3\"] = jsonData.nAddress.alternativeAddresses[2].street == \"BO MASCHWITZ VILLAGE\";",
-                  "tests[\"houseNumber/3\"] = jsonData.nAddress.alternativeAddresses[2].houseNumber == \"0\";",
-                  "tests[\"latitude/3\"] = jsonData.nAddress.alternativeAddresses[2].latitude == \"-34.373932\";",
-                  "tests[\"longitude/3\"] = jsonData.nAddress.alternativeAddresses[2].longitude == \"-58.745571\";",
-                  "tests[\"postalCode/3\"] = jsonData.nAddress.alternativeAddresses[2].postalCode == \"1619\";",
-                  "tests[\"fromStreetNumber/3\"] = jsonData.nAddress.alternativeAddresses[2].fromStreetNumber == \"0\";",
-                  "tests[\"toStreetNumber/3\"] = jsonData.nAddress.alternativeAddresses[2].toStreetNumber == \"0\";",
                   "",
                   "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
                   "tests[\"NISE\"] = responseBody.has(\"NISE\");",
@@ -1350,7 +1336,49 @@
             }
           ],
           "request": {
-            "url": "{{addresJSON}}?level1=AR&street=INGENIERO MASCHWITZ 1387&level4=INGENIERO MASCHWITZ&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=1623",
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=INGENIERO MASCHWITZ 1387&level4=INGENIERO MASCHWITZ&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=1623",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "INGENIERO MASCHWITZ 1387",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level4",
+                  "value": "INGENIERO MASCHWITZ",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "postalCode",
+                  "value": "1623",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
