@@ -1240,13 +1240,17 @@
                   "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
                   "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
                   "",
-                  "tests[\"barrioAbreviado\"] = responseBody.has(\"barrioAbreviado\");",
-                  "tests[\"puerta\"] = responseBody.has(\"puerta\");",
-                  "tests[\"localidadAbreviada\"] = responseBody.has(\"localidadAbreviada\");",
-                  "tests[\"zonaRiesgo\"] = responseBody.has(\"zonaRiesgo\");",
-                  "tests[\"calleAbreviada\"] = responseBody.has(\"calleAbreviada\");",
                   "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"calle15\"] = responseBody.has(\"calle15\");",
+                  "tests[\"puerta\"] = responseBody.has(\"puerta\");",
+                  "tests[\"inhibido\"] = responseBody.has(\"inhibido\");",
+                  "tests[\"nivelRiesgo\"] = responseBody.has(\"nivelRiesgo\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "tests[\"concepto\"] = responseBody.has(\"concepto\");",
+                  "tests[\"inMaq\"] = responseBody.has(\"inMaq\");",
                   "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"zonaRiesgo\"] = responseBody.has(\"zonaRiesgo\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; ",
@@ -1256,7 +1260,43 @@
             }
           ],
           "request": {
-            "url": "{{addresJSON}}?level1=AR&street=AVENIDA NORBERTO DE LA RIESTRA 1820&level4=CABA&clientAccessCode=2f769577cfc40b284bfd2fa0e1ffd013",
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=AVENIDA NORBERTO DE LA RIESTRA 1820&level4=CABA&clientAccessCode=194b73ddb45539e24ec5b8bd080e1801",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "AVENIDA NORBERTO DE LA RIESTRA 1820",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level4",
+                  "value": "CABA",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "194b73ddb45539e24ec5b8bd080e1801",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
