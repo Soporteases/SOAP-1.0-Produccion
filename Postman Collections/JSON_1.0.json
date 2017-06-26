@@ -1035,11 +1035,11 @@
                   "tests[\"level2/1\"] = jsonData.nAddress.alternativeAddresses[0].level2 == \"MISIONES\";",
                   "tests[\"level3/1\"] = jsonData.nAddress.alternativeAddresses[0].level3 == \"CAPITAL\";",
                   "tests[\"level4/1\"] = jsonData.nAddress.alternativeAddresses[0].level4 == \"POSADAS\";",
-                  "tests[\"level5/1\"] = jsonData.nAddress.alternativeAddresses[0].level5 == \"25 DE MAYO\";",
-                  "tests[\"street/1\"] = jsonData.nAddress.alternativeAddresses[0].street == \"Barrio 25 DE MAYO\";",
+                  "tests[\"level5/1\"] = jsonData.nAddress.alternativeAddresses[0].level5 == \"1 DE MAYO\";",
+                  "tests[\"street/1\"] = jsonData.nAddress.alternativeAddresses[0].street == \"Barrio 1 DE MAYO\";",
                   "tests[\"houseNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].houseNumber == \"0\";",
-                  "tests[\"latitude/1\"] = jsonData.nAddress.alternativeAddresses[0].latitude == \"-27.392435\";",
-                  "tests[\"longitude/1\"] = jsonData.nAddress.alternativeAddresses[0].longitude == \"-55.902977\";",
+                  "tests[\"latitude/1\"] = jsonData.nAddress.alternativeAddresses[0].latitude == \"-27.362871\";",
+                  "tests[\"longitude/1\"] = jsonData.nAddress.alternativeAddresses[0].longitude == \"-55.925472\";",
                   "tests[\"postalCode/1\"] = jsonData.nAddress.alternativeAddresses[0].postalCode == \"3300\";",
                   "tests[\"fromStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].fromStreetNumber == \"0\";",
                   "tests[\"toStreetNumber/1\"] = jsonData.nAddress.alternativeAddresses[0].toStreetNumber == \"0\";",
@@ -1049,11 +1049,11 @@
                   "tests[\"level2/2\"] = jsonData.nAddress.alternativeAddresses[1].level2 == \"MISIONES\";",
                   "tests[\"level3/2\"] = jsonData.nAddress.alternativeAddresses[1].level3 == \"CAPITAL\";",
                   "tests[\"level4/2\"] = jsonData.nAddress.alternativeAddresses[1].level4 == \"POSADAS\";",
-                  "tests[\"level5/2\"] = jsonData.nAddress.alternativeAddresses[1].level5 == \"1 DE MAYO\";",
-                  "tests[\"street/2\"] = jsonData.nAddress.alternativeAddresses[1].street == \"Barrio 1 DE MAYO\";",
+                  "tests[\"level5/2\"] = jsonData.nAddress.alternativeAddresses[1].level5 == \"25 DE MAYO\";",
+                  "tests[\"street/2\"] = jsonData.nAddress.alternativeAddresses[1].street == \"Barrio 25 DE MAYO\";",
                   "tests[\"houseNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].houseNumber == \"0\";",
-                  "tests[\"latitude/2\"] = jsonData.nAddress.alternativeAddresses[1].latitude == \"-27.362871\";",
-                  "tests[\"longitude/2\"] = jsonData.nAddress.alternativeAddresses[1].longitude == \"-55.925472\";",
+                  "tests[\"latitude/2\"] = jsonData.nAddress.alternativeAddresses[1].latitude == \"-27.392435\";",
+                  "tests[\"longitude/2\"] = jsonData.nAddress.alternativeAddresses[1].longitude == \"-55.902977\";",
                   "tests[\"postalCode/2\"] = jsonData.nAddress.alternativeAddresses[1].postalCode == \"3300\";",
                   "tests[\"fromStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].fromStreetNumber == \"0\";",
                   "tests[\"toStreetNumber/2\"] = jsonData.nAddress.alternativeAddresses[1].toStreetNumber == \"0\";",
@@ -1070,7 +1070,49 @@
             }
           ],
           "request": {
-            "url": "{{addresJSON}}?level1=AR&street=BARRIO 25 DE MAYO&level4=POSADAS&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=3300",
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=BARRIO 25 DE MAYO&level4=POSADAS&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=3300",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "BARRIO 25 DE MAYO",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level4",
+                  "value": "POSADAS",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "postalCode",
+                  "value": "3300",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
