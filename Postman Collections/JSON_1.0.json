@@ -435,14 +435,11 @@
                   "",
                   "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
                   "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
-                  "tests[\"calle24\"] = responseBody.has(\"calle24\");",
                   "tests[\"NISE\"] = responseBody.has(\"NISE\");",
                   "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
                   "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
                   "tests[\"cpa\"] = responseBody.has(\"cpa\");",
                   "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
-                  "tests[\"riskArea\"] = responseBody.has(\"riskArea\");",
-                  "tests[\"distributionZone\"] = responseBody.has(\"distributionZone\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; ",
@@ -452,7 +449,43 @@
             }
           ],
           "request": {
-            "url": "{{addresJSON}}?level1=AR&street=PEATONAL 30 B.C ARIAS 322&postalCode=4600&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=PEATONAL 30 B.C ARIAS 322&postalCode=4600&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "PEATONAL 30 B.C ARIAS 322",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "postalCode",
+                  "value": "4600",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
