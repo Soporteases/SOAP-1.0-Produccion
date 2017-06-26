@@ -1699,7 +1699,7 @@
                   "tests[\"AR-Domicilio CO-concepto\"] = responseBody.has(\"<name>concepto</name><value></value>\");",
                   "",
                   "tests[\"AR-Domicilio CO-calle\"] = responseBody.has(\"<calle>RUTA PROV 53</calle>\");",
-                  "tests[\"AR-Domicilio CO-numero\"] = responseBody.has(\"<numero>13.5</numero>\");",
+                  "tests[\"AR-Domicilio CO-numero\"] = responseBody.has(\"<numero>KM 13,5</numero>\");",
                   "tests[\"AR-Domicilio CO-piso\"] = responseBody.has(\"<piso></piso>\");",
                   "tests[\"AR-Domicilio CO-depto\"] = responseBody.has(\"<depto></depto>\");",
                   "tests[\"AR-Domicilio CO-cp\"] = responseBody.has(\"<cp>1888</cp>\");",
