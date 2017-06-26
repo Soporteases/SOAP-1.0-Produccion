@@ -1203,6 +1203,107 @@
           "response": []
         },
         {
+          "_postman_id": "314c819c-6345-e64c-2810-e6e91590662d",
+          "name": "AR-Domicilios CO Tarjeta naranja",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"1\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"CIUDAD AUTONOMA BUENOS AIRES\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"FLORES\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"AVDA NORBERTO DE LA RIESTRA\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"1820\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.646470\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.435449\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1437\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1101\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"6350\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"PRESIDENTE CAMILO TORRES Y TENORIO\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"AGUSTIN DE VEDIA\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"puerta\"] = responseBody.has(\"puerta\");",
+                  "tests[\"inhibido\"] = responseBody.has(\"inhibido\");",
+                  "tests[\"nivelRiesgo\"] = responseBody.has(\"nivelRiesgo\");",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"concepto\"] = responseBody.has(\"concepto\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
+                  "tests[\"inMaq\"] = responseBody.has(\"inMaq\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"zonaRiesgo\"] = responseBody.has(\"zonaRiesgo\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=AVENIDA NORBERTO DE LA RIESTRA 1820&level4=CABA&clientAccessCode=3e920fa72b050920a0039d236965cdef",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "AVENIDA NORBERTO DE LA RIESTRA 1820",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level4",
+                  "value": "CABA",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "3e920fa72b050920a0039d236965cdef",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
           "_postman_id": "04b499b6-d6a9-af38-cfb2-85258aca28c4",
           "name": "AR-Domicilios CO Tarjeta naranja",
           "event": [
@@ -1393,107 +1494,6 @@
                 {
                   "key": "clientAccessCode",
                   "value": "194b73ddb45539e24ec5b8bd080e1801",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "314c819c-6345-e64c-2810-e6e91590662d",
-          "name": "AR-Domicilios CO Tarjeta naranja",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"1\";",
-                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
-                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"CAPITAL FEDERAL\";",
-                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"CAPITAL FEDERAL\";",
-                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"CIUDAD AUTONOMA BUENOS AIRES\";",
-                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"FLORES\";",
-                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
-                  "tests[\"street\"] = jsonData.nAddress.street == \"AVDA NORBERTO DE LA RIESTRA\";",
-                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"1820\";",
-                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
-                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
-                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.646470\";",
-                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.435449\";",
-                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1437\";",
-                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
-                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1101\";",
-                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"6350\";",
-                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
-                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"PRESIDENTE CAMILO TORRES Y TENORIO\";",
-                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"AGUSTIN DE VEDIA\";",
-                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
-                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
-                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
-                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
-                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
-                  "",
-                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
-                  "tests[\"puerta\"] = responseBody.has(\"puerta\");",
-                  "tests[\"inhibido\"] = responseBody.has(\"inhibido\");",
-                  "tests[\"nivelRiesgo\"] = responseBody.has(\"nivelRiesgo\");",
-                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
-                  "tests[\"concepto\"] = responseBody.has(\"concepto\");",
-                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
-                  "tests[\"inMaq\"] = responseBody.has(\"inMaq\");",
-                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
-                  "tests[\"zonaRiesgo\"] = responseBody.has(\"zonaRiesgo\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": {
-              "raw": "{{addresJSON}}?level1=AR&street=AVENIDA NORBERTO DE LA RIESTRA 1820&level4=CABA&clientAccessCode=3e920fa72b050920a0039d236965cdef",
-              "auth": {},
-              "host": [
-                "{{addresJSON}}"
-              ],
-              "path": [
-                ""
-              ],
-              "query": [
-                {
-                  "key": "level1",
-                  "value": "AR",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "street",
-                  "value": "AVENIDA NORBERTO DE LA RIESTRA 1820",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "level4",
-                  "value": "CABA",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "clientAccessCode",
-                  "value": "3e920fa72b050920a0039d236965cdef",
                   "equals": true,
                   "description": ""
                 }
