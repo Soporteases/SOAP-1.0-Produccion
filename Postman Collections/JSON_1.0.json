@@ -1815,7 +1815,7 @@
                   "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
                   "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
                   "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"null123\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"123\";",
                   "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
                   "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
                   "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
@@ -1830,7 +1830,31 @@
             }
           ],
           "request": {
-            "url": "{{phoneJSON}}?phoneNumber=123&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "url": {
+              "raw": "{{phoneJSON}}?phoneNumber=123&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{phoneJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "123",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
