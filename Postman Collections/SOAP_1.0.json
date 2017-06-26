@@ -197,7 +197,7 @@
                   "tests[\"Condicion Tributaria OK-cuitInfo\"] = responseBody.has(\"<cuitInfo>27165525413</cuitInfo>\");",
                   "tests[\"Condicion Tributaria OK-denominacion\"] = responseBody.has(\"<denominacion>SOSA MARTA INES               </denominacion>\");",
                   "tests[\"Condicion Tributaria OK-denominacionInfo\"] = responseBody.has(\"<denominacionInfo></denominacionInfo>\");",
-                  "tests[\"Condicion Tributaria OK-empleador\"] = responseBody.has(\"<empleador>N08</empleador>\");",
+                  "tests[\"Condicion Tributaria OK-empleador\"] = responseBody.has(\"<empleador>N00</empleador>\");",
                   "tests[\"Condicion Tributaria OK-estado\"] = responseBody.has(\"<estado>VA</estado>\");",
                   "tests[\"Condicion Tributaria OK-flagDenominacion\"] = responseBody.has(\"<flagDenominacion>NN</flagDenominacion>\");",
                   "tests[\"Condicion Tributaria OK-ganancias\"] = responseBody.has(\"<ganancias>AC</ganancias>\");",
