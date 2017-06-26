@@ -1904,7 +1904,7 @@
       "item": [
         {
           "_postman_id": "2e5049f7-d850-9e25-d92f-4a08fda760f4",
-          "name": "Enriquecimiento con CUIL",
+          "name": "Enriquecimiento con DNI",
           "event": [
             {
               "listen": "test",
