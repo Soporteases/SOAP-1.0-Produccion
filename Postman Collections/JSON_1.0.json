@@ -1131,7 +1131,7 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"status\"] = jsonData.status === \"DU\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"DS\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"DE\";",
                   "tests[\"geoType\"] = jsonData.nAddress.geoType == \"\";",
                   "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
                   "tests[\"level2\"] = jsonData.nAddress.level2 == \"TUCUMAN\";",
@@ -1202,7 +1202,55 @@
             }
           ],
           "request": {
-            "url": "{{addresJSON}}?level1=AR&street=BELGRANO\t629&level4=SAN ALBERTO&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=4105&level2=TUCUMAN",
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=BELGRANO\t629&level4=SAN ALBERTO&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=4105&level2=TUCUMAN",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "BELGRANO\t629",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level4",
+                  "value": "SAN ALBERTO",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "postalCode",
+                  "value": "4105",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level2",
+                  "value": "TUCUMAN",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
