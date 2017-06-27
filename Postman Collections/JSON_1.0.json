@@ -3070,6 +3070,12 @@
       ]
     },
     {
+      "_postman_id": "e4ba6c51-71d3-857b-fdb1-ea5ee1b4a331",
+      "name": "Email",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "a0aff18a-0a58-4509-2433-6b8f823ec91d",
       "name": "UY-Domicilios CO estandar",
       "event": [
