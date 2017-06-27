@@ -1489,6 +1489,70 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "c153458e-cf14-8590-76db-7854da2a940f",
+          "name": "Telefono SD",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"SD\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"123\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{phoneJSON}}?phoneNumber=123&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{phoneJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "123",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -2782,70 +2846,6 @@
       ],
       "request": {
         "url": "{{addresJSON}}?level1=UY&street=ruta 022 km 42&level4=TARARIRAS&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=COLONIA",
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "c153458e-cf14-8590-76db-7854da2a940f",
-      "name": "Telefono SD",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"status\"] = jsonData.status === \"SD\";",
-              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-              "tests[\"prefix\"] = jsonData.nPhone.prefix == \"\";",
-              "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-              "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
-              "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
-              "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
-              "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"123\";",
-              "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-              "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
-              "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-              "",
-              "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-              "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-              "",
-              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-              "tests[\"Status code is 200\"] = responseCode.code === 200; "
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": {
-          "raw": "{{phoneJSON}}?phoneNumber=123&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-          "auth": {},
-          "host": [
-            "{{phoneJSON}}"
-          ],
-          "path": [
-            ""
-          ],
-          "query": [
-            {
-              "key": "phoneNumber",
-              "value": "123",
-              "equals": true,
-              "description": ""
-            },
-            {
-              "key": "clientAccessCode",
-              "value": "aea243aba41084aa098b3a70eeb63ddf",
-              "equals": true,
-              "description": ""
-            }
-          ],
-          "variable": []
-        },
         "method": "GET",
         "header": [],
         "body": {},
