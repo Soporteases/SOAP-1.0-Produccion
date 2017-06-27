@@ -415,6 +415,39 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "3ca71dff-464f-b36d-fdea-f64a7fca56a0",
+          "name": "Nombres CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"ELVIS ANTONIO\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"GONCALVES\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"PF\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"M\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{nombresJSON}}?name=Elvis Antonio Goncalves&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -1756,39 +1789,6 @@
       ],
       "request": {
         "url": "{{addresJSON}}?level1=UY&street=ruta 022 km 42&level4=TARARIRAS&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=COLONIA",
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "3ca71dff-464f-b36d-fdea-f64a7fca56a0",
-      "name": "Nombres CO",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"status\"] = jsonData.status === \"CO\";",
-              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-              "tests[\"name\"] = jsonData.nName.name == \"ELVIS ANTONIO\";",
-              "tests[\"lastName\"] = jsonData.nName.lastName == \"GONCALVES\";",
-              "tests[\"personType\"] = jsonData.nName.personType == \"PF\";",
-              "tests[\"gender\"] = jsonData.nName.gender == \"M\";",
-              "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
-              "",
-              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-              "tests[\"Status code is 200\"] = responseCode.code === 200; "
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{nombresJSON}}?name=Elvis Antonio Goncalves&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
         "method": "GET",
         "header": [],
         "body": {},
