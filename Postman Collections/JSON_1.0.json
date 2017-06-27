@@ -910,6 +910,59 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "9dd91a6b-59e5-75d3-b9ae-fb2acc83aa79",
+          "name": "AR-Domicilios CO MAQ Telefonica",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"1\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"BUENOS AIRES\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"ALMIRANTE BROWN\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"BURZACO\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"APECECHEA\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"87\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.827127\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.370503\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1852\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"1200\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"PARANA\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"AVENIDA MONTEVERDE\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{addresJSON}}?level1=AR&street=APECECHEA  87&level4=BURZACO&clientAccessCode=0584ef48a0282697e836e15c6a62d91a",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -977,6 +1030,39 @@
           ],
           "request": {
             "url": "{{nombresJSON}}?name=Elvis Antonio Goncalves&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a187e7f7-3dd7-6a0b-58c5-a30a57671398",
+          "name": "Nombres NP",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NP\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"ROSA MARIA ROSA MARIA\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{nombresJSON}}?name=ROSA MARIA ROSA MARIA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
             "method": "GET",
             "header": [],
             "body": {},
@@ -1108,6 +1194,70 @@
           ],
           "request": {
             "url": "{{phoneJSON}}?phoneNumber=1149233521&level1=&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a2953173-cc12-f61a-4631-5e466623efdf",
+          "name": "Telefono NE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1105847852\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{phoneJSON}}?phoneNumber=1105847852&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{phoneJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "1105847852",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
@@ -2407,156 +2557,6 @@
       ],
       "request": {
         "url": "{{addresJSON}}?level1=UY&street=ruta 022 km 42&level4=TARARIRAS&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=COLONIA",
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "9dd91a6b-59e5-75d3-b9ae-fb2acc83aa79",
-      "name": "AR-Domicilios CO MAQ Telefonica",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"status\"] = jsonData.status === \"CO\";",
-              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-              "tests[\"geoType\"] = jsonData.nAddress.geoType == \"1\";",
-              "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
-              "tests[\"level2\"] = jsonData.nAddress.level2 == \"BUENOS AIRES\";",
-              "tests[\"level3\"] = jsonData.nAddress.level3 == \"ALMIRANTE BROWN\";",
-              "tests[\"level4\"] = jsonData.nAddress.level4 == \"BURZACO\";",
-              "tests[\"level5\"] = jsonData.nAddress.level5 == \"\";",
-              "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
-              "tests[\"street\"] = jsonData.nAddress.street == \"APECECHEA\";",
-              "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"87\";",
-              "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
-              "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
-              "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.827127\";",
-              "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.370503\";",
-              "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1852\";",
-              "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
-              "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
-              "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"1200\";",
-              "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
-              "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"PARANA\";",
-              "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"AVENIDA MONTEVERDE\";",
-              "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
-              "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
-              "tests[\"place\"] = jsonData.nAddress.place == \"\";",
-              "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
-              "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
-              "",
-              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-              "tests[\"Status code is 200\"] = responseCode.code === 200; "
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{addresJSON}}?level1=AR&street=APECECHEA  87&level4=BURZACO&clientAccessCode=0584ef48a0282697e836e15c6a62d91a",
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "a187e7f7-3dd7-6a0b-58c5-a30a57671398",
-      "name": "Nombres NP",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"status\"] = jsonData.status === \"NP\";",
-              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-              "tests[\"name\"] = jsonData.nName.name == \"\";",
-              "tests[\"lastName\"] = jsonData.nName.lastName == \"ROSA MARIA ROSA MARIA\";",
-              "tests[\"personType\"] = jsonData.nName.personType == \"\";",
-              "tests[\"gender\"] = jsonData.nName.gender == \"\";",
-              "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
-              "",
-              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-              "tests[\"Status code is 200\"] = responseCode.code === 200; "
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{nombresJSON}}?name=ROSA MARIA ROSA MARIA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "a2953173-cc12-f61a-4631-5e466623efdf",
-      "name": "Telefono NE",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"status\"] = jsonData.status === \"NE\";",
-              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-              "tests[\"prefix\"] = jsonData.nPhone.prefix == \"\";",
-              "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-              "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
-              "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
-              "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
-              "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1105847852\";",
-              "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-              "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
-              "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-              "",
-              "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-              "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-              "",
-              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-              "tests[\"Status code is 200\"] = responseCode.code === 200; "
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": {
-          "raw": "{{phoneJSON}}?phoneNumber=1105847852&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-          "auth": {},
-          "host": [
-            "{{phoneJSON}}"
-          ],
-          "path": [
-            ""
-          ],
-          "query": [
-            {
-              "key": "phoneNumber",
-              "value": "1105847852",
-              "equals": true,
-              "description": ""
-            },
-            {
-              "key": "clientAccessCode",
-              "value": "aea243aba41084aa098b3a70eeb63ddf",
-              "equals": true,
-              "description": ""
-            }
-          ],
-          "variable": []
-        },
         "method": "GET",
         "header": [],
         "body": {},
