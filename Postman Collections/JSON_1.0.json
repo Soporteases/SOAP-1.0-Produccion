@@ -749,7 +749,6 @@
                   "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
                   "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
                   "tests[\"NISE\"] = responseBody.has(\"NISE\");",
-                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
                   "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
                   "tests[\"cpa\"] = responseBody.has(\"cpa\");",
                   "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
@@ -762,7 +761,49 @@
             }
           ],
           "request": {
-            "url": "{{addresJSON}}?level1=AR&street=SAN JOSE DE FLORES 6001&level4=Villa Ballester&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=1653",
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=SAN JOSE DE FLORES 6001&level4=Villa Ballester&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=1653",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "SAN JOSE DE FLORES 6001",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level4",
+                  "value": "Villa Ballester",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "postalCode",
+                  "value": "1653",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
