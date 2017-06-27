@@ -1689,7 +1689,6 @@
                   "tests[\"AR-Domicilio CO-puerta\"] = responseBody.has(\"<name>puerta</name><value>NO RELEVADO</value>\");",
                   "tests[\"AR-Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
                   "tests[\"AR-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.889679</value>\");",
-                  "tests[\"AR-Domicilio CO-zonaDemoRiesgo\"] = responseBody.has(\"<name>zonaDemoRiesgo</name><value>N</value>\");",
                   "tests[\"AR-Domicilio CO-inhibido\"] = responseBody.has(\"<name>inhibido</name><value>N</value>\");",
                   "tests[\"AR-Domicilio CO-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-34.86042</value>\");",
                   "tests[\"AR-Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
