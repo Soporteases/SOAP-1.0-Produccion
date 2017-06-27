@@ -764,7 +764,6 @@
                   "tests[\"Domicilio CO-placeType\"] = responseBody.has(\"<placeType></placeType>\");",
                   "tests[\"Domicilio CO-placeReference\"] = responseBody.has(\"<placeReference></placeReference>\");",
                   "tests[\"Domicilio CO-numberAlternativeAddresses\"] = responseBody.has(\"<numberAlternativeAddresses>0</numberAlternativeAddresses>\");",
-                  "tests[\"Domicilio CO-zonaDemoRiesgo\"] = responseBody.has(\"<name>zonaDemoRiesgo</name><value>N</value>\");",
                   "tests[\"Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
                   "tests[\"Domicilio CO-longitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-65.251931</value>\");",
                   "tests[\"Domicilio CO-PORTAL\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
