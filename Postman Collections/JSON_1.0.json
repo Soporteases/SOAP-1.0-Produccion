@@ -152,49 +152,7 @@
       "_postman_id": "f562f8ef-c180-6075-c5a6-2881ecdf53ef",
       "name": "Telefonos",
       "description": "",
-      "item": [
-        {
-          "_postman_id": "f06ebbfe-5b85-6073-4240-a4aa15f82d44",
-          "name": "Telefono fijo no llame CO",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
-                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
-                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
-                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"4442\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"0390\";",
-                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ok\";",
-                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-                  "",
-                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-                  "tests[\"directory\"] = responseBody.has(\"directory\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{phoneJSON}}?phoneNumber=01144420390&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        }
-      ]
+      "item": []
     },
     {
       "_postman_id": "500725de-fe17-9fbb-eaf6-101407cbfc16",
@@ -3266,6 +3224,47 @@
       ],
       "request": {
         "url": "{{addresJSON}}?level1=CL&street=avenida alameda 540&level4=santiago&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "f06ebbfe-5b85-6073-4240-a4aa15f82d44",
+      "name": "Telefono fijo no llame CO",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"status\"] = jsonData.status === \"CO\";",
+              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+              "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
+              "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+              "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+              "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+              "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"4442\";",
+              "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"0390\";",
+              "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+              "tests[\"validated\"] = jsonData.nPhone.validated == \"ok\";",
+              "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+              "",
+              "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+              "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+              "tests[\"directory\"] = responseBody.has(\"directory\");",
+              "",
+              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+              "tests[\"Status code is 200\"] = responseCode.code === 200; "
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{phoneJSON}}?phoneNumber=01144420390&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
         "method": "GET",
         "header": [],
         "body": {},
