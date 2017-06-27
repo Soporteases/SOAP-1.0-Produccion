@@ -994,7 +994,6 @@
                   "tests[\"Domicilio DU-fromStreetNumber/3\"] = responseBody.has(\"<fromStreetNumber>1</fromStreetNumber>\");",
                   "tests[\"Domicilio DU-toStreetNumber/3\"] = responseBody.has(\"<toStreetNumber>2</toStreetNumber>\");",
                   "",
-                  "tests[\"Domicilio CO-zonaDemoRiesgo\"] = responseBody.has(\"<name>zonaDemoRiesgo</name><value>N</value>\");",
                   "tests[\"Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
                   "tests[\"Domicilio CO-PORTAL\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
                   "tests[\"Domicilio CO-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-26.84972</value>\");",
