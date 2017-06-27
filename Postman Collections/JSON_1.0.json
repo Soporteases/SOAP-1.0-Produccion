@@ -269,7 +269,6 @@
                   "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
                   "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
                   "tests[\"NISE\"] = responseBody.has(\"NISE\");",
-                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
                   "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
                   "tests[\"cpa\"] = responseBody.has(\"cpa\");",
                   "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
