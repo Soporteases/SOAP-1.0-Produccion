@@ -1183,7 +1183,7 @@
           ],
           "request": {
             "url": {
-              "raw": "{{addresJSON}}?level1=AR&street=BELGRANO  629&level4=SAN ALBERTO&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=4105&level2=TUCUMAN",
+              "raw": "{{addresJSON}}?level1=AR&street=BELGRANO\t629&level4=SAN ALBERTO&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=4105&level2=TUCUMAN",
               "auth": {},
               "host": [
                 "{{addresJSON}}"
@@ -1200,7 +1200,7 @@
                 },
                 {
                   "key": "street",
-                  "value": "BELGRANO  629",
+                  "value": "BELGRANO\t629",
                   "equals": true,
                   "description": ""
                 },
