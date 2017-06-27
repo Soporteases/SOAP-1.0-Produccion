@@ -157,7 +157,7 @@
             }
           ],
           "request": {
-            "url": "{{addresJSON}}?level1=AR&street=APECECHEA  87&level4=BURZACO&clientAccessCode=0584ef48a0282697e836e15c6a62d91a",
+            "url": "{{addresJSON}}?level1=AR&street=APECECHEA\t87&level4=BURZACO&clientAccessCode=0584ef48a0282697e836e15c6a62d91a",
             "method": "GET",
             "header": [],
             "body": {},
