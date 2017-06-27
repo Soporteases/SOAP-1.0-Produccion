@@ -623,7 +623,41 @@
       "_postman_id": "915d33eb-891d-5c26-4f3e-b6c1ca81f3f9",
       "name": "Nombres",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "a187e7f7-3dd7-6a0b-58c5-a30a57671398",
+          "name": "Nombres NP",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NP\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"ROSA MARIA ROSA MARIA\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{nombresJSON}}?name=ROSA MARIA ROSA MARIA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "f562f8ef-c180-6075-c5a6-2881ecdf53ef",
@@ -664,6 +698,70 @@
           ],
           "request": {
             "url": "{{phoneJSON}}?phoneNumber=01144420390&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a2953173-cc12-f61a-4631-5e466623efdf",
+          "name": "Telefono NE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1105847852\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{phoneJSON}}?phoneNumber=1105847852&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{phoneJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "1105847852",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
@@ -3169,103 +3267,6 @@
       ],
       "request": {
         "url": "{{addresJSON}}?level1=AR&street=APECECHEA  87&level4=BURZACO&clientAccessCode=0584ef48a0282697e836e15c6a62d91a",
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "a187e7f7-3dd7-6a0b-58c5-a30a57671398",
-      "name": "Nombres NP",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"status\"] = jsonData.status === \"NP\";",
-              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-              "tests[\"name\"] = jsonData.nName.name == \"\";",
-              "tests[\"lastName\"] = jsonData.nName.lastName == \"ROSA MARIA ROSA MARIA\";",
-              "tests[\"personType\"] = jsonData.nName.personType == \"\";",
-              "tests[\"gender\"] = jsonData.nName.gender == \"\";",
-              "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
-              "",
-              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-              "tests[\"Status code is 200\"] = responseCode.code === 200; "
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{nombresJSON}}?name=ROSA MARIA ROSA MARIA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "a2953173-cc12-f61a-4631-5e466623efdf",
-      "name": "Telefono NE",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"status\"] = jsonData.status === \"NE\";",
-              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-              "tests[\"prefix\"] = jsonData.nPhone.prefix == \"\";",
-              "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-              "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
-              "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
-              "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
-              "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1105847852\";",
-              "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-              "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
-              "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-              "",
-              "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-              "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-              "",
-              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-              "tests[\"Status code is 200\"] = responseCode.code === 200; "
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": {
-          "raw": "{{phoneJSON}}?phoneNumber=1105847852&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-          "auth": {},
-          "host": [
-            "{{phoneJSON}}"
-          ],
-          "path": [
-            ""
-          ],
-          "query": [
-            {
-              "key": "phoneNumber",
-              "value": "1105847852",
-              "equals": true,
-              "description": ""
-            },
-            {
-              "key": "clientAccessCode",
-              "value": "aea243aba41084aa098b3a70eeb63ddf",
-              "equals": true,
-              "description": ""
-            }
-          ],
-          "variable": []
-        },
         "method": "GET",
         "header": [],
         "body": {},
