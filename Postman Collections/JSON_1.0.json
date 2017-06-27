@@ -184,7 +184,41 @@
       "_postman_id": "915d33eb-891d-5c26-4f3e-b6c1ca81f3f9",
       "name": "Nombres",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "28a80a5b-3e36-0368-08d4-e84cd1660986",
+          "name": "Nombres SD",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"SD\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{nombresJSON}}?name=&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "f562f8ef-c180-6075-c5a6-2881ecdf53ef",
@@ -1482,39 +1516,6 @@
       ],
       "request": {
         "url": "{{addresJSON}}?level1=UY&street=ruta 022 km 42&level4=TARARIRAS&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=COLONIA",
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "28a80a5b-3e36-0368-08d4-e84cd1660986",
-      "name": "Nombres SD",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"status\"] = jsonData.status === \"SD\";",
-              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-              "tests[\"name\"] = jsonData.nName.name == \"\";",
-              "tests[\"lastName\"] = jsonData.nName.lastName == \"\";",
-              "tests[\"personType\"] = jsonData.nName.personType == \"\";",
-              "tests[\"gender\"] = jsonData.nName.gender == \"\";",
-              "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
-              "",
-              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-              "tests[\"Status code is 200\"] = responseCode.code === 200; "
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{nombresJSON}}?name=&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
         "method": "GET",
         "header": [],
         "body": {},
