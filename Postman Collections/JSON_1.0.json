@@ -596,47 +596,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "5050d4a7-6ef5-3e23-16da-f988b1ba1ef0",
-          "name": "Telefono Celolar no llame CO",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
-                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
-                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
-                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"6933\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"8493\";",
-                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
-                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-                  "",
-                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-                  "tests[\"directory\"] = responseBody.has(\"directory\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{phoneJSON}}?phoneNumber=1169338493&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
         }
       ]
     },
@@ -1930,6 +1889,47 @@
       ],
       "request": {
         "url": "{{addresJSON}}?level1=UY&street=ruta 022 km 42&level4=TARARIRAS&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=COLONIA",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "5050d4a7-6ef5-3e23-16da-f988b1ba1ef0",
+      "name": "Telefono Celolar no llame CO",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"status\"] = jsonData.status === \"CO\";",
+              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+              "tests[\"prefix\"] = jsonData.nPhone.prefix == \"011\";",
+              "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+              "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+              "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+              "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"6933\";",
+              "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"8493\";",
+              "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+              "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+              "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+              "",
+              "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+              "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+              "tests[\"directory\"] = responseBody.has(\"directory\");",
+              "",
+              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+              "tests[\"Status code is 200\"] = responseCode.code === 200; "
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{phoneJSON}}?phoneNumber=1169338493&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
         "method": "GET",
         "header": [],
         "body": {},
