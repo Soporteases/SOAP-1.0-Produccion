@@ -53,7 +53,6 @@
                   "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
                   "tests[\"concepto\"] = responseBody.has(\"concepto\");",
                   "tests[\"NISE\"] = responseBody.has(\"NISE\");",
-                  "tests[\"zonaDemoRiesgo\"] = responseBody.has(\"zonaDemoRiesgo\");",
                   "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
                   "tests[\"cpa\"] = responseBody.has(\"cpa\");",
                   "tests[\"nivelRiesgo\"] = responseBody.has(\"nivelRiesgo\");",
@@ -83,25 +82,25 @@
                   "key": "level1",
                   "value": "AR",
                   "equals": true,
-                  "description": "Pais"
+                  "description": ""
                 },
                 {
                   "key": "street",
                   "value": "San Martin 500",
                   "equals": true,
-                  "description": "Calle, Barrio, Ruta, Etc"
+                  "description": ""
                 },
                 {
                   "key": "level4",
                   "value": "CABA",
                   "equals": true,
-                  "description": "Localidad"
+                  "description": ""
                 },
                 {
                   "key": "clientAccessCode",
                   "value": "aea243aba41084aa098b3a70eeb63ddf",
                   "equals": true,
-                  "description": "Codigo Unico de Cliente"
+                  "description": ""
                 }
               ],
               "variable": []
