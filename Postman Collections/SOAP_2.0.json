@@ -366,7 +366,6 @@
                   "tests[\"Domicilio NE-numberAlternativeAddresses\"] = responseBody.has(\"<numberAlternativeAddresses>0</numberAlternativeAddresses>\");",
                   "tests[\"Domicilio NE-zonaRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>N</value>\");",
                   "tests[\"Domicilio NE-MatchLevel\"] = responseBody.has(\"<name>MatchLevel</name><value></value>\");",
-                  "tests[\"Domicilio NE-zonaDemoRiesgo\"] = responseBody.has(\"<name>zonaDemoRiesgo</name><value>N</value>\");",
                   "tests[\"Domicilio NE-NISE\"] = responseBody.has(\"<name>NISE</name><value>0</value>\");",
                   "tests[\"Domicilio NE-longitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value></value>\");",
                   "tests[\"Domicilio NE-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
