@@ -3086,9 +3086,9 @@
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"status\"] = jsonData.status === \"VA\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"name\"] = jsonData.nEmail.email == \"egoncalves@asesconsulting.com\";",
-                  "tests[\"lastName\"] = jsonData.nEmail.type == \"ND\";",
-                  "tests[\"personType\"] = jsonData.nEmail.lastDateValidated == \"2017-06-26\";",
+                  "tests[\"email\"] = jsonData.nEmail.email == \"egoncalves@asesconsulting.com\";",
+                  "tests[\"type\"] = jsonData.nEmail.type == \"ND\";",
+                  "tests[\"lastDateValidated\"] = jsonData.nEmail.lastDateValidated == \"2017-06-28\";",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
