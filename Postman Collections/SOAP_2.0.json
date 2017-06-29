@@ -1053,7 +1053,7 @@
                   "tests[\"Domicilio CO-corner\"] = responseBody.has(\"<corner></corner>\");",
                   "tests[\"Domicilio CO-placeType\"] = responseBody.has(\"<placeType></placeType>\");",
                   "tests[\"Domicilio CO-placeReference\"] = responseBody.has(\"<placeReference></placeReference>\");",
-                  "tests[\"Domicilio CO-numberAlternativeAddresses\"] = responseBody.has(\"<numberAlternativeAddresses>2</numberAlternativeAddresses>\");",
+                  "tests[\"Domicilio CO-numberAlternativeAddresses\"] = responseBody.has(\"<numberAlternativeAddresses>3</numberAlternativeAddresses>\");",
                   "",
                   "tests[\"Domicilio DU-geoType/2\"] = responseBody.has(\"<geoType>8</geoType>\");",
                   "tests[\"Domicilio DU-level1/2\"] = responseBody.has(\"<level1></level1>\");",
