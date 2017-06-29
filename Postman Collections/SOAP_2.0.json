@@ -2116,7 +2116,7 @@
                   "tests[\"Nombres CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
                   "tests[\"Nombres CO-email\"] = responseBody.has(\"<email>egoncalves@asesconsulting.com</email>\");",
                   "tests[\"Nombres CO-type\"] = responseBody.has(\"<type>ND</type>\");",
-                  "tests[\"Nombres CO-lastDateValidated\"] = responseBody.has(\"<lastDateValidated>2017-06-26</lastDateValidated>\");",
+                  "",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
