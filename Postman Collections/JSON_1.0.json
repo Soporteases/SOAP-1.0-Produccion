@@ -1974,6 +1974,89 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "edb877b8-806e-e51a-9d04-033c752ebaba",
+          "name": "Telefono TN",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"prefix\"] = jsonData.nPhone.prefix == \"0351\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"54\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"0351\";",
+                  "tests[\"cellPhonePrefix\"] = jsonData.nPhone.cellPhonePrefix == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"309\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1850\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"5000\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{phoneJSON}}?phoneNumber=153091850&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=5000&ddn=0351&ddi=54",
+              "auth": {},
+              "host": [
+                "{{phoneJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "153091850",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "postalCode",
+                  "value": "5000",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "ddn",
+                  "value": "0351",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "ddi",
+                  "value": "54",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
