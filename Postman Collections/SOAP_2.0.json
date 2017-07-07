@@ -1595,6 +1595,47 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "c57a782b-ada5-da3d-93dd-4fd2b76fd632",
+          "name": "Telefonos TN",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Telefono OK1-status\"] = responseBody.has(\"<status>CO</status>\");",
+                  "tests[\"Telefono OK1-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Telefono OK1-prefix\"] = responseBody.has(\"<prefix>0351</prefix>\");",
+                  "tests[\"Telefono OK1-ddi\"] = responseBody.has(\"<ddi>54</ddi>\");",
+                  "tests[\"Telefono OK1-ddn\"] = responseBody.has(\"<ddn>0351 </ddn>\");",
+                  "tests[\"Telefono OK1-cellPhonePrefix\"] = responseBody.has(\"<cellPhonePrefix></cellPhonePrefix>\");",
+                  "tests[\"Telefono OK1-characteristic\"] = responseBody.has(\"<characteristic>309</characteristic>\");",
+                  "tests[\"Telefono OK1-phoneNumber\"] = responseBody.has(\"<phoneNumber>1850</phoneNumber>\");",
+                  "tests[\"Telefono OK1-postalCode\"] = responseBody.has(\"<postalCode>5000</postalCode>\");",
+                  "tests[\"Telefono OK1-validated\"] = responseBody.has(\"<validated>ce</validated>\");",
+                  "tests[\"Telefono OK1-directory\"] = responseBody.has(\"<name>directory</name><value>Ce</value>\");",
+                  "tests[\"Telefono OK1-doNotCallRegistry\"] = responseBody.has(\"<name>doNotCallRegistry</name><value>NO</value>\");",
+                  "tests[\"Telefono OK1-fullPhone\"] = responseBody.has(\"<name>fullPhone</name><value>153091850</value>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Telefonos2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize2>\r\n         <!--Optional:-->\r\n         <phoneNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xPhone>\r\n               <!--Optional:-->\r\n               <level1> </level1>\r\n               <!--Optional:-->\r\n               <level2> </level2>\r\n               <!--Optional:-->\r\n               <level3> </level3>\r\n               <!--Optional:-->\r\n               <level4> </level4>\r\n               <!--Optional:-->\r\n               <level5> </level5>\r\n               <!--Optional:-->\r\n               <prefix> </prefix>\r\n               <!--Optional:-->\r\n               <characteristic> </characteristic>\r\n               <!--Optional:-->\r\n               <phoneNumber>153091850</phoneNumber>\r\n               <!--Optional:-->\r\n               <postalCode>5000</postalCode>\r\n               <!--Optional:-->\r\n               <ddi>54</ddi>\r\n               <!--Optional:-->\r\n               <ddn>0351 </ddn>\r\n               <!--Optional:-->\r\n               <additionalData> </additionalData>\r\n            </xPhone>\r\n         </phoneNormalize>\r\n      </soap:phoneNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
