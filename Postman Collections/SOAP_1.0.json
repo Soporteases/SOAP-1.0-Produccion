@@ -1490,7 +1490,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "tests[\"Domicilio DU-latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.383353</value>\");",
-                  "tests[\"Domicilio DU-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>11</value>\");",
+                  "",
                   "tests[\"Domicilio DU-longitud\"] = responseBody.has(\"<name>longitud</name><value>-58.750027</value>\");",
                   "tests[\"Domicilio DU-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-34.383353</value>\");",
                   "tests[\"Domicilio DU-longitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-58.750027</value>\");",
