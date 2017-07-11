@@ -1453,7 +1453,7 @@
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"status\"] = jsonData.status === \"DU\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"DC\";",
-                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"11\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"\";",
                   "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
                   "tests[\"level2\"] = jsonData.nAddress.level2 == \"BUENOS AIRES\";",
                   "tests[\"level3\"] = jsonData.nAddress.level3 == \"ESCOBAR\";",
