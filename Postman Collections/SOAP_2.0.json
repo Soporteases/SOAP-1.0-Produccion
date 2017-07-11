@@ -859,7 +859,7 @@
                 "exec": [
                   "tests[\"Domicilio CO-status\"] = responseBody.has(\"<status>DU</status>\");",
                   "tests[\"Domicilio CO-statusReason\"] = responseBody.has(\"<statusReason>DZ</statusReason>\");",
-                  "tests[\"Domicilio CO-Status\"] = responseBody.has(\"<geoType>12</geoType>\");",
+                  "tests[\"Domicilio CO-geoType\"] = responseBody.has(\"<geoType></geoType>\");",
                   "tests[\"Domicilio CO-level1\"] = responseBody.has(\"<level1></level1>\");",
                   "tests[\"Domicilio CO-level2\"] = responseBody.has(\"<level2>MISIONES</level2>\");",
                   "tests[\"Domicilio CO-level3\"] = responseBody.has(\"<level3>CAPITAL</level3>\");",
