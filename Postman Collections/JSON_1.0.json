@@ -2364,7 +2364,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"status\"] = jsonData.status === \"EN\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
                   "tests[\"service1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].service == \"PERSONAS\";",
                   "tests[\"name/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].name == \"TipoCUIT\";",
@@ -2762,7 +2762,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"status\"] = jsonData.status === \"EN\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
                   "tests[\"service1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].service == \"PERSONAS\";",
                   "tests[\"name/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].name == \"TipoCUIT\";",
