@@ -976,7 +976,7 @@
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"status\"] = jsonData.status === \"DU\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"DZ\";",
-                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"12\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"\";",
                   "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
                   "tests[\"level2\"] = jsonData.nAddress.level2 == \"MISIONES\";",
                   "tests[\"level3\"] = jsonData.nAddress.level3 == \"CAPITAL\";",
