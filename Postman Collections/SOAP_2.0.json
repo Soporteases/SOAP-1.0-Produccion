@@ -1495,13 +1495,16 @@
                 "exec": [
                   "tests[\"Telefono OK1-status\"] = responseBody.has(\"<status>CO</status>\");",
                   "tests[\"Telefono OK1-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Telefono OK1-prefix\"] = responseBody.has(\"<prefix>011</prefix>\");",
+                  "tests[\"Telefono OK1-level1\"] = responseBody.has(\"<level1></level1>\");",
+                  "tests[\"Telefono OK1-level2\"] = responseBody.has(\"<level2></level2>\");",
+                  "tests[\"Telefono OK1-level3\"] = responseBody.has(\"<level3></level3>\");",
+                  "tests[\"Telefono OK1-level4\"] = responseBody.has(\"<level4></level4>\");",
+                  "tests[\"Telefono OK1-level5\"] = responseBody.has(\"<level5></level5>\");",
+                  "tests[\"Telefono OK1-postalCode\"] = responseBody.has(\"<postalCode>0</postalCode>\");",
                   "tests[\"Telefono OK1-ddi\"] = responseBody.has(\"<ddi></ddi>\");",
-                  "tests[\"Telefono OK1-ddn\"] = responseBody.has(\"<ddn></ddn>\");",
-                  "tests[\"Telefono OK1-cellPhonePrefix\"] = responseBody.has(\"<cellPhonePrefix></cellPhonePrefix>\");",
+                  "tests[\"Telefono OK1-ddn\"] = responseBody.has(\"<ddn>011</ddn>\");",
                   "tests[\"Telefono OK1-characteristic\"] = responseBody.has(\"<characteristic>6175</characteristic>\");",
                   "tests[\"Telefono OK1-phoneNumber\"] = responseBody.has(\"<phoneNumber>5152</phoneNumber>\");",
-                  "tests[\"Telefono OK1-postalCode\"] = responseBody.has(\"<postalCode>0</postalCode>\");",
                   "tests[\"Telefono OK1-validated\"] = responseBody.has(\"<validated>ce</validated>\");",
                   "tests[\"Telefono OK1-directory\"] = responseBody.has(\"<name>directory</name><value>Ce</value>\");",
                   "tests[\"Telefono OK1-doNotCallRegistry\"] = responseBody.has(\"<name>doNotCallRegistry</name><value>NO</value>\");",
@@ -1519,7 +1522,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize2>\r\n         <!--Optional:-->\r\n         <phoneNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xPhone>\r\n               <!--Optional:-->\r\n               <level1> </level1>\r\n               <!--Optional:-->\r\n               <level2> </level2>\r\n               <!--Optional:-->\r\n               <level3> </level3>\r\n               <!--Optional:-->\r\n               <level4> </level4>\r\n               <!--Optional:-->\r\n               <level5> </level5>\r\n               <!--Optional:-->\r\n               <prefix> </prefix>\r\n               <!--Optional:-->\r\n               <characteristic> </characteristic>\r\n               <!--Optional:-->\r\n               <phoneNumber>1161755152</phoneNumber>\r\n               <!--Optional:-->\r\n               <postalCode> </postalCode>\r\n               <!--Optional:-->\r\n               <ddi> </ddi>\r\n               <!--Optional:-->\r\n               <ddn> </ddn>\r\n               <!--Optional:-->\r\n               <additionalData> </additionalData>\r\n            </xPhone>\r\n         </phoneNormalize>\r\n      </soap:phoneNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize2>\r\n         <!--Optional:-->\r\n         <phoneNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xPhone>\r\n               <!--Optional:-->\r\n               <level1> </level1>\r\n               <!--Optional:-->\r\n               <level2> </level2>\r\n               <!--Optional:-->\r\n               <level3> </level3>\r\n               <!--Optional:-->\r\n               <level4> </level4>\r\n               <!--Optional:-->\r\n               <level5> </level5>\r\n               <!--Optional:-->\r\n               <characteristic> </characteristic>\r\n               <!--Optional:-->\r\n               <phoneNumber>1161755152</phoneNumber>\r\n               <!--Optional:-->\r\n               <postalCode> </postalCode>\r\n               <!--Optional:-->\r\n               <ddi> </ddi>\r\n               <!--Optional:-->\r\n               <ddn> </ddn>\r\n               <!--Optional:-->\r\n               <additionalData> </additionalData>\r\n            </xPhone>\r\n         </phoneNormalize>\r\n      </soap:phoneNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },
