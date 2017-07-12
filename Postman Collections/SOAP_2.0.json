@@ -2063,7 +2063,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Enriquecimiento CO-status\"] = responseBody.has(\"<status>CO</status>\");",
+                  "tests[\"Enriquecimiento CO-status\"] = responseBody.has(\"<status>EN</status>\");",
                   "tests[\"Enriquecimiento CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
                   "tests[\"Enriquecimiento CO-PERSONAS\"] = responseBody.has(\"<service>PERSONAS</service>\");",
                   "tests[\"Enriquecimiento CO-TipoCUIT\"] = responseBody.has(\"<name>TipoCUIT</name><label></label><value>CUIT PERSONA FISICA</value><index>0</index><dataType></dataType>\");",
