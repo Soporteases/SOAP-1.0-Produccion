@@ -1348,7 +1348,6 @@
                   "tests[\"Domicilio DU-latitud\"] = responseBody.has(\"<name>latitud</name><value>-27.368742</value>\");",
                   "tests[\"Domicilio DU-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-27.368742</value>\");",
                   "tests[\"Domicilio DU-longitud\"] = responseBody.has(\"<name>longitud</name><value>-55.894215</value>\");",
-                  "tests[\"Domicilio DU-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>12</value>\");",
                   "tests[\"Domicilio DU-longitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-55.894215</value>\");",
                   "tests[\"Domicilio DU-calle\"] = responseBody.has(\"<calle>BARRIO 25 DE MAYO</calle>\");",
                   "tests[\"Domicilio DU-numero\"] = responseBody.has(\"<numero></numero>\");",
