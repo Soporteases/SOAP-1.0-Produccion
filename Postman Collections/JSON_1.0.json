@@ -3924,6 +3924,66 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "8f910da1-c234-f5a5-6494-d3ebf10661c7",
+          "name": "CondTributaria NE Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"\";",
+                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"\";",
+                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
+                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"\";",
+                  "tests[\"iva\"] = jsonData.nCuit.iva == \"\";",
+                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"\";",
+                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"\";",
+                  "tests[\"employer\"] = jsonData.nCuit.employer == \"\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30709013196",
+              "auth": {},
+              "host": [
+                "{{TributariaJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "cuit",
+                  "value": "30709013196",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
