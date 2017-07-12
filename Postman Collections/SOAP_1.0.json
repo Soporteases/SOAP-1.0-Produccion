@@ -2036,15 +2036,15 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Dominio OK\"] = responseBody.has(\"<dominio>AA004FG</dominio>\");",
-                  "tests[\"Marca OK\"] = responseBody.has(\"<marca>TOYOTA</marca>\");",
-                  "tests[\"Modelo OK\"] = responseBody.has(\"<modelo>ETIOS X 1.5 M/T</modelo>\");",
-                  "tests[\"Anio OK\"] = responseBody.has(\"<ano>2016</ano>\");",
+                  "tests[\"status OK\"] = responseBody.has(\"<status>SD</status>\");",
+                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"domain OK\"] = responseBody.has(\"<domain>AA004FG</domain>\");",
+                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand>TOYOTA</vehicleBrand>\");",
+                  "tests[\"model OK\"] = responseBody.has(\"<model>ETIOS X 1.5 M/T</model>\");",
                   "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
-                  "tests[\"Chasis OK\"] = responseBody.has(\"<nroChasis></nroChasis>\");",
-                  "tests[\"Tipo OK\"] = responseBody.has(\"<tipo></tipo>\");",
-                  "tests[\"Estado OK\"] = responseBody.has(\"<estado>SD</estado>\");",
-                  "",
+                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis></chassis>\");",
+                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
+                  "tests[\"year OK\"] = responseBody.has(\"<year>2016</year>\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "",
@@ -2054,12 +2054,12 @@
             }
           ],
           "request": {
-            "url": "{{Patentes}}",
+            "url": "{{Patentes2}}",
             "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleData>\r\n            <!--1 or more repetitions:-->\r\n            <customValues>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <value> </value>\r\n            </customValues>\r\n            <!--Optional:-->\r\n            <dominio>AA004FG</dominio>\r\n            <!--Optional:-->\r\n            <motor> </motor>\r\n            <!--Optional:-->\r\n            <nroChasis> </nroChasis>\r\n            <!--Optional:-->\r\n            <clientAccessCode>ea86ad3f0ed110b6961d1b883688534c</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </vehicleData>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>ea86ad3f0ed110b6961d1b883688534c</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AA004FG</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },
