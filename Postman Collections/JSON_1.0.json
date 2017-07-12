@@ -3690,15 +3690,15 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"SD\";",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"domain\"] = jsonData.nVehicle.domain == \"\";",
-                  "tests[\"vehicleBrand\"] = jsonData.nVehicle.vehicleBrand == \"\";",
-                  "tests[\"model\"] = jsonData.nVehicle.model == \"\";",
+                  "tests[\"domain\"] = jsonData.nVehicle.domain == \"AA004FG\";",
+                  "tests[\"vehicleBrand\"] = jsonData.nVehicle.vehicleBrand == \"TOYOTA\";",
+                  "tests[\"model\"] = jsonData.nVehicle.model == \"ETIOS X 1.5 M/T\";",
                   "tests[\"motor\"] = jsonData.nVehicle.motor == \"\";",
                   "tests[\"chassis\"] = jsonData.nVehicle.chassis == \"\";",
                   "tests[\"fabricationPlace\"] = jsonData.nVehicle.fabricationPlace == \"\";",
-                  "tests[\"year\"] = jsonData.nVehicle.year == \"\";",
+                  "tests[\"year\"] = jsonData.nVehicle.year == \"2016\";",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
@@ -3708,7 +3708,7 @@
           ],
           "request": {
             "url": {
-              "raw": "{{PatentesJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&domain=AA048TN",
+              "raw": "{{PatentesJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&domain=AA004FG",
               "auth": {},
               "host": [
                 "{{PatentesJSON}}"
@@ -3725,7 +3725,7 @@
                 },
                 {
                   "key": "domain",
-                  "value": "AA048TN",
+                  "value": "AA004FG",
                   "equals": true,
                   "description": ""
                 }
