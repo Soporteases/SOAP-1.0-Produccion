@@ -3505,7 +3505,7 @@
       "item": [
         {
           "_postman_id": "babdb12d-f077-1825-1abc-7062ca429e80",
-          "name": "Patentes SD",
+          "name": "Patentes SD Standar",
           "event": [
             {
               "listen": "test",
