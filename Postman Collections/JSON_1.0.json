@@ -3497,6 +3497,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "d27813e1-7826-ab38-c08b-2ddb4a720364",
+      "name": "Patentes",
+      "description": "",
+      "item": []
     }
   ]
 }
