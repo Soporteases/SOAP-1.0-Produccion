@@ -2391,6 +2391,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "f197dc97-8cd3-a0e0-557c-aba6a3e51360",
+      "name": "Condicion Tributaria",
+      "description": "",
+      "item": []
     }
   ]
 }
