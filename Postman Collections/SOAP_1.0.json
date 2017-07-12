@@ -1990,44 +1990,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "df81ec63-fba8-267c-6585-1f5bdf9b43a8",
-          "name": "Patentes CO Estandar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"status OK\"] = responseBody.has(\"<status>CO</status>\");",
-                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"domain OK\"] = responseBody.has(\"<domain>EYD785</domain>\");",
-                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand>VOLKSWAGEN</vehicleBrand>\");",
-                  "tests[\"model OK\"] = responseBody.has(\"<model>POLO CLASSIC 1.9L SD 31A</model>\");",
-                  "tests[\"Motor OK\"] = responseBody.has(\"<motor>1Y 961787</motor>\");",
-                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis>8AWZZZ9EZ5A699109</chassis>\");",
-                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
-                  "tests[\"year OK\"] = responseBody.has(\"<year>2005</year>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Patentes2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>EYD785</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "d3ef3dee-6b60-3620-d462-da2a8f4aaa83",
           "name": "Patentes CO Estandar",
           "event": [
