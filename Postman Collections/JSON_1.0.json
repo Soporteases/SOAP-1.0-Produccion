@@ -3561,6 +3561,65 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "6de544b9-3ab8-1027-9fc1-7648b585d5ad",
+          "name": "Patentes CO Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"domain\"] = jsonData.nVehicle.domain == \"EYD785\";",
+                  "tests[\"vehicleBrand\"] = jsonData.nVehicle.vehicleBrand == \"\";",
+                  "tests[\"model\"] = jsonData.nVehicle.model == \"POLO CLASSIC 1.9L SD 31A\";",
+                  "tests[\"motor\"] = jsonData.nVehicle.motor == \"1Y 961787\";",
+                  "tests[\"chassis\"] = jsonData.nVehicle.chassis == \"8AWZZZ9EZ5A699109\";",
+                  "tests[\"fabricationPlace\"] = jsonData.nVehicle.fabricationPlace == \"\";",
+                  "tests[\"year\"] = jsonData.nVehicle.year == \"2005\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{PatentesJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&domain=EYD785",
+              "auth": {},
+              "host": [
+                "{{PatentesJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "domain",
+                  "value": "EYD785",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
