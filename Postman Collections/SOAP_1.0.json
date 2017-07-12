@@ -2140,44 +2140,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "e9d1741d-880f-02b3-203a-79ce1f4f4097",
-          "name": "Patentes SD Estandar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"status OK\"] = responseBody.has(\"<status>SD</status>\");",
-                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"domain OK\"] = responseBody.has(\"<domain></domain>\");",
-                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand></vehicleBrand>\");",
-                  "tests[\"model OK\"] = responseBody.has(\"<model></model>\");",
-                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
-                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis></chassis>\");",
-                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
-                  "tests[\"year OK\"] = responseBody.has(\"<year></year>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Patentes2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AA048TN</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
         }
       ]
     },
