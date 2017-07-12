@@ -3620,6 +3620,65 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "4d83eae2-b2ba-6669-5e1f-32cc940cf46d",
+          "name": "Patentes SD Fedepat",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"SD\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"domain\"] = jsonData.nVehicle.domain == \"AA004FG\";",
+                  "tests[\"vehicleBrand\"] = jsonData.nVehicle.vehicleBrand == \"TOYOTA\";",
+                  "tests[\"model\"] = jsonData.nVehicle.model == \"ETIOS X 1.5 M/T\";",
+                  "tests[\"motor\"] = jsonData.nVehicle.motor == \"\";",
+                  "tests[\"chassis\"] = jsonData.nVehicle.chassis == \"\";",
+                  "tests[\"fabricationPlace\"] = jsonData.nVehicle.fabricationPlace == \"\";",
+                  "tests[\"year\"] = jsonData.nVehicle.year == \"2016\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{PatentesJSON}}?clientAccessCode=ea86ad3f0ed110b6961d1b883688534c&domain=AA004FG",
+              "auth": {},
+              "host": [
+                "{{PatentesJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "ea86ad3f0ed110b6961d1b883688534c",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "domain",
+                  "value": "AA004FG",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
