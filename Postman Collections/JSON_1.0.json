@@ -3864,6 +3864,66 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "4b931b60-445f-24f7-d3e7-c3cde780e7ae",
+          "name": "CondTributaria VA Monotributista",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"VA\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"27165525413\";",
+                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"SOSA MARTA INES               \";",
+                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
+                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"AC\";",
+                  "tests[\"iva\"] = jsonData.nCuit.iva == \"AC\";",
+                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"NI\";",
+                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"27165525413\";",
+                  "tests[\"employer\"] = jsonData.nCuit.employer == \"N00\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=27165525413",
+              "auth": {},
+              "host": [
+                "{{TributariaJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "cuit",
+                  "value": "27165525413",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
