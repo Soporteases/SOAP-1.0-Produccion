@@ -2396,7 +2396,46 @@
       "_postman_id": "f197dc97-8cd3-a0e0-557c-aba6a3e51360",
       "name": "Condicion Tributaria",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "d6d0e78c-a47b-a1bd-f3eb-eddc6646450b",
+          "name": "CondTributaria VA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Condicion Tributaria OK-status\"] = responseBody.has(\"<status>VA</status>\");",
+                  "tests[\"Condicion Tributaria OK-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuit>30707171282</cuit>\");",
+                  "tests[\"Condicion Tributaria OK-denomination\"] = responseBody.has(\"<denomination>ODFJELL ARGENTINA S.A.        </denomination>\");",
+                  "tests[\"Condicion Tributaria OK-denominationFlg\"] = responseBody.has(\"<denominationFlg></denominationFlg>\");",
+                  "tests[\"Condicion Tributaria OK-aernings\"] = responseBody.has(\"<aernings>AC</aernings>\");",
+                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>AC</iva>\");",
+                  "tests[\"Condicion Tributaria OK-uniqueTribute\"] = responseBody.has(\"<uniqueTribute>NI</uniqueTribute>\");",
+                  "tests[\"Condicion Tributaria OK-uniqueTributeActivity\"] = responseBody.has(\"<uniqueTributeActivity>30707171282</uniqueTributeActivity>\");",
+                  "tests[\"Condicion Tributaria OK-employer\"] = responseBody.has(\"<employer>S00</employer>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Tributaria2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:taxStatusNormalize>\r\n         <!--Optional:-->\r\n         <condtribNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xCuit>\r\n               <!--Optional:-->\r\n               <cuit>30707171282</cuit>\r\n               <!--Optional:-->\r\n               <denomination> </denomination>\r\n            </xCuit>\r\n         </condtribNormalize>\r\n      </soap:taxStatusNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
