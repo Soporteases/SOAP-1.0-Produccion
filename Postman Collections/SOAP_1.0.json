@@ -2177,6 +2177,44 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "d3ef3dee-6b60-3620-d462-da2a8f4aaa83",
+          "name": "Patentes CO Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Dominio OK\"] = responseBody.has(\"<dominio>EYD785</dominio>\");",
+                  "tests[\"Marca OK\"] = responseBody.has(\"<marca>VOLKSWAGEN</marca>\");",
+                  "tests[\"Modelo OK\"] = responseBody.has(\"<modelo>POLO CLASSIC 1.9L SD 31A</modelo>\");",
+                  "tests[\"Anio OK\"] = responseBody.has(\"<ano>2005</ano>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor>1Y 961787</motor>\");",
+                  "tests[\"Chasis OK\"] = responseBody.has(\"<nroChasis>8AWZZZ9EZ5A699109</nroChasis>\");",
+                  "tests[\"Tipo OK\"] = responseBody.has(\"<tipo></tipo>\");",
+                  "tests[\"Estado OK\"] = responseBody.has(\"<estado>CO</estado>\");",
+                  "",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleData>\r\n            <!--1 or more repetitions:-->\r\n            <customValues>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <value> </value>\r\n            </customValues>\r\n            <!--Optional:-->\r\n            <dominio>EYD785</dominio>\r\n            <!--Optional:-->\r\n            <motor> </motor>\r\n            <!--Optional:-->\r\n            <nroChasis> </nroChasis>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <sector> </sector>\r\n            <!--Optional:-->\r\n            <userName> </userName>\r\n         </vehicleData>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
