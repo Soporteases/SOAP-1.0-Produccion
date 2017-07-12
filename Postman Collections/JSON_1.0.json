@@ -3575,7 +3575,7 @@
                   "tests[\"status\"] = jsonData.status === \"CO\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
                   "tests[\"domain\"] = jsonData.nVehicle.domain == \"EYD785\";",
-                  "tests[\"vehicleBrand\"] = jsonData.nVehicle.vehicleBrand == \"\";",
+                  "tests[\"vehicleBrand\"] = jsonData.nVehicle.vehicleBrand == \"VOLKSWAGEN\";",
                   "tests[\"model\"] = jsonData.nVehicle.model == \"POLO CLASSIC 1.9L SD 31A\";",
                   "tests[\"motor\"] = jsonData.nVehicle.motor == \"1Y 961787\";",
                   "tests[\"chassis\"] = jsonData.nVehicle.chassis == \"8AWZZZ9EZ5A699109\";",
