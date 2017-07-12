@@ -3502,7 +3502,65 @@
       "_postman_id": "d27813e1-7826-ab38-c08b-2ddb4a720364",
       "name": "Patentes",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "babdb12d-f077-1825-1abc-7062ca429e80",
+          "name": "Patentes SD",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"SD\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{PatentesJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&domain=AA048TN",
+              "auth": {},
+              "host": [
+                "{{PatentesJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "domain",
+                  "value": "AA048TN",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
