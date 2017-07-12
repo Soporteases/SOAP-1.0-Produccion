@@ -3681,6 +3681,65 @@
           "response": []
         },
         {
+          "_postman_id": "690c9d27-52af-ca5b-c7a0-f9f39eff73bc",
+          "name": "Patentes CO Sin motor y serial",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"domain\"] = jsonData.nVehicle.domain == \"AA004FG\";",
+                  "tests[\"vehicleBrand\"] = jsonData.nVehicle.vehicleBrand == \"TOYOTA\";",
+                  "tests[\"model\"] = jsonData.nVehicle.model == \"ETIOS X 1.5 M/T\";",
+                  "tests[\"motor\"] = jsonData.nVehicle.motor == \"\";",
+                  "tests[\"chassis\"] = jsonData.nVehicle.chassis == \"\";",
+                  "tests[\"fabricationPlace\"] = jsonData.nVehicle.fabricationPlace == \"\";",
+                  "tests[\"year\"] = jsonData.nVehicle.year == \"2016\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{PatentesJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&domain=AA004FG",
+              "auth": {},
+              "host": [
+                "{{PatentesJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "domain",
+                  "value": "AA004FG",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
           "_postman_id": "babdb12d-f077-1825-1abc-7062ca429e80",
           "name": "Patentes SD Estandar",
           "event": [
