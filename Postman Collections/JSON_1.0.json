@@ -3817,13 +3817,13 @@
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"status\"] = jsonData.status === \"VA\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"30676235309\";",
-                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"ASES CONSULTING S.A.          \";",
+                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"30707171282\";",
+                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"ODFJELL ARGENTINA S.A.        \";",
                   "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
                   "tests[\"aernings\"] = jsonData.nCuit.aernings == \"AC\";",
                   "tests[\"iva\"] = jsonData.nCuit.iva == \"AC\";",
                   "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"NI\";",
-                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"30676235309\";",
+                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"30707171282\";",
                   "tests[\"employer\"] = jsonData.nCuit.employer == \"S00\";",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
@@ -3834,7 +3834,7 @@
           ],
           "request": {
             "url": {
-              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30676235309",
+              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30707171282",
               "auth": {},
               "host": [
                 "{{TributariaJSON}}"
@@ -3851,7 +3851,7 @@
                 },
                 {
                   "key": "cuit",
-                  "value": "30676235309",
+                  "value": "30707171282",
                   "equals": true,
                   "description": ""
                 }
