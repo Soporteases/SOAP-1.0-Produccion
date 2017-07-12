@@ -1582,10 +1582,8 @@
                 "exec": [
                   "tests[\"Telefono OK1-status\"] = responseBody.has(\"<status>SD</status>\");",
                   "tests[\"Telefono OK1-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Telefono OK1-prefix\"] = responseBody.has(\"<prefix></prefix>\");",
                   "tests[\"Telefono OK1-ddi\"] = responseBody.has(\"<ddi></ddi>\");",
                   "tests[\"Telefono OK1-ddn\"] = responseBody.has(\"<ddn></ddn>\");",
-                  "tests[\"Telefono OK1-cellPhonePrefix\"] = responseBody.has(\"<cellPhonePrefix></cellPhonePrefix>\");",
                   "tests[\"Telefono OK1-characteristic\"] = responseBody.has(\"<characteristic></characteristic>\");",
                   "tests[\"Telefono OK1-phoneNumber\"] = responseBody.has(\"<phoneNumber>123</phoneNumber>\");",
                   "tests[\"Telefono OK1-postalCode\"] = responseBody.has(\"<postalCode>0</postalCode>\");",
