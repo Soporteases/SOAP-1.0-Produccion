@@ -8,6 +8,482 @@
   },
   "item": [
     {
+      "_postman_id": "99c212d0-fb44-a2e9-1947-0a698a66b154",
+      "name": "Condicion Tributaria",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "070c9a96-7886-423d-8c99-855cac47b718",
+          "name": "CondTributaria VA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"VA\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"30707171282\";",
+                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"ODFJELL ARGENTINA S.A.        \";",
+                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
+                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"AC\";",
+                  "tests[\"iva\"] = jsonData.nCuit.iva == \"AC\";",
+                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"NI\";",
+                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"30707171282\";",
+                  "tests[\"employer\"] = jsonData.nCuit.employer == \"S00\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30707171282",
+              "auth": {},
+              "host": [
+                "{{TributariaJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "cuit",
+                  "value": "30707171282",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4b931b60-445f-24f7-d3e7-c3cde780e7ae",
+          "name": "CondTributaria VA Monotributista",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"VA\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"27165525413\";",
+                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"SOSA MARTA INES               \";",
+                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
+                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"AC\";",
+                  "tests[\"iva\"] = jsonData.nCuit.iva == \"AC\";",
+                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"NI\";",
+                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"27165525413\";",
+                  "tests[\"employer\"] = jsonData.nCuit.employer == \"N00\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=27165525413",
+              "auth": {},
+              "host": [
+                "{{TributariaJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "cuit",
+                  "value": "27165525413",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8f910da1-c234-f5a5-6494-d3ebf10661c7",
+          "name": "CondTributaria NE Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"\";",
+                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"\";",
+                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
+                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"\";",
+                  "tests[\"iva\"] = jsonData.nCuit.iva == \"\";",
+                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"\";",
+                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"\";",
+                  "tests[\"employer\"] = jsonData.nCuit.employer == \"\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30709013196",
+              "auth": {},
+              "host": [
+                "{{TributariaJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "cuit",
+                  "value": "30709013196",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "500725de-fe17-9fbb-eaf6-101407cbfc16",
+      "name": "Datos Filiatorios",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "3c976972-81a7-21e4-413d-c73764de521a",
+          "name": "Filiatorio VA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"OK\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"96\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"AP\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"93288885\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"VA\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"86\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"AP\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"20932888859\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"AP\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"A\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"AP\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"LAZARO LUIS\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"AP\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NI\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"M\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"AP\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"15/04/1925\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=93-28888-5&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "bbf88e3b-28de-9387-5b2c-4bfcf221847a",
+          "name": "Filiatorio VA Con nombre",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"OK\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"89\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"AP\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"2783891\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"VA\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"86\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"AP\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"27027838915\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"AP\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"A\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"AP\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"CORDOBA\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"AP\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"JUANA RAMONA\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"CO\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"F\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"AP\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"12/07/1936\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=2783891&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=CORDOBA JUANA RAMONA",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ccf82dce-c988-b4ee-74d0-a2a61b0f527c",
+          "name": "Filiatorio DU Con nombre",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"DU\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NV\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NV\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"NV\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"NV\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"NV\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NV\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NV\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NV\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NV\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=4111807&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=SANTOS OSCAR NERI",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "94e281bb-57f1-44bd-a18a-22783289b779",
+          "name": "Filiatorio DU Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"DU\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NV\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NV\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"NV\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"NV\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"NV\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NV\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NV\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NV\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NV\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=4356144&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b5c18615-25af-90a1-4df3-d6d5d7e2b0e9",
+          "name": "Filiatorio NE Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NE\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NO\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"92808826\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NO\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"NO\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"NO\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"NO\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NO\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NO\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NO\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NO\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?documentNumber=92808826&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a87fd0e0-b550-de02-e0c7-14a099ae351b",
+          "name": "Filiatorio VA Empresa",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"OK\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
+                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NA\";",
+                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"0\";",
+                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NA\";",
+                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"80\";",
+                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"AP\";",
+                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"30676235309\";",
+                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"VA\";",
+                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"C\";",
+                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"AP\";",
+                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
+                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NI\";",
+                  "tests[\"name\"] = jsonData.nFiliation.name == \"ASES CONSULTING S.A.\";",
+                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"AP\";",
+                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
+                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NA\";",
+                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"01/10/1993\";",
+                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{FiliatoriosJSON}}?tributaryNumber=30676235309&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "fda7e7ca-6c88-891c-05be-6c6c8bfae8f0",
       "name": "Domicilios",
       "description": "",
@@ -1758,253 +2234,10 @@
             "description": ""
           },
           "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "915d33eb-891d-5c26-4f3e-b6c1ca81f3f9",
-      "name": "Nombres",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "28a80a5b-3e36-0368-08d4-e84cd1660986",
-          "name": "Nombres SD",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"SD\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"name\"] = jsonData.nName.name == \"\";",
-                  "tests[\"lastName\"] = jsonData.nName.lastName == \"\";",
-                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
-                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
-                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{nombresJSON}}?name=&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
         },
         {
-          "_postman_id": "3ca71dff-464f-b36d-fdea-f64a7fca56a0",
-          "name": "Nombres CO",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"name\"] = jsonData.nName.name == \"ELVIS ANTONIO\";",
-                  "tests[\"lastName\"] = jsonData.nName.lastName == \"GONCALVES\";",
-                  "tests[\"personType\"] = jsonData.nName.personType == \"PF\";",
-                  "tests[\"gender\"] = jsonData.nName.gender == \"M\";",
-                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{nombresJSON}}?name=Elvis Antonio Goncalves&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "a187e7f7-3dd7-6a0b-58c5-a30a57671398",
-          "name": "Nombres NP",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"NP\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"name\"] = jsonData.nName.name == \"\";",
-                  "tests[\"lastName\"] = jsonData.nName.lastName == \"ROSA MARIA ROSA MARIA\";",
-                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
-                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
-                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{nombresJSON}}?name=ROSA MARIA ROSA MARIA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "f562f8ef-c180-6075-c5a6-2881ecdf53ef",
-      "name": "Telefonos",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "29e6ecf5-1115-8fc0-c8db-6ee22f4de5e5",
-          "name": "Telefono celular CO",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
-                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
-                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
-                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
-                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
-                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"011\";",
-                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"6175\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"5152\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
-                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-                  "tests[\"directory\"] = responseBody.has(\"directory\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{phoneJSON}}?phoneNumber=1161755152&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "5050d4a7-6ef5-3e23-16da-f988b1ba1ef0",
-          "name": "Telefono Celolar no llame CO",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
-                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
-                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
-                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
-                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
-                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"011\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"8493\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
-                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-                  "",
-                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-                  "tests[\"directory\"] = responseBody.has(\"directory\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{phoneJSON}}?phoneNumber=1169338493&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "6d9d42c4-6d1f-c1b7-0de8-90eab0384be3",
-          "name": "Telefono fijo CO",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
-                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
-                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
-                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
-                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
-                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"011\";",
-                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"4923\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"3521\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ok\";",
-                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-                  "",
-                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-                  "tests[\"directory\"] = responseBody.has(\"directory\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{phoneJSON}}?phoneNumber=1149233521&level1=&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "a2953173-cc12-f61a-4631-5e466623efdf",
-          "name": "Telefono NE",
+          "_postman_id": "dcb0b93f-829a-2e9c-0782-70bdb2bce4e7",
+          "name": "AR-Domicilios DIRECTV Barrio",
           "event": [
             {
               "listen": "test",
@@ -2013,246 +2246,91 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"status\"] = jsonData.status === \"NE\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
-                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
-                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
-                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
-                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
-                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
-                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1105847852\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
-                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"AI\";",
+                  "tests[\"geoType\"] = jsonData.nAddress.geoType == \"3\";",
+                  "tests[\"level1\"] = jsonData.nAddress.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nAddress.level2 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level3\"] = jsonData.nAddress.level3 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level4\"] = jsonData.nAddress.level4 == \"CIUDAD AUTONOMA BUENOS AIRES\";",
+                  "tests[\"level5\"] = jsonData.nAddress.level5 == \"VILLA URQUIZA\";",
+                  "tests[\"streetType\"] = jsonData.nAddress.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nAddress.street == \"PEDRAZA 10000\";",
+                  "tests[\"houseNumber\"] = jsonData.nAddress.houseNumber == \"\";",
+                  "tests[\"floor\"] = jsonData.nAddress.floor == \"\";",
+                  "tests[\"unit\"] = jsonData.nAddress.unit == \"\";",
+                  "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.571850\";",
+                  "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.504890\";",
+                  "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1431\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1501\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"6400\";",
+                  "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nAddress.betweenStreet1 == \"AVENIDA DE LOS CONSTITUYENTES\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nAddress.betweenStreet2 == \"PASAJE DIEGO BARAGAÑA ALVAREZ\";",
+                  "tests[\"corner\"] = jsonData.nAddress.corner == \"\";",
+                  "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
+                  "tests[\"place\"] = jsonData.nAddress.place == \"\";",
+                  "tests[\"placeReference\"] = jsonData.nAddress.placeReference == \"\";",
+                  "tests[\"numberAlternativeAddresses\"] = jsonData.nAddress.numberAlternativeAddresses == \"0\";",
                   "",
-                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"longitudLocalidad\"] = responseBody.has(\"longitudLocalidad\");",
+                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
+                  "tests[\"NISE\"] = responseBody.has(\"NISE\");",
+                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
+                  "tests[\"cpa\"] = responseBody.has(\"cpa\");",
+                  "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
+                  ""
                 ]
               }
             }
           ],
           "request": {
             "url": {
-              "raw": "{{phoneJSON}}?phoneNumber=1105847852&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "raw": "{{addresJSON}}?level1=AR&street=boca raton&level4=Pilar&clientAccessCode=7baa28b305e676e2813e3d5b81b802ac&postalCode=1629&level2=Buenos Aires",
               "auth": {},
               "host": [
-                "{{phoneJSON}}"
+                "{{addresJSON}}"
               ],
               "path": [
                 ""
               ],
               "query": [
                 {
-                  "key": "phoneNumber",
-                  "value": "1105847852",
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "boca raton",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level4",
+                  "value": "Pilar",
                   "equals": true,
                   "description": ""
                 },
                 {
                   "key": "clientAccessCode",
-                  "value": "aea243aba41084aa098b3a70eeb63ddf",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c153458e-cf14-8590-76db-7854da2a940f",
-          "name": "Telefono SD",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"SD\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
-                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
-                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
-                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
-                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
-                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
-                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"123\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
-                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-                  "",
-                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": {
-              "raw": "{{phoneJSON}}?phoneNumber=123&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-              "auth": {},
-              "host": [
-                "{{phoneJSON}}"
-              ],
-              "path": [
-                ""
-              ],
-              "query": [
-                {
-                  "key": "phoneNumber",
-                  "value": "123",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "clientAccessCode",
-                  "value": "aea243aba41084aa098b3a70eeb63ddf",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f06ebbfe-5b85-6073-4240-a4aa15f82d44",
-          "name": "Telefono fijo no llame CO",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
-                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
-                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
-                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
-                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
-                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
-                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
-                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"011\";",
-                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"4442\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"0390\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ok\";",
-                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-                  "",
-                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-                  "tests[\"directory\"] = responseBody.has(\"directory\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{phoneJSON}}?phoneNumber=01144420390&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "edb877b8-806e-e51a-9d04-033c752ebaba",
-          "name": "Telefono TN",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"CO\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
-                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
-                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
-                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
-                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
-                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"5000\";",
-                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"54\";",
-                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"0351\";",
-                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"309\";",
-                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1850\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
-                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
-                  "",
-                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
-                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
-                  "tests[\"directory\"] = responseBody.has(\"directory\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": {
-              "raw": "{{phoneJSON}}?phoneNumber=153091850&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=5000&ddn=0351&ddi=54",
-              "auth": {},
-              "host": [
-                "{{phoneJSON}}"
-              ],
-              "path": [
-                ""
-              ],
-              "query": [
-                {
-                  "key": "phoneNumber",
-                  "value": "153091850",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "clientAccessCode",
-                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "value": "7baa28b305e676e2813e3d5b81b802ac",
                   "equals": true,
                   "description": ""
                 },
                 {
                   "key": "postalCode",
-                  "value": "5000",
+                  "value": "1629",
                   "equals": true,
                   "description": ""
                 },
                 {
-                  "key": "ddn",
-                  "value": "0351",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "ddi",
-                  "value": "54",
+                  "key": "level2",
+                  "value": "Buenos Aires",
                   "equals": true,
                   "description": ""
                 }
@@ -2269,13 +2347,13 @@
       ]
     },
     {
-      "_postman_id": "500725de-fe17-9fbb-eaf6-101407cbfc16",
-      "name": "Datos Filiatorios",
+      "_postman_id": "e4ba6c51-71d3-857b-fdb1-ea5ee1b4a331",
+      "name": "Email",
       "description": "",
       "item": [
         {
-          "_postman_id": "3c976972-81a7-21e4-413d-c73764de521a",
-          "name": "Filiatorio VA",
+          "_postman_id": "5f2c6432-1cb8-60f8-dbaf-cf6484015e00",
+          "name": "Email CO",
           "event": [
             {
               "listen": "test",
@@ -2283,271 +2361,48 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"OK\";",
+                  "tests[\"status\"] = jsonData.status === \"VA\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"96\";",
-                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"AP\";",
-                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"93288885\";",
-                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"VA\";",
-                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"86\";",
-                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"AP\";",
-                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"20932888859\";",
-                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"AP\";",
-                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"A\";",
-                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"AP\";",
-                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"LAZARO LUIS\";",
-                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"AP\";",
-                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
-                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NI\";",
-                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"M\";",
-                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"AP\";",
-                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"15/04/1925\";",
-                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
+                  "tests[\"email\"] = jsonData.nEmail.email == \"egoncalves@asesconsulting.com\";",
+                  "tests[\"type\"] = jsonData.nEmail.type == \"ND\";",
+                  "",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
-                  ""
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
             }
           ],
           "request": {
-            "url": "{{FiliatoriosJSON}}?documentNumber=93-28888-5&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "bbf88e3b-28de-9387-5b2c-4bfcf221847a",
-          "name": "Filiatorio VA Con nombre",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"OK\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"89\";",
-                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"AP\";",
-                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"2783891\";",
-                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"VA\";",
-                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"86\";",
-                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"AP\";",
-                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"27027838915\";",
-                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"AP\";",
-                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"A\";",
-                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"AP\";",
-                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"CORDOBA\";",
-                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"AP\";",
-                  "tests[\"name\"] = jsonData.nFiliation.name == \"JUANA RAMONA\";",
-                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"CO\";",
-                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"F\";",
-                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"AP\";",
-                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"12/07/1936\";",
-                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{FiliatoriosJSON}}?documentNumber=2783891&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=CORDOBA JUANA RAMONA",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ccf82dce-c988-b4ee-74d0-a2a61b0f527c",
-          "name": "Filiatorio DU Con nombre",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"DU\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
-                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NV\";",
-                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"\";",
-                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NV\";",
-                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"\";",
-                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"NV\";",
-                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"\";",
-                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"NV\";",
-                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"\";",
-                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"NV\";",
-                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
-                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NV\";",
-                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
-                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NV\";",
-                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
-                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NV\";",
-                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
-                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NV\";",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{FiliatoriosJSON}}?documentNumber=4111807&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=SANTOS OSCAR NERI",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "94e281bb-57f1-44bd-a18a-22783289b779",
-          "name": "Filiatorio DU Estandar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"DU\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
-                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NV\";",
-                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"\";",
-                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NV\";",
-                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"\";",
-                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"NV\";",
-                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"\";",
-                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"NV\";",
-                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"\";",
-                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"NV\";",
-                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
-                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NV\";",
-                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
-                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NV\";",
-                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
-                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NV\";",
-                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
-                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NV\";",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{FiliatoriosJSON}}?documentNumber=4356144&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "b5c18615-25af-90a1-4df3-d6d5d7e2b0e9",
-          "name": "Filiatorio NE Estandar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"NE\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
-                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NO\";",
-                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"92808826\";",
-                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NO\";",
-                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"\";",
-                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"NO\";",
-                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"\";",
-                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"NO\";",
-                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"\";",
-                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"NO\";",
-                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
-                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NO\";",
-                  "tests[\"name\"] = jsonData.nFiliation.name == \"\";",
-                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"NO\";",
-                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
-                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NO\";",
-                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
-                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NO\";",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{FiliatoriosJSON}}?documentNumber=92808826&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
-            "method": "GET",
-            "header": [],
-            "body": {},
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "a87fd0e0-b550-de02-e0c7-14a099ae351b",
-          "name": "Filiatorio VA Empresa",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"OK\";",
-                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"documentType\"] = jsonData.nFiliation.documentType == \"\";",
-                  "tests[\"documentTypeFlg\"] = jsonData.nFiliation.documentTypeFlg == \"NA\";",
-                  "tests[\"documentNumber\"] = jsonData.nFiliation.documentNumber == \"0\";",
-                  "tests[\"documentNumberFlg\"] = jsonData.nFiliation.documentNumberFlg == \"NA\";",
-                  "tests[\"tributaryType\"] = jsonData.nFiliation.tributaryType == \"80\";",
-                  "tests[\"tributaryTypeFlg\"] = jsonData.nFiliation.tributaryTypeFlg == \"AP\";",
-                  "tests[\"tributaryNumber\"] = jsonData.nFiliation.tributaryNumber == \"30676235309\";",
-                  "tests[\"tributaryNumberFlg\"] = jsonData.nFiliation.tributaryNumberFlg == \"VA\";",
-                  "tests[\"contributorType\"] = jsonData.nFiliation.contributorType == \"C\";",
-                  "tests[\"contributorTypeFlg\"] = jsonData.nFiliation.contributorTypeFlg == \"AP\";",
-                  "tests[\"lastName\"] = jsonData.nFiliation.lastName == \"\";",
-                  "tests[\"lastNameFlg\"] = jsonData.nFiliation.lastNameFlg == \"NI\";",
-                  "tests[\"name\"] = jsonData.nFiliation.name == \"ASES CONSULTING S.A.\";",
-                  "tests[\"nameFlg\"] = jsonData.nFiliation.nameFlg == \"AP\";",
-                  "tests[\"gender\"] = jsonData.nFiliation.gender == \"\";",
-                  "tests[\"genderFlg\"] = jsonData.nFiliation.genderFlg == \"NA\";",
-                  "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"01/10/1993\";",
-                  "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; ",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{FiliatoriosJSON}}?tributaryNumber=30676235309&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "url": {
+              "raw": "{{EmailJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&email=egoncalves@asesconsulting.com",
+              "auth": {
+                "user": "{{EmailJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&email=egoncalves",
+                "password": ""
+              },
+              "host": [
+                "asesconsulting",
+                "com"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "email",
+                  "value": "egoncalves@asesconsulting.com",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
@@ -3433,13 +3288,13 @@
       ]
     },
     {
-      "_postman_id": "e4ba6c51-71d3-857b-fdb1-ea5ee1b4a331",
-      "name": "Email",
+      "_postman_id": "915d33eb-891d-5c26-4f3e-b6c1ca81f3f9",
+      "name": "Nombres",
       "description": "",
       "item": [
         {
-          "_postman_id": "5f2c6432-1cb8-60f8-dbaf-cf6484015e00",
-          "name": "Email CO",
+          "_postman_id": "28a80a5b-3e36-0368-08d4-e84cd1660986",
+          "name": "Nombres SD",
           "event": [
             {
               "listen": "test",
@@ -3447,11 +3302,13 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"VA\";",
+                  "tests[\"status\"] = jsonData.status === \"SD\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"email\"] = jsonData.nEmail.email == \"egoncalves@asesconsulting.com\";",
-                  "tests[\"type\"] = jsonData.nEmail.type == \"ND\";",
-                  "",
+                  "tests[\"name\"] = jsonData.nName.name == \"\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
@@ -3460,35 +3317,73 @@
             }
           ],
           "request": {
-            "url": {
-              "raw": "{{EmailJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&email=egoncalves@asesconsulting.com",
-              "auth": {
-                "user": "{{EmailJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&email=egoncalves",
-                "password": ""
-              },
-              "host": [
-                "asesconsulting",
-                "com"
-              ],
-              "path": [
-                ""
-              ],
-              "query": [
-                {
-                  "key": "clientAccessCode",
-                  "value": "aea243aba41084aa098b3a70eeb63ddf",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "email",
-                  "value": "egoncalves@asesconsulting.com",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
+            "url": "{{nombresJSON}}?name=&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3ca71dff-464f-b36d-fdea-f64a7fca56a0",
+          "name": "Nombres CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"ELVIS ANTONIO\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"GONCALVES\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"PF\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"M\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{nombresJSON}}?name=Elvis Antonio Goncalves&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a187e7f7-3dd7-6a0b-58c5-a30a57671398",
+          "name": "Nombres NP",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"NP\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"name\"] = jsonData.nName.name == \"\";",
+                  "tests[\"lastName\"] = jsonData.nName.lastName == \"ROSA MARIA ROSA MARIA\";",
+                  "tests[\"personType\"] = jsonData.nName.personType == \"\";",
+                  "tests[\"gender\"] = jsonData.nName.gender == \"\";",
+                  "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{nombresJSON}}?name=ROSA MARIA ROSA MARIA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
             "method": "GET",
             "header": [],
             "body": {},
@@ -3801,13 +3696,13 @@
       ]
     },
     {
-      "_postman_id": "99c212d0-fb44-a2e9-1947-0a698a66b154",
-      "name": "Condicion Tributaria",
+      "_postman_id": "f562f8ef-c180-6075-c5a6-2881ecdf53ef",
+      "name": "Telefonos",
       "description": "",
       "item": [
         {
-          "_postman_id": "070c9a96-7886-423d-8c99-855cac47b718",
-          "name": "CondTributaria VA",
+          "_postman_id": "29e6ecf5-1115-8fc0-c8db-6ee22f4de5e5",
+          "name": "Telefono celular CO",
           "event": [
             {
               "listen": "test",
@@ -3815,16 +3710,23 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"VA\";",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"30707171282\";",
-                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"ODFJELL ARGENTINA S.A.        \";",
-                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
-                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"AC\";",
-                  "tests[\"iva\"] = jsonData.nCuit.iva == \"AC\";",
-                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"NI\";",
-                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"30707171282\";",
-                  "tests[\"employer\"] = jsonData.nCuit.employer == \"S00\";",
+                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
+                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
+                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
+                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"011\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"6175\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"5152\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
@@ -3833,31 +3735,7 @@
             }
           ],
           "request": {
-            "url": {
-              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30707171282",
-              "auth": {},
-              "host": [
-                "{{TributariaJSON}}"
-              ],
-              "path": [
-                ""
-              ],
-              "query": [
-                {
-                  "key": "clientAccessCode",
-                  "value": "aea243aba41084aa098b3a70eeb63ddf",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "cuit",
-                  "value": "30707171282",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
+            "url": "{{phoneJSON}}?phoneNumber=1161755152&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
             "method": "GET",
             "header": [],
             "body": {},
@@ -3866,8 +3744,8 @@
           "response": []
         },
         {
-          "_postman_id": "4b931b60-445f-24f7-d3e7-c3cde780e7ae",
-          "name": "CondTributaria VA Monotributista",
+          "_postman_id": "5050d4a7-6ef5-3e23-16da-f988b1ba1ef0",
+          "name": "Telefono Celolar no llame CO",
           "event": [
             {
               "listen": "test",
@@ -3875,16 +3753,23 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"VA\";",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"27165525413\";",
-                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"SOSA MARTA INES               \";",
-                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
-                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"AC\";",
-                  "tests[\"iva\"] = jsonData.nCuit.iva == \"AC\";",
-                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"NI\";",
-                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"27165525413\";",
-                  "tests[\"employer\"] = jsonData.nCuit.employer == \"N00\";",
+                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
+                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
+                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
+                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"011\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"8493\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
@@ -3893,31 +3778,7 @@
             }
           ],
           "request": {
-            "url": {
-              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=27165525413",
-              "auth": {},
-              "host": [
-                "{{TributariaJSON}}"
-              ],
-              "path": [
-                ""
-              ],
-              "query": [
-                {
-                  "key": "clientAccessCode",
-                  "value": "aea243aba41084aa098b3a70eeb63ddf",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "cuit",
-                  "value": "27165525413",
-                  "equals": true,
-                  "description": ""
-                }
-              ],
-              "variable": []
-            },
+            "url": "{{phoneJSON}}?phoneNumber=1169338493&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
             "method": "GET",
             "header": [],
             "body": {},
@@ -3926,8 +3787,52 @@
           "response": []
         },
         {
-          "_postman_id": "8f910da1-c234-f5a5-6494-d3ebf10661c7",
-          "name": "CondTributaria NE Estandar",
+          "_postman_id": "6d9d42c4-6d1f-c1b7-0de8-90eab0384be3",
+          "name": "Telefono fijo CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
+                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
+                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
+                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"011\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"4923\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"3521\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ok\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{phoneJSON}}?phoneNumber=1149233521&level1=&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a2953173-cc12-f61a-4631-5e466623efdf",
+          "name": "Telefono NE",
           "event": [
             {
               "listen": "test",
@@ -3937,14 +3842,21 @@
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"status\"] = jsonData.status === \"NE\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"\";",
-                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"\";",
-                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
-                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"\";",
-                  "tests[\"iva\"] = jsonData.nCuit.iva == \"\";",
-                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"\";",
-                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"\";",
-                  "tests[\"employer\"] = jsonData.nCuit.employer == \"\";",
+                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
+                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
+                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
+                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1105847852\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
@@ -3954,15 +3866,200 @@
           ],
           "request": {
             "url": {
-              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30709013196",
+              "raw": "{{phoneJSON}}?phoneNumber=1105847852&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
               "auth": {},
               "host": [
-                "{{TributariaJSON}}"
+                "{{phoneJSON}}"
               ],
               "path": [
                 ""
               ],
               "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "1105847852",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c153458e-cf14-8590-76db-7854da2a940f",
+          "name": "Telefono SD",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"SD\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
+                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
+                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
+                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"123\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{phoneJSON}}?phoneNumber=123&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{phoneJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "123",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f06ebbfe-5b85-6073-4240-a4aa15f82d44",
+          "name": "Telefono fijo no llame CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
+                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
+                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
+                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"0\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"011\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"4442\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"0390\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ok\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{phoneJSON}}?phoneNumber=01144420390&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "edb877b8-806e-e51a-9d04-033c752ebaba",
+          "name": "Telefono TN",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"level1\"] = jsonData.nPhone.level1 == \"\";",
+                  "tests[\"level2\"] = jsonData.nPhone.level2 == \"\";",
+                  "tests[\"level3\"] = jsonData.nPhone.level3 == \"\";",
+                  "tests[\"level4\"] = jsonData.nPhone.level4 == \"\";",
+                  "tests[\"level5\"] = jsonData.nPhone.level5 == \"\";",
+                  "tests[\"postalCode\"] = jsonData.nPhone.postalCode == \"5000\";",
+                  "tests[\"ddi\"] = jsonData.nPhone.ddi == \"54\";",
+                  "tests[\"ddn\"] = jsonData.nPhone.ddn == \"0351\";",
+                  "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"309\";",
+                  "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1850\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
+                  "",
+                  "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
+                  "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
+                  "tests[\"directory\"] = responseBody.has(\"directory\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": {
+              "raw": "{{phoneJSON}}?phoneNumber=153091850&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&postalCode=5000&ddn=0351&ddi=54",
+              "auth": {},
+              "host": [
+                "{{phoneJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "153091850",
+                  "equals": true,
+                  "description": ""
+                },
                 {
                   "key": "clientAccessCode",
                   "value": "aea243aba41084aa098b3a70eeb63ddf",
@@ -3970,8 +4067,20 @@
                   "description": ""
                 },
                 {
-                  "key": "cuit",
-                  "value": "30709013196",
+                  "key": "postalCode",
+                  "value": "5000",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "ddn",
+                  "value": "0351",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "ddi",
+                  "value": "54",
                   "equals": true,
                   "description": ""
                 }
