@@ -8,6 +8,422 @@
   },
   "item": [
     {
+      "_postman_id": "f197dc97-8cd3-a0e0-557c-aba6a3e51360",
+      "name": "Condicion Tributaria",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "d6d0e78c-a47b-a1bd-f3eb-eddc6646450b",
+          "name": "CondTributaria VA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Condicion Tributaria OK-status\"] = responseBody.has(\"<status>VA</status>\");",
+                  "tests[\"Condicion Tributaria OK-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuit>30707171282</cuit>\");",
+                  "tests[\"Condicion Tributaria OK-denomination\"] = responseBody.has(\"<denomination>ODFJELL ARGENTINA S.A.        </denomination>\");",
+                  "tests[\"Condicion Tributaria OK-denominationFlg\"] = responseBody.has(\"<denominationFlg></denominationFlg>\");",
+                  "tests[\"Condicion Tributaria OK-aernings\"] = responseBody.has(\"<aernings>AC</aernings>\");",
+                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>AC</iva>\");",
+                  "tests[\"Condicion Tributaria OK-uniqueTribute\"] = responseBody.has(\"<uniqueTribute>NI</uniqueTribute>\");",
+                  "tests[\"Condicion Tributaria OK-uniqueTributeActivity\"] = responseBody.has(\"<uniqueTributeActivity>30707171282</uniqueTributeActivity>\");",
+                  "tests[\"Condicion Tributaria OK-employer\"] = responseBody.has(\"<employer>S00</employer>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Tributaria2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:taxStatusNormalize>\r\n         <!--Optional:-->\r\n         <condtribNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xCuit>\r\n               <!--Optional:-->\r\n               <cuit>30707171282</cuit>\r\n               <!--Optional:-->\r\n               <denomination> </denomination>\r\n            </xCuit>\r\n         </condtribNormalize>\r\n      </soap:taxStatusNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d70e37d4-31a1-a20a-cb09-4b05e4f1b4a0",
+          "name": "CondTributaria VA Monotributo",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Condicion Tributaria OK-status\"] = responseBody.has(\"<status>VA</status>\");",
+                  "tests[\"Condicion Tributaria OK-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuit>27165525413</cuit>\");",
+                  "tests[\"Condicion Tributaria OK-denomination\"] = responseBody.has(\"<denomination>SOSA MARTA INES               </denomination>\");",
+                  "tests[\"Condicion Tributaria OK-denominationFlg\"] = responseBody.has(\"<denominationFlg></denominationFlg>\");",
+                  "tests[\"Condicion Tributaria OK-aernings\"] = responseBody.has(\"<aernings>AC</aernings>\");",
+                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>AC</iva>\");",
+                  "tests[\"Condicion Tributaria OK-uniqueTribute\"] = responseBody.has(\"<uniqueTribute>NI</uniqueTribute>\");",
+                  "tests[\"Condicion Tributaria OK-uniqueTributeActivity\"] = responseBody.has(\"<uniqueTributeActivity>27165525413</uniqueTributeActivity>\");",
+                  "tests[\"Condicion Tributaria OK-employer\"] = responseBody.has(\"<employer>N00</employer>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Tributaria2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:taxStatusNormalize>\r\n         <!--Optional:-->\r\n         <condtribNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xCuit>\r\n               <!--Optional:-->\r\n               <cuit>27165525413</cuit>\r\n               <!--Optional:-->\r\n               <denomination> </denomination>\r\n            </xCuit>\r\n         </condtribNormalize>\r\n      </soap:taxStatusNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3b909494-3ddd-ae4e-0d09-7527234c1484",
+          "name": "CondTributaria NE Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Condicion Tributaria OK-status\"] = responseBody.has(\"<status>NE</status>\");",
+                  "tests[\"Condicion Tributaria OK-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuit></cuit>\");",
+                  "tests[\"Condicion Tributaria OK-denomination\"] = responseBody.has(\"<denomination></denomination>\");",
+                  "tests[\"Condicion Tributaria OK-denominationFlg\"] = responseBody.has(\"<denominationFlg></denominationFlg>\");",
+                  "tests[\"Condicion Tributaria OK-aernings\"] = responseBody.has(\"<aernings></aernings>\");",
+                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva></iva>\");",
+                  "tests[\"Condicion Tributaria OK-uniqueTribute\"] = responseBody.has(\"<uniqueTribute></uniqueTribute>\");",
+                  "tests[\"Condicion Tributaria OK-uniqueTributeActivity\"] = responseBody.has(\"<uniqueTributeActivity></uniqueTributeActivity>\");",
+                  "tests[\"Condicion Tributaria OK-employer\"] = responseBody.has(\"<employer></employer>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Tributaria2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:taxStatusNormalize>\r\n         <!--Optional:-->\r\n         <condtribNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xCuit>\r\n               <!--Optional:-->\r\n               <cuit>30709013196</cuit>\r\n               <!--Optional:-->\r\n               <denomination> </denomination>\r\n            </xCuit>\r\n         </condtribNormalize>\r\n      </soap:taxStatusNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "82a6adfc-b11c-fecc-7973-0933a945c8e9",
+      "name": "Datos Filiatorios",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "59572a89-8575-63f3-6d82-6e846954a724",
+          "name": "Filiatorio VA",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>OK</status>\");",
+                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType>96</documentType>\");",
+                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>AP</documentTypeFlg>\");",
+                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber>93288885</documentNumber>\");",
+                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>VA</documentNumberFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType>86</tributaryType>\");",
+                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>AP</tributaryTypeFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber>20932888859</tributaryNumber>\");",
+                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>AP</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType>A</contributorType>\");",
+                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>AP</contributorTypeFlg>\");",
+                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName>LAZARO LUIS</lastName>\");",
+                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>AP</lastNameFlg>\");",
+                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name></name>\");",
+                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>NI</nameFlg>\");",
+                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender>M</gender>\");",
+                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>AP</genderFlg>\");",
+                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate>15/04/1925</birthDate>\");",
+                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>AP</birthDateFlg>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>93-28888-5</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d41aa921-3ecb-3d85-c321-21d5a66647bc",
+          "name": "Filiatorio VA Con nombre",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>OK</status>\");",
+                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType>89</documentType>\");",
+                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>AP</documentTypeFlg>\");",
+                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber>2783891</documentNumber>\");",
+                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>VA</documentNumberFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType>86</tributaryType>\");",
+                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>AP</tributaryTypeFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber>27027838915</tributaryNumber>\");",
+                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>AP</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType>A</contributorType>\");",
+                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>AP</contributorTypeFlg>\");",
+                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName>CORDOBA</lastName>\");",
+                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>AP</lastNameFlg>\");",
+                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name>JUANA RAMONA</name>\");",
+                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>CO</nameFlg>\");",
+                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender>F</gender>\");",
+                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>AP</genderFlg>\");",
+                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate>12/07/1936</birthDate>\");",
+                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>AP</birthDateFlg>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>2783891</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name>CORDOBA JUANA RAMONA</name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ab1254b8-b37a-c588-5c18-3dd94870c82c",
+          "name": "Filiatorio DU Con nombre",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>DU</status>\");",
+                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
+                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NV</documentTypeFlg>\");",
+                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber></documentNumber>\");",
+                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NV</documentNumberFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
+                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NV</tributaryTypeFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber></tributaryNumber>\");",
+                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>NV</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType></contributorType>\");",
+                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>NV</contributorTypeFlg>\");",
+                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
+                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>NV</lastNameFlg>\");",
+                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name></name>\");",
+                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>NV</nameFlg>\");",
+                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender></gender>\");",
+                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>NV</genderFlg>\");",
+                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate></birthDate>\");",
+                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>NV</birthDateFlg>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>4111807</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name>SANTOS OSCAR NERI</name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "db4a9e39-0636-f45a-681b-97c6fe5402d1",
+          "name": "Filiatorio DU Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>DU</status>\");",
+                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
+                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NV</documentTypeFlg>\");",
+                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber></documentNumber>\");",
+                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NV</documentNumberFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
+                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NV</tributaryTypeFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber></tributaryNumber>\");",
+                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>NV</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType></contributorType>\");",
+                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>NV</contributorTypeFlg>\");",
+                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
+                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>NV</lastNameFlg>\");",
+                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name></name>\");",
+                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>NV</nameFlg>\");",
+                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender></gender>\");",
+                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>NV</genderFlg>\");",
+                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate></birthDate>\");",
+                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>NV</birthDateFlg>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>4356144</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7d85de84-e288-f9e6-1247-d17d90b2411b",
+          "name": "Filiatorio NE Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>NE</status>\");",
+                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
+                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NO</documentTypeFlg>\");",
+                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber>92808826</documentNumber>\");",
+                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NO</documentNumberFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
+                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NO</tributaryTypeFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber></tributaryNumber>\");",
+                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>NO</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType></contributorType>\");",
+                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>NO</contributorTypeFlg>\");",
+                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
+                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>NO</lastNameFlg>\");",
+                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name></name>\");",
+                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>NO</nameFlg>\");",
+                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender></gender>\");",
+                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>NO</genderFlg>\");",
+                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate></birthDate>\");",
+                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>NO</birthDateFlg>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>92808826</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ea7ecfd7-834b-242b-3597-7dbd1f904a78",
+          "name": "Filiatorio VA Empresa",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>OK</status>\");",
+                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
+                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NA</documentTypeFlg>\");",
+                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber>0</documentNumber>\");",
+                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NA</documentNumberFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType>80</tributaryType>\");",
+                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>AP</tributaryTypeFlg>\");",
+                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber>30676235309</tributaryNumber>\");",
+                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>VA</tributaryNumberFlg>\");",
+                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType>C</contributorType>\");",
+                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>AP</contributorTypeFlg>\");",
+                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
+                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>NI</lastNameFlg>\");",
+                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name>ASES CONSULTING S.A.</name>\");",
+                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>AP</nameFlg>\");",
+                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender></gender>\");",
+                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>NA</genderFlg>\");",
+                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate>01/10/1993</birthDate>\");",
+                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>AP</birthDateFlg>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Filiatorios2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber></documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber>30676235309</tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "a6c2ec7c-0c40-dbf3-e3ad-78d9b51c9348",
       "name": "Domicilios",
       "description": "",
@@ -1235,6 +1651,313 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "36d273b8-770e-4bee-484a-6f062634d907",
+          "name": "AR-Domicilios DIRECTV Barrio ",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Domicilio NE-status\"] = responseBody.has(\"<status>NE</status>\");",
+                  "tests[\"Domicilio NE-statusReason\"] = responseBody.has(\"<statusReason>AI</statusReason>\");",
+                  "tests[\"Domicilio NE-Status\"] = responseBody.has(\"<geoType>3</geoType>\");",
+                  "tests[\"Domicilio NE-level1\"] = responseBody.has(\"<level1></level1>\");",
+                  "tests[\"Domicilio NE-level2\"] = responseBody.has(\"<level2>CAPITAL FEDERAL</level2>\");",
+                  "tests[\"Domicilio NE-level3\"] = responseBody.has(\"<level3>CAPITAL FEDERAL</level3>\");",
+                  "tests[\"Domicilio NE-level4\"] = responseBody.has(\"<level4>CIUDAD AUTONOMA BUENOS AIRES</level4>\");",
+                  "tests[\"Domicilio NE-level5\"] = responseBody.has(\"<level5>VILLA URQUIZA</level5>\");",
+                  "tests[\"Domicilio NE-streetType\"] = responseBody.has(\"<streetType></streetType>\");",
+                  "tests[\"Domicilio NE-street\"] = responseBody.has(\"<street>PEDRAZA 10000</street>\");",
+                  "tests[\"Domicilio NE-houseNumber\"] = responseBody.has(\"<houseNumber></houseNumber>\");",
+                  "tests[\"Domicilio NE-floor\"] = responseBody.has(\"<floor></floor>\");",
+                  "tests[\"Domicilio NE-unit\"] = responseBody.has(\"<unit></unit>\");",
+                  "tests[\"Domicilio NE-latitude\"] = responseBody.has(\"<latitude>-34.571850</latitude>\");",
+                  "tests[\"Domicilio NE-longitude\"] = responseBody.has(\"<longitude>-58.504890</longitude>\");",
+                  "tests[\"Domicilio NE-postalCode\"] = responseBody.has(\"<postalCode>1431</postalCode>\");",
+                  "tests[\"Domicilio NE-additionalPostalCode\"] = responseBody.has(\"<additionalPostalCode></additionalPostalCode>\");",
+                  "tests[\"Domicilio NE-fromStreetNumber\"] = responseBody.has(\"<fromStreetNumber>1501</fromStreetNumber>\");",
+                  "tests[\"Domicilio NE-toStreetNumber\"] = responseBody.has(\"<toStreetNumber>6400</toStreetNumber>\");",
+                  "tests[\"Domicilio NE-additionalData\"] = responseBody.has(\"<additionalData></additionalData>\");",
+                  "tests[\"Domicilio NE-betweenStreet1\"] = responseBody.has(\"<betweenStreet1>AVENIDA DE LOS CONSTITUYENTES</betweenStreet1>\");",
+                  "tests[\"Domicilio NE-betweenStreet2\"] = responseBody.has(\"<betweenStreet2>PASAJE DIEGO BARAGAÑA ALVAREZ</betweenStreet2>\");",
+                  "tests[\"Domicilio NE-corner\"] = responseBody.has(\"<corner></corner>\");",
+                  "tests[\"Domicilio NE-placeType\"] = responseBody.has(\"<placeType></placeType>\");",
+                  "tests[\"Domicilio NE-placeReference\"] = responseBody.has(\"<placeReference></placeReference>\");",
+                  "tests[\"Domicilio NE-numberAlternativeAddresses\"] = responseBody.has(\"<numberAlternativeAddresses>0</numberAlternativeAddresses>\");",
+                  "tests[\"Domicilio NE-zonaRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>N</value>\");",
+                  "tests[\"Domicilio NE-MatchLevel\"] = responseBody.has(\"<name>MatchLevel</name><value></value>\");",
+                  "tests[\"Domicilio NE-NISE\"] = responseBody.has(\"<name>NISE</name><value>0</value>\");",
+                  "tests[\"Domicilio NE-longitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-58.445288</value>\");",
+                  "tests[\"Domicilio NE-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
+                  "tests[\"Domicilio NE-cpa\"] = responseBody.has(\"<name>cpa</name><value></value>\");",
+                  "tests[\"Domicilio NE-PORTAL\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
+                  "tests[\"Domicilio NE-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-34.607161</value>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Address2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.addressonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:addressNormalize2>\r\n         <!--Optional:-->\r\n         <addressNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>7baa28b305e676e2813e3d5b81b802ac</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter></customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xAddress>\r\n               <!--Optional:-->\r\n               <level1></level1>\r\n               <!--Optional:-->\r\n               <level2>Buenos aires</level2>\r\n               <!--Optional:-->\r\n               <level3></level3>\r\n               <!--Optional:-->\r\n               <level4>Pilar</level4>\r\n               <!--Optional:-->\r\n               <level5></level5>\r\n               <!--Optional:-->\r\n               <street>boca raton</street>\r\n               <!--Optional:-->\r\n               <houseNumber> </houseNumber>\r\n               <!--Optional:-->\r\n               <floor></floor>\r\n               <!--Optional:-->\r\n               <unit></unit>\r\n               <!--Optional:-->\r\n               <postalCode>1629</postalCode>\r\n               <!--Optional:-->\r\n               <additionalData></additionalData>\r\n               <!--Optional:-->\r\n               <betweenStreet1></betweenStreet1>\r\n               <!--Optional:-->\r\n               <betweenStreet2></betweenStreet2>\r\n            </xAddress>\r\n         </addressNormalize>\r\n      </soap:addressNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "768c4923-6196-500d-e6c2-fe073b1a8b0f",
+      "name": "Email",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "58bb142f-abe7-a110-32e5-4e3f3d61014d",
+          "name": "Email CO",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Nombres CO-status\"] = responseBody.has(\"<status>VA</status>\");",
+                  "tests[\"Nombres CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Nombres CO-email\"] = responseBody.has(\"<email>egoncalves@asesconsulting.com</email>\");",
+                  "tests[\"Nombres CO-type\"] = responseBody.has(\"<type>ND</type>\");",
+                  "",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Email2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.emailonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:emailNormalize>\r\n         <!--Optional:-->\r\n         <emailNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xEmail>\r\n               <!--Optional:-->\r\n               <email>egoncalves@asesconsulting.com</email>\r\n            </xEmail>\r\n         </emailNormalize>\r\n      </soap:emailNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "f352065d-500c-5944-a28d-422fd0fbebad",
+      "name": "Enriquecimiento",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "850f28c4-7342-6719-857e-b8b6609b2e7f",
+          "name": "Enriquecimiento con CUIL",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Enriquecimiento CO-status\"] = responseBody.has(\"<status>EN</status>\");",
+                  "tests[\"Enriquecimiento CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Enriquecimiento CO-PERSONAS\"] = responseBody.has(\"<service>PERSONAS</service>\");",
+                  "tests[\"Enriquecimiento CO-TipoCUIT\"] = responseBody.has(\"<name>TipoCUIT</name><label></label><value>CUIT PERSONA FISICA</value><index>0</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-CUIT\"] = responseBody.has(\"<name>CUIT</name><label></label><value>27104774755</value><index>1</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-DNI\"] = responseBody.has(\"<name>DNI</name><label></label><value>10477475</value><index>2</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NombreCompleto\"] = responseBody.has(\"<name>NombreCompleto</name><label></label><value>VILLAR NELIDA MIRTA</value><index>3</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Genero\"] = responseBody.has(\"<name>Genero</name><label></label><value>F</value><index>4</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-FechaNacimiento\"] = responseBody.has(\"<name>FechaNacimiento</name><label></label><value>29/08/1952</value><index>5</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NivelSocioEconomico\"] = responseBody.has(\"<name>NivelSocioEconomico</name><label></label><value>C2</value><index>6</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-DIRECCIONES\"] = responseBody.has(\"<service>DIRECCIONES</service>\");",
+                  "tests[\"Enriquecimiento CO-Calle\"] = responseBody.has(\"<name>Calle</name><label></label><value>PJE JUAN HIPOLITO VIEYTES</value><index>13</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero\"] = responseBody.has(\"<name>Numero</name><label></label><value>986</value><index>14</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Piso\"] = responseBody.has(\"<name>Piso</name><label></label><value></value><index>15</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Depto\"] = responseBody.has(\"<name>Depto</name><label></label><value></value><index>16</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Localidad\"] = responseBody.has(\"<name>Localidad</name><label></label><value>SANTA ROSA</value><index>17</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Provincia\"] = responseBody.has(\"<name>Provincia</name><label></label><value>LA PAMPA</value><index>18</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-CodigoPostal\"] = responseBody.has(\"<name>CodigoPostal</name><label></label><value>6300</value><index>19</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Latitud\"] = responseBody.has(\"<name>Latitud</name><label></label><value>-64.297049</value><index>20</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Longitud\"] = responseBody.has(\"<name>Longitud</name><label></label><value>-36.627357</value><index>21</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-TIPO\"] = responseBody.has(\"<name>TIPO</name><label></label><value>F</value><index>22</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Calle/2\"] = responseBody.has(\"<name>Calle</name><label></label><value>ECUADOR</value><index>23</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero/2\"] = responseBody.has(\"<name>Numero</name><label></label><value>923</value><index>24</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Piso/2\"] = responseBody.has(\"<name>Piso</name><label></label><value></value><index>25</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Depto/2\"] = responseBody.has(\"<name>Depto</name><label></label><value></value><index>26</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Localidad/2\"] = responseBody.has(\"<name>Localidad</name><label></label><value>CIUDAD AUTONOMA BUENOS AIRES</value><index>27</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Provincia/2\"] = responseBody.has(\"<name>Provincia</name><label></label><value>CAPITAL FEDERAL</value><index>28</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-CodigoPostal/2\"] = responseBody.has(\"<name>CodigoPostal</name><label></label><value>1214</value><index>29</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Latitud/2\"] = responseBody.has(\"<name>Latitud</name><label></label><value>-58.405948</value><index>30</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Longitud/2\"] = responseBody.has(\"<name>Longitud</name><label></label><value>-34.599248</value><index>31</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-TIPO/2\"] = responseBody.has(\"<name>TIPO</name><label></label><value></value><index>32</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-TELEFONOS\"] = responseBody.has(\"<service>TELEFONOS</service>\");",
+                  "tests[\"Enriquecimiento CO-Prefijo/1\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>011</value><index>33</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero1\"] = responseBody.has(\"<name>Numero</name><label></label><value>49919001</value><index>34</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/1\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>35</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/1\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>36</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/2\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>37</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero2\"] = responseBody.has(\"<name>Numero</name><label></label><value>613824</value><index>38</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/2\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>39</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/2\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>40</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/3\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>41</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero3\"] = responseBody.has(\"<name>Numero</name><label></label><value>438494</value><index>42</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/3\"] = responseBody.has(\"<name>Tipo</name><label></label><value>FIJO</value><index>43</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/3\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>44</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/4\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>45</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero4\"] = responseBody.has(\"<name>Numero</name><label></label><value>660229</value><index>46</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/4\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>47</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/4\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>48</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/5\"] = responseBody.has(\"<name>Prefijo</name><label></label><value></value><index>49</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero5\"] = responseBody.has(\"<name>Numero</name><label></label><value></value><index>50</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/5\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>51</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/5\"] = responseBody.has(\"<name>NoLlame</name><label></label><value></value><index>52</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/6\"] = responseBody.has(\"<name>Prefijo</name><label></label><value></value><index>53</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero6\"] = responseBody.has(\"<name>Numero</name><label></label><value></value><index>54</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/6\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>55</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/6\"] = responseBody.has(\"<name>NoLlame</name><label></label><value></value><index>56</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-EMAILS\"] = responseBody.has(\"<service>EMAILS</service>\");",
+                  "tests[\"Enriquecimiento CO-Email1\"] = responseBody.has(\"<name>Email</name><label></label><value></value><index>57</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-TipoEmail1\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>58</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Email2\"] = responseBody.has(\"<name>Email</name><label></label><value></value><index>59</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-TipoEmail2\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>60</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Enriquecimiento2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.enrichment.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:enrichment>\r\n         <!--Optional:-->\r\n         <enrichment>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xPersonEnrichment>\r\n               <!--Optional:-->\r\n               <level1>AR</level1>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber></documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber>27104774755</tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n               <!--Optional:-->\r\n               <queryId>2</queryId>\r\n            </xPersonEnrichment>\r\n         </enrichment>\r\n      </soap:enrichment>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2e5049f7-d850-9e25-d92f-4a08fda760f4",
+          "name": "Enriquecimiento con DNI",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Enriquecimiento CO-status\"] = responseBody.has(\"<status>EN</status>\");",
+                  "tests[\"Enriquecimiento CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"Enriquecimiento CO-PERSONAS\"] = responseBody.has(\"<service>PERSONAS</service>\");",
+                  "tests[\"Enriquecimiento CO-TipoCUIT\"] = responseBody.has(\"<name>TipoCUIT</name><label></label><value>CUIT PERSONA FISICA</value><index>0</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-CUIT\"] = responseBody.has(\"<name>CUIT</name><label></label><value>27104774755</value><index>1</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-DNI\"] = responseBody.has(\"<name>DNI</name><label></label><value>10477475</value><index>2</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NombreCompleto\"] = responseBody.has(\"<name>NombreCompleto</name><label></label><value>VILLAR NELIDA MIRTA</value><index>3</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Genero\"] = responseBody.has(\"<name>Genero</name><label></label><value>F</value><index>4</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-FechaNacimiento\"] = responseBody.has(\"<name>FechaNacimiento</name><label></label><value>29/08/1952</value><index>5</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NivelSocioEconomico\"] = responseBody.has(\"<name>NivelSocioEconomico</name><label></label><value>C2</value><index>6</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-DIRECCIONES\"] = responseBody.has(\"<service>DIRECCIONES</service>\");",
+                  "tests[\"Enriquecimiento CO-Calle\"] = responseBody.has(\"<name>Calle</name><label></label><value>PJE JUAN HIPOLITO VIEYTES</value><index>13</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero\"] = responseBody.has(\"<name>Numero</name><label></label><value>986</value><index>14</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Piso\"] = responseBody.has(\"<name>Piso</name><label></label><value></value><index>15</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Depto\"] = responseBody.has(\"<name>Depto</name><label></label><value></value><index>16</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Localidad\"] = responseBody.has(\"<name>Localidad</name><label></label><value>SANTA ROSA</value><index>17</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Provincia\"] = responseBody.has(\"<name>Provincia</name><label></label><value>LA PAMPA</value><index>18</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-CodigoPostal\"] = responseBody.has(\"<name>CodigoPostal</name><label></label><value>6300</value><index>19</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Latitud\"] = responseBody.has(\"<name>Latitud</name><label></label><value>-64.297049</value><index>20</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Longitud\"] = responseBody.has(\"<name>Longitud</name><label></label><value>-36.627357</value><index>21</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-TIPO\"] = responseBody.has(\"<name>TIPO</name><label></label><value>F</value><index>22</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Calle/2\"] = responseBody.has(\"<name>Calle</name><label></label><value>ECUADOR</value><index>23</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero/2\"] = responseBody.has(\"<name>Numero</name><label></label><value>923</value><index>24</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Piso/2\"] = responseBody.has(\"<name>Piso</name><label></label><value></value><index>25</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Depto/2\"] = responseBody.has(\"<name>Depto</name><label></label><value></value><index>26</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Localidad/2\"] = responseBody.has(\"<name>Localidad</name><label></label><value>CIUDAD AUTONOMA BUENOS AIRES</value><index>27</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Provincia/2\"] = responseBody.has(\"<name>Provincia</name><label></label><value>CAPITAL FEDERAL</value><index>28</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-CodigoPostal/2\"] = responseBody.has(\"<name>CodigoPostal</name><label></label><value>1214</value><index>29</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Latitud/2\"] = responseBody.has(\"<name>Latitud</name><label></label><value>-58.405948</value><index>30</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Longitud/2\"] = responseBody.has(\"<name>Longitud</name><label></label><value>-34.599248</value><index>31</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-TIPO/2\"] = responseBody.has(\"<name>TIPO</name><label></label><value></value><index>32</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-TELEFONOS\"] = responseBody.has(\"<service>TELEFONOS</service>\");",
+                  "tests[\"Enriquecimiento CO-Prefijo/1\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>011</value><index>33</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero1\"] = responseBody.has(\"<name>Numero</name><label></label><value>49919001</value><index>34</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/1\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>35</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/1\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>36</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/2\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>37</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero2\"] = responseBody.has(\"<name>Numero</name><label></label><value>613824</value><index>38</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/2\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>39</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/2\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>40</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/3\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>41</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero3\"] = responseBody.has(\"<name>Numero</name><label></label><value>438494</value><index>42</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/3\"] = responseBody.has(\"<name>Tipo</name><label></label><value>FIJO</value><index>43</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/3\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>44</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/4\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>45</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero4\"] = responseBody.has(\"<name>Numero</name><label></label><value>660229</value><index>46</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/4\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>47</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/4\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>48</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/5\"] = responseBody.has(\"<name>Prefijo</name><label></label><value></value><index>49</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero5\"] = responseBody.has(\"<name>Numero</name><label></label><value></value><index>50</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/5\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>51</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/5\"] = responseBody.has(\"<name>NoLlame</name><label></label><value></value><index>52</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Prefijo/6\"] = responseBody.has(\"<name>Prefijo</name><label></label><value></value><index>53</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Numero6\"] = responseBody.has(\"<name>Numero</name><label></label><value></value><index>54</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-Tipo/6\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>55</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-NoLlame/6\"] = responseBody.has(\"<name>NoLlame</name><label></label><value></value><index>56</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-EMAILS\"] = responseBody.has(\"<service>EMAILS</service>\");",
+                  "tests[\"Enriquecimiento CO-Email1\"] = responseBody.has(\"<name>Email</name><label></label><value></value><index>57</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-TipoEmail1\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>58</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"Enriquecimiento CO-Email2\"] = responseBody.has(\"<name>Email</name><label></label><value></value><index>59</index><dataType></dataType>\");",
+                  "tests[\"Enriquecimiento CO-TipoEmail2\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>60</index><dataType></dataType>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Enriquecimiento2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.enrichment.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:enrichment>\r\n         <!--Optional:-->\r\n         <enrichment>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xPersonEnrichment>\r\n               <!--Optional:-->\r\n               <level1>AR</level1>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>10477475</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber></tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n               <!--Optional:-->\r\n               <queryId>2</queryId>\r\n            </xPersonEnrichment>\r\n         </enrichment>\r\n      </soap:enrichment>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -1340,6 +2063,203 @@
             "body": {
               "mode": "raw",
               "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.nameonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:nameNormalize2>\r\n         <!--Optional:-->\r\n         <nameNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xName>\r\n               <!--Optional:-->\r\n               <name></name>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <level1> </level1>\r\n            </xName>\r\n         </nameNormalize>\r\n      </soap:nameNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "a5b3be33-7ad7-ca92-c44c-d435816e2600",
+      "name": "Patentes",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "249f4f1d-53d6-7910-22a8-3885f7818968",
+          "name": "Patentes CO Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"status OK\"] = responseBody.has(\"<status>CO</status>\");",
+                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"domain OK\"] = responseBody.has(\"<domain>EYD785</domain>\");",
+                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand>VOLKSWAGEN</vehicleBrand>\");",
+                  "tests[\"model OK\"] = responseBody.has(\"<model>POLO CLASSIC 1.9L SD 31A</model>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor>1Y 961787</motor>\");",
+                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis>8AWZZZ9EZ5A699109</chassis>\");",
+                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
+                  "tests[\"year OK\"] = responseBody.has(\"<year>2005</year>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>EYD785</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9d2ef390-2def-12cc-4a3f-36fef6faf01b",
+          "name": "Patentes SD FedePat",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"status OK\"] = responseBody.has(\"<status>SD</status>\");",
+                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"domain OK\"] = responseBody.has(\"<domain>AA004FG</domain>\");",
+                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand>TOYOTA</vehicleBrand>\");",
+                  "tests[\"model OK\"] = responseBody.has(\"<model>ETIOS X 1.5 M/T</model>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
+                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis></chassis>\");",
+                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
+                  "tests[\"year OK\"] = responseBody.has(\"<year>2016</year>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>ea86ad3f0ed110b6961d1b883688534c</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AA004FG</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a2a6f365-391f-86e6-1d13-04900006e486",
+          "name": "Patentes CO FedePat",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"status OK\"] = responseBody.has(\"<status>CO</status>\");",
+                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"domain OK\"] = responseBody.has(\"<domain>AAE375</domain>\");",
+                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand></vehicleBrand>\");",
+                  "tests[\"model OK\"] = responseBody.has(\"<model></model>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor>159A30388247630</motor>\");",
+                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis>8AS146000*S5192224</chassis>\");",
+                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
+                  "tests[\"year OK\"] = responseBody.has(\"<year>1995</year>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>ea86ad3f0ed110b6961d1b883688534c</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AAE375</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0d46cd29-bcc2-e098-7e5b-e60139136b5b",
+          "name": "Patentes CO Sin motor y serial",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"status OK\"] = responseBody.has(\"<status>CO</status>\");",
+                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"domain OK\"] = responseBody.has(\"<domain>AA004FG</domain>\");",
+                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand>TOYOTA</vehicleBrand>\");",
+                  "tests[\"model OK\"] = responseBody.has(\"<model>ETIOS X 1.5 M/T</model>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
+                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis></chassis>\");",
+                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
+                  "tests[\"year OK\"] = responseBody.has(\"<year>2016</year>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AA004FG</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "002595f2-3a33-1365-18a5-638469f1b838",
+          "name": "Patentes SD Estandar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"status OK\"] = responseBody.has(\"<status>SD</status>\");",
+                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
+                  "tests[\"domain OK\"] = responseBody.has(\"<domain></domain>\");",
+                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand></vehicleBrand>\");",
+                  "tests[\"model OK\"] = responseBody.has(\"<model></model>\");",
+                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
+                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis></chassis>\");",
+                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
+                  "tests[\"year OK\"] = responseBody.has(\"<year></year>\");",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{Patentes2}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AA048TN</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },
@@ -1648,864 +2568,6 @@
             "body": {
               "mode": "raw",
               "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.phoneonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:phoneNormalize2>\r\n         <!--Optional:-->\r\n         <phoneNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xPhone>\r\n               <!--Optional:-->\r\n               <level1> </level1>\r\n               <!--Optional:-->\r\n               <level2> </level2>\r\n               <!--Optional:-->\r\n               <level3> </level3>\r\n               <!--Optional:-->\r\n               <level4> </level4>\r\n               <!--Optional:-->\r\n               <level5> </level5>\r\n               <!--Optional:-->\r\n               <characteristic> </characteristic>\r\n               <!--Optional:-->\r\n               <phoneNumber>153091850</phoneNumber>\r\n               <!--Optional:-->\r\n               <postalCode>5000</postalCode>\r\n               <!--Optional:-->\r\n               <ddi>54</ddi>\r\n               <!--Optional:-->\r\n               <ddn>0351 </ddn>\r\n               <!--Optional:-->\r\n               <additionalData> </additionalData>\r\n            </xPhone>\r\n         </phoneNormalize>\r\n      </soap:phoneNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "82a6adfc-b11c-fecc-7973-0933a945c8e9",
-      "name": "Datos Filiatorios",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "59572a89-8575-63f3-6d82-6e846954a724",
-          "name": "Filiatorio VA",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>OK</status>\");",
-                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType>96</documentType>\");",
-                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>AP</documentTypeFlg>\");",
-                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber>93288885</documentNumber>\");",
-                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>VA</documentNumberFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType>86</tributaryType>\");",
-                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>AP</tributaryTypeFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber>20932888859</tributaryNumber>\");",
-                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>AP</tributaryNumberFlg>\");",
-                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType>A</contributorType>\");",
-                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>AP</contributorTypeFlg>\");",
-                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName>LAZARO LUIS</lastName>\");",
-                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>AP</lastNameFlg>\");",
-                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name></name>\");",
-                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>NI</nameFlg>\");",
-                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender>M</gender>\");",
-                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>AP</genderFlg>\");",
-                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate>15/04/1925</birthDate>\");",
-                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>AP</birthDateFlg>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Filiatorios2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>93-28888-5</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d41aa921-3ecb-3d85-c321-21d5a66647bc",
-          "name": "Filiatorio VA Con nombre",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>OK</status>\");",
-                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType>89</documentType>\");",
-                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>AP</documentTypeFlg>\");",
-                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber>2783891</documentNumber>\");",
-                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>VA</documentNumberFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType>86</tributaryType>\");",
-                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>AP</tributaryTypeFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber>27027838915</tributaryNumber>\");",
-                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>AP</tributaryNumberFlg>\");",
-                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType>A</contributorType>\");",
-                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>AP</contributorTypeFlg>\");",
-                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName>CORDOBA</lastName>\");",
-                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>AP</lastNameFlg>\");",
-                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name>JUANA RAMONA</name>\");",
-                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>CO</nameFlg>\");",
-                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender>F</gender>\");",
-                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>AP</genderFlg>\");",
-                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate>12/07/1936</birthDate>\");",
-                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>AP</birthDateFlg>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Filiatorios2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>2783891</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name>CORDOBA JUANA RAMONA</name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ab1254b8-b37a-c588-5c18-3dd94870c82c",
-          "name": "Filiatorio DU Con nombre",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>DU</status>\");",
-                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
-                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NV</documentTypeFlg>\");",
-                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber></documentNumber>\");",
-                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NV</documentNumberFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
-                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NV</tributaryTypeFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber></tributaryNumber>\");",
-                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>NV</tributaryNumberFlg>\");",
-                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType></contributorType>\");",
-                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>NV</contributorTypeFlg>\");",
-                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
-                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>NV</lastNameFlg>\");",
-                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name></name>\");",
-                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>NV</nameFlg>\");",
-                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender></gender>\");",
-                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>NV</genderFlg>\");",
-                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate></birthDate>\");",
-                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>NV</birthDateFlg>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Filiatorios2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>4111807</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name>SANTOS OSCAR NERI</name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "db4a9e39-0636-f45a-681b-97c6fe5402d1",
-          "name": "Filiatorio DU Estandar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>DU</status>\");",
-                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
-                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NV</documentTypeFlg>\");",
-                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber></documentNumber>\");",
-                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NV</documentNumberFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
-                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NV</tributaryTypeFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber></tributaryNumber>\");",
-                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>NV</tributaryNumberFlg>\");",
-                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType></contributorType>\");",
-                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>NV</contributorTypeFlg>\");",
-                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
-                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>NV</lastNameFlg>\");",
-                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name></name>\");",
-                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>NV</nameFlg>\");",
-                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender></gender>\");",
-                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>NV</genderFlg>\");",
-                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate></birthDate>\");",
-                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>NV</birthDateFlg>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Filiatorios2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>4356144</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7d85de84-e288-f9e6-1247-d17d90b2411b",
-          "name": "Filiatorio NE Estandar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>NE</status>\");",
-                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
-                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NO</documentTypeFlg>\");",
-                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber>92808826</documentNumber>\");",
-                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NO</documentNumberFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
-                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NO</tributaryTypeFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber></tributaryNumber>\");",
-                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>NO</tributaryNumberFlg>\");",
-                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType></contributorType>\");",
-                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>NO</contributorTypeFlg>\");",
-                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
-                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>NO</lastNameFlg>\");",
-                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name></name>\");",
-                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>NO</nameFlg>\");",
-                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender></gender>\");",
-                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>NO</genderFlg>\");",
-                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate></birthDate>\");",
-                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>NO</birthDateFlg>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Filiatorios2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>92808826</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber> </tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ea7ecfd7-834b-242b-3597-7dbd1f904a78",
-          "name": "Filiatorio VA Empresa",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Filiatorios CO-status\"] = responseBody.has(\"<status>OK</status>\");",
-                  "tests[\"Filiatorios CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Filiatorios CO-documentType\"] = responseBody.has(\"<documentType></documentType>\");",
-                  "tests[\"Filiatorios CO-documentTypeFlg\"] = responseBody.has(\"<documentTypeFlg>NA</documentTypeFlg>\");",
-                  "tests[\"Filiatorios CO-documentNumber\"] = responseBody.has(\"<documentNumber>0</documentNumber>\");",
-                  "tests[\"Filiatorios CO-documentNumberFlg\"] = responseBody.has(\"<documentNumberFlg>NA</documentNumberFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryType\"] = responseBody.has(\"<tributaryType>80</tributaryType>\");",
-                  "tests[\"Filiatorios CO-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>AP</tributaryTypeFlg>\");",
-                  "tests[\"Filiatorios CO-tributaryNumber\"] = responseBody.has(\"<tributaryNumber>30676235309</tributaryNumber>\");",
-                  "tests[\"Filiatorios CO-tributaryNumberFlg\"] = responseBody.has(\"<tributaryNumberFlg>VA</tributaryNumberFlg>\");",
-                  "tests[\"Filiatorios CO-contributorType\"] = responseBody.has(\"<contributorType>C</contributorType>\");",
-                  "tests[\"Filiatorios CO-contributorTypeFlg\"] = responseBody.has(\"<contributorTypeFlg>AP</contributorTypeFlg>\");",
-                  "tests[\"Filiatorios CO-lastName\"] = responseBody.has(\"<lastName></lastName>\");",
-                  "tests[\"Filiatorios CO-lastNameFlg\"] = responseBody.has(\"<lastNameFlg>NI</lastNameFlg>\");",
-                  "tests[\"Filiatorios CO-name\"] = responseBody.has(\"<name>ASES CONSULTING S.A.</name>\");",
-                  "tests[\"Filiatorios CO-nameFlg\"] = responseBody.has(\"<nameFlg>AP</nameFlg>\");",
-                  "tests[\"Filiatorios CO-gender\"] = responseBody.has(\"<gender></gender>\");",
-                  "tests[\"Filiatorios CO-genderFlg\"] = responseBody.has(\"<genderFlg>NA</genderFlg>\");",
-                  "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate>01/10/1993</birthDate>\");",
-                  "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>AP</birthDateFlg>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Filiatorios2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.filiationonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:filiationNormalize2>\r\n         <!--Optional:-->\r\n         <filiationNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xFiliation>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber></documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber>30676235309</tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n            </xFiliation>\r\n         </filiationNormalize>\r\n      </soap:filiationNormalize2>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "f352065d-500c-5944-a28d-422fd0fbebad",
-      "name": "Enriquecimiento",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "850f28c4-7342-6719-857e-b8b6609b2e7f",
-          "name": "Enriquecimiento con CUIL",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Enriquecimiento CO-status\"] = responseBody.has(\"<status>EN</status>\");",
-                  "tests[\"Enriquecimiento CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Enriquecimiento CO-PERSONAS\"] = responseBody.has(\"<service>PERSONAS</service>\");",
-                  "tests[\"Enriquecimiento CO-TipoCUIT\"] = responseBody.has(\"<name>TipoCUIT</name><label></label><value>CUIT PERSONA FISICA</value><index>0</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-CUIT\"] = responseBody.has(\"<name>CUIT</name><label></label><value>27104774755</value><index>1</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-DNI\"] = responseBody.has(\"<name>DNI</name><label></label><value>10477475</value><index>2</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NombreCompleto\"] = responseBody.has(\"<name>NombreCompleto</name><label></label><value>VILLAR NELIDA MIRTA</value><index>3</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Genero\"] = responseBody.has(\"<name>Genero</name><label></label><value>F</value><index>4</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-FechaNacimiento\"] = responseBody.has(\"<name>FechaNacimiento</name><label></label><value>29/08/1952</value><index>5</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NivelSocioEconomico\"] = responseBody.has(\"<name>NivelSocioEconomico</name><label></label><value>C2</value><index>6</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-DIRECCIONES\"] = responseBody.has(\"<service>DIRECCIONES</service>\");",
-                  "tests[\"Enriquecimiento CO-Calle\"] = responseBody.has(\"<name>Calle</name><label></label><value>PJE JUAN HIPOLITO VIEYTES</value><index>13</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero\"] = responseBody.has(\"<name>Numero</name><label></label><value>986</value><index>14</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Piso\"] = responseBody.has(\"<name>Piso</name><label></label><value></value><index>15</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Depto\"] = responseBody.has(\"<name>Depto</name><label></label><value></value><index>16</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Localidad\"] = responseBody.has(\"<name>Localidad</name><label></label><value>SANTA ROSA</value><index>17</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Provincia\"] = responseBody.has(\"<name>Provincia</name><label></label><value>LA PAMPA</value><index>18</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-CodigoPostal\"] = responseBody.has(\"<name>CodigoPostal</name><label></label><value>6300</value><index>19</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Latitud\"] = responseBody.has(\"<name>Latitud</name><label></label><value>-64.297049</value><index>20</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Longitud\"] = responseBody.has(\"<name>Longitud</name><label></label><value>-36.627357</value><index>21</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-TIPO\"] = responseBody.has(\"<name>TIPO</name><label></label><value>F</value><index>22</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Calle/2\"] = responseBody.has(\"<name>Calle</name><label></label><value>ECUADOR</value><index>23</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero/2\"] = responseBody.has(\"<name>Numero</name><label></label><value>923</value><index>24</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Piso/2\"] = responseBody.has(\"<name>Piso</name><label></label><value></value><index>25</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Depto/2\"] = responseBody.has(\"<name>Depto</name><label></label><value></value><index>26</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Localidad/2\"] = responseBody.has(\"<name>Localidad</name><label></label><value>CIUDAD AUTONOMA BUENOS AIRES</value><index>27</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Provincia/2\"] = responseBody.has(\"<name>Provincia</name><label></label><value>CAPITAL FEDERAL</value><index>28</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-CodigoPostal/2\"] = responseBody.has(\"<name>CodigoPostal</name><label></label><value>1214</value><index>29</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Latitud/2\"] = responseBody.has(\"<name>Latitud</name><label></label><value>-58.405948</value><index>30</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Longitud/2\"] = responseBody.has(\"<name>Longitud</name><label></label><value>-34.599248</value><index>31</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-TIPO/2\"] = responseBody.has(\"<name>TIPO</name><label></label><value></value><index>32</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-TELEFONOS\"] = responseBody.has(\"<service>TELEFONOS</service>\");",
-                  "tests[\"Enriquecimiento CO-Prefijo/1\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>011</value><index>33</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero1\"] = responseBody.has(\"<name>Numero</name><label></label><value>49919001</value><index>34</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/1\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>35</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/1\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>36</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/2\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>37</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero2\"] = responseBody.has(\"<name>Numero</name><label></label><value>613824</value><index>38</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/2\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>39</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/2\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>40</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/3\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>41</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero3\"] = responseBody.has(\"<name>Numero</name><label></label><value>438494</value><index>42</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/3\"] = responseBody.has(\"<name>Tipo</name><label></label><value>FIJO</value><index>43</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/3\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>44</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/4\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>45</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero4\"] = responseBody.has(\"<name>Numero</name><label></label><value>660229</value><index>46</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/4\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>47</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/4\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>48</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/5\"] = responseBody.has(\"<name>Prefijo</name><label></label><value></value><index>49</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero5\"] = responseBody.has(\"<name>Numero</name><label></label><value></value><index>50</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/5\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>51</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/5\"] = responseBody.has(\"<name>NoLlame</name><label></label><value></value><index>52</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/6\"] = responseBody.has(\"<name>Prefijo</name><label></label><value></value><index>53</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero6\"] = responseBody.has(\"<name>Numero</name><label></label><value></value><index>54</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/6\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>55</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/6\"] = responseBody.has(\"<name>NoLlame</name><label></label><value></value><index>56</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-EMAILS\"] = responseBody.has(\"<service>EMAILS</service>\");",
-                  "tests[\"Enriquecimiento CO-Email1\"] = responseBody.has(\"<name>Email</name><label></label><value></value><index>57</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-TipoEmail1\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>58</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Email2\"] = responseBody.has(\"<name>Email</name><label></label><value></value><index>59</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-TipoEmail2\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>60</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Enriquecimiento2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.enrichment.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:enrichment>\r\n         <!--Optional:-->\r\n         <enrichment>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xPersonEnrichment>\r\n               <!--Optional:-->\r\n               <level1>AR</level1>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber></documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber>27104774755</tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n               <!--Optional:-->\r\n               <queryId>2</queryId>\r\n            </xPersonEnrichment>\r\n         </enrichment>\r\n      </soap:enrichment>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "2e5049f7-d850-9e25-d92f-4a08fda760f4",
-          "name": "Enriquecimiento con DNI",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Enriquecimiento CO-status\"] = responseBody.has(\"<status>EN</status>\");",
-                  "tests[\"Enriquecimiento CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Enriquecimiento CO-PERSONAS\"] = responseBody.has(\"<service>PERSONAS</service>\");",
-                  "tests[\"Enriquecimiento CO-TipoCUIT\"] = responseBody.has(\"<name>TipoCUIT</name><label></label><value>CUIT PERSONA FISICA</value><index>0</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-CUIT\"] = responseBody.has(\"<name>CUIT</name><label></label><value>27104774755</value><index>1</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-DNI\"] = responseBody.has(\"<name>DNI</name><label></label><value>10477475</value><index>2</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NombreCompleto\"] = responseBody.has(\"<name>NombreCompleto</name><label></label><value>VILLAR NELIDA MIRTA</value><index>3</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Genero\"] = responseBody.has(\"<name>Genero</name><label></label><value>F</value><index>4</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-FechaNacimiento\"] = responseBody.has(\"<name>FechaNacimiento</name><label></label><value>29/08/1952</value><index>5</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NivelSocioEconomico\"] = responseBody.has(\"<name>NivelSocioEconomico</name><label></label><value>C2</value><index>6</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-DIRECCIONES\"] = responseBody.has(\"<service>DIRECCIONES</service>\");",
-                  "tests[\"Enriquecimiento CO-Calle\"] = responseBody.has(\"<name>Calle</name><label></label><value>PJE JUAN HIPOLITO VIEYTES</value><index>13</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero\"] = responseBody.has(\"<name>Numero</name><label></label><value>986</value><index>14</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Piso\"] = responseBody.has(\"<name>Piso</name><label></label><value></value><index>15</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Depto\"] = responseBody.has(\"<name>Depto</name><label></label><value></value><index>16</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Localidad\"] = responseBody.has(\"<name>Localidad</name><label></label><value>SANTA ROSA</value><index>17</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Provincia\"] = responseBody.has(\"<name>Provincia</name><label></label><value>LA PAMPA</value><index>18</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-CodigoPostal\"] = responseBody.has(\"<name>CodigoPostal</name><label></label><value>6300</value><index>19</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Latitud\"] = responseBody.has(\"<name>Latitud</name><label></label><value>-64.297049</value><index>20</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Longitud\"] = responseBody.has(\"<name>Longitud</name><label></label><value>-36.627357</value><index>21</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-TIPO\"] = responseBody.has(\"<name>TIPO</name><label></label><value>F</value><index>22</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Calle/2\"] = responseBody.has(\"<name>Calle</name><label></label><value>ECUADOR</value><index>23</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero/2\"] = responseBody.has(\"<name>Numero</name><label></label><value>923</value><index>24</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Piso/2\"] = responseBody.has(\"<name>Piso</name><label></label><value></value><index>25</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Depto/2\"] = responseBody.has(\"<name>Depto</name><label></label><value></value><index>26</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Localidad/2\"] = responseBody.has(\"<name>Localidad</name><label></label><value>CIUDAD AUTONOMA BUENOS AIRES</value><index>27</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Provincia/2\"] = responseBody.has(\"<name>Provincia</name><label></label><value>CAPITAL FEDERAL</value><index>28</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-CodigoPostal/2\"] = responseBody.has(\"<name>CodigoPostal</name><label></label><value>1214</value><index>29</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Latitud/2\"] = responseBody.has(\"<name>Latitud</name><label></label><value>-58.405948</value><index>30</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Longitud/2\"] = responseBody.has(\"<name>Longitud</name><label></label><value>-34.599248</value><index>31</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-TIPO/2\"] = responseBody.has(\"<name>TIPO</name><label></label><value></value><index>32</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-TELEFONOS\"] = responseBody.has(\"<service>TELEFONOS</service>\");",
-                  "tests[\"Enriquecimiento CO-Prefijo/1\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>011</value><index>33</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero1\"] = responseBody.has(\"<name>Numero</name><label></label><value>49919001</value><index>34</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/1\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>35</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/1\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>36</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/2\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>37</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero2\"] = responseBody.has(\"<name>Numero</name><label></label><value>613824</value><index>38</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/2\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>39</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/2\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>40</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/3\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>41</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero3\"] = responseBody.has(\"<name>Numero</name><label></label><value>438494</value><index>42</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/3\"] = responseBody.has(\"<name>Tipo</name><label></label><value>FIJO</value><index>43</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/3\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>44</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/4\"] = responseBody.has(\"<name>Prefijo</name><label></label><value>02954</value><index>45</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero4\"] = responseBody.has(\"<name>Numero</name><label></label><value>660229</value><index>46</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/4\"] = responseBody.has(\"<name>Tipo</name><label></label><value>MOVIL</value><index>47</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/4\"] = responseBody.has(\"<name>NoLlame</name><label></label><value>NO</value><index>48</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/5\"] = responseBody.has(\"<name>Prefijo</name><label></label><value></value><index>49</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero5\"] = responseBody.has(\"<name>Numero</name><label></label><value></value><index>50</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/5\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>51</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/5\"] = responseBody.has(\"<name>NoLlame</name><label></label><value></value><index>52</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Prefijo/6\"] = responseBody.has(\"<name>Prefijo</name><label></label><value></value><index>53</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Numero6\"] = responseBody.has(\"<name>Numero</name><label></label><value></value><index>54</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-Tipo/6\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>55</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-NoLlame/6\"] = responseBody.has(\"<name>NoLlame</name><label></label><value></value><index>56</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-EMAILS\"] = responseBody.has(\"<service>EMAILS</service>\");",
-                  "tests[\"Enriquecimiento CO-Email1\"] = responseBody.has(\"<name>Email</name><label></label><value></value><index>57</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-TipoEmail1\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>58</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"Enriquecimiento CO-Email2\"] = responseBody.has(\"<name>Email</name><label></label><value></value><index>59</index><dataType></dataType>\");",
-                  "tests[\"Enriquecimiento CO-TipoEmail2\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>60</index><dataType></dataType>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Enriquecimiento2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.enrichment.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:enrichment>\r\n         <!--Optional:-->\r\n         <enrichment>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xPersonEnrichment>\r\n               <!--Optional:-->\r\n               <level1>AR</level1>\r\n               <!--Optional:-->\r\n               <documentType> </documentType>\r\n               <!--Optional:-->\r\n               <documentNumber>10477475</documentNumber>\r\n               <!--Optional:-->\r\n               <tributaryType> </tributaryType>\r\n               <!--Optional:-->\r\n               <tributaryNumber></tributaryNumber>\r\n               <!--Optional:-->\r\n               <lastName> </lastName>\r\n               <!--Optional:-->\r\n               <name> </name>\r\n               <!--Optional:-->\r\n               <gender> </gender>\r\n               <!--Optional:-->\r\n               <birthDate> </birthDate>\r\n               <!--Optional:-->\r\n               <queryId>2</queryId>\r\n            </xPersonEnrichment>\r\n         </enrichment>\r\n      </soap:enrichment>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "768c4923-6196-500d-e6c2-fe073b1a8b0f",
-      "name": "Email",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "58bb142f-abe7-a110-32e5-4e3f3d61014d",
-          "name": "Email CO",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Nombres CO-status\"] = responseBody.has(\"<status>VA</status>\");",
-                  "tests[\"Nombres CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Nombres CO-email\"] = responseBody.has(\"<email>egoncalves@asesconsulting.com</email>\");",
-                  "tests[\"Nombres CO-type\"] = responseBody.has(\"<type>ND</type>\");",
-                  "",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Email2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap.emailonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:emailNormalize>\r\n         <!--Optional:-->\r\n         <emailNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xEmail>\r\n               <!--Optional:-->\r\n               <email>egoncalves@asesconsulting.com</email>\r\n            </xEmail>\r\n         </emailNormalize>\r\n      </soap:emailNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "a5b3be33-7ad7-ca92-c44c-d435816e2600",
-      "name": "Patentes",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "249f4f1d-53d6-7910-22a8-3885f7818968",
-          "name": "Patentes CO Estandar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"status OK\"] = responseBody.has(\"<status>CO</status>\");",
-                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"domain OK\"] = responseBody.has(\"<domain>EYD785</domain>\");",
-                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand>VOLKSWAGEN</vehicleBrand>\");",
-                  "tests[\"model OK\"] = responseBody.has(\"<model>POLO CLASSIC 1.9L SD 31A</model>\");",
-                  "tests[\"Motor OK\"] = responseBody.has(\"<motor>1Y 961787</motor>\");",
-                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis>8AWZZZ9EZ5A699109</chassis>\");",
-                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
-                  "tests[\"year OK\"] = responseBody.has(\"<year>2005</year>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Patentes2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>EYD785</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "9d2ef390-2def-12cc-4a3f-36fef6faf01b",
-          "name": "Patentes SD FedePat",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"status OK\"] = responseBody.has(\"<status>SD</status>\");",
-                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"domain OK\"] = responseBody.has(\"<domain>AA004FG</domain>\");",
-                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand>TOYOTA</vehicleBrand>\");",
-                  "tests[\"model OK\"] = responseBody.has(\"<model>ETIOS X 1.5 M/T</model>\");",
-                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
-                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis></chassis>\");",
-                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
-                  "tests[\"year OK\"] = responseBody.has(\"<year>2016</year>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Patentes2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>ea86ad3f0ed110b6961d1b883688534c</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AA004FG</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "a2a6f365-391f-86e6-1d13-04900006e486",
-          "name": "Patentes CO FedePat",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"status OK\"] = responseBody.has(\"<status>CO</status>\");",
-                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"domain OK\"] = responseBody.has(\"<domain>AAE375</domain>\");",
-                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand></vehicleBrand>\");",
-                  "tests[\"model OK\"] = responseBody.has(\"<model></model>\");",
-                  "tests[\"Motor OK\"] = responseBody.has(\"<motor>159A30388247630</motor>\");",
-                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis>8AS146000*S5192224</chassis>\");",
-                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
-                  "tests[\"year OK\"] = responseBody.has(\"<year>1995</year>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Patentes2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>ea86ad3f0ed110b6961d1b883688534c</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AAE375</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "0d46cd29-bcc2-e098-7e5b-e60139136b5b",
-          "name": "Patentes CO Sin motor y serial",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"status OK\"] = responseBody.has(\"<status>CO</status>\");",
-                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"domain OK\"] = responseBody.has(\"<domain>AA004FG</domain>\");",
-                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand>TOYOTA</vehicleBrand>\");",
-                  "tests[\"model OK\"] = responseBody.has(\"<model>ETIOS X 1.5 M/T</model>\");",
-                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
-                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis></chassis>\");",
-                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
-                  "tests[\"year OK\"] = responseBody.has(\"<year>2016</year>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Patentes2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AA004FG</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "002595f2-3a33-1365-18a5-638469f1b838",
-          "name": "Patentes SD Estandar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"status OK\"] = responseBody.has(\"<status>SD</status>\");",
-                  "tests[\"statusReason OK\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"domain OK\"] = responseBody.has(\"<domain></domain>\");",
-                  "tests[\"vehicleBrand OK\"] = responseBody.has(\"<vehicleBrand></vehicleBrand>\");",
-                  "tests[\"model OK\"] = responseBody.has(\"<model></model>\");",
-                  "tests[\"Motor OK\"] = responseBody.has(\"<motor></motor>\");",
-                  "tests[\"chassis OK\"] = responseBody.has(\"<chassis></chassis>\");",
-                  "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
-                  "tests[\"year OK\"] = responseBody.has(\"<year></year>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Patentes2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.vehicleonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:infoDomainService>\r\n         <!--Optional:-->\r\n         <vehicleNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xVehicle>\r\n               <!--Optional:-->\r\n               <domain>AA048TN</domain>\r\n               <!--Optional:-->\r\n               <motor> </motor>\r\n               <!--Optional:-->\r\n               <chassis> </chassis>\r\n            </xVehicle>\r\n         </vehicleNormalize>\r\n      </soap:infoDomainService>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "f197dc97-8cd3-a0e0-557c-aba6a3e51360",
-      "name": "Condicion Tributaria",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "d6d0e78c-a47b-a1bd-f3eb-eddc6646450b",
-          "name": "CondTributaria VA",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Condicion Tributaria OK-status\"] = responseBody.has(\"<status>VA</status>\");",
-                  "tests[\"Condicion Tributaria OK-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuit>30707171282</cuit>\");",
-                  "tests[\"Condicion Tributaria OK-denomination\"] = responseBody.has(\"<denomination>ODFJELL ARGENTINA S.A.        </denomination>\");",
-                  "tests[\"Condicion Tributaria OK-denominationFlg\"] = responseBody.has(\"<denominationFlg></denominationFlg>\");",
-                  "tests[\"Condicion Tributaria OK-aernings\"] = responseBody.has(\"<aernings>AC</aernings>\");",
-                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>AC</iva>\");",
-                  "tests[\"Condicion Tributaria OK-uniqueTribute\"] = responseBody.has(\"<uniqueTribute>NI</uniqueTribute>\");",
-                  "tests[\"Condicion Tributaria OK-uniqueTributeActivity\"] = responseBody.has(\"<uniqueTributeActivity>30707171282</uniqueTributeActivity>\");",
-                  "tests[\"Condicion Tributaria OK-employer\"] = responseBody.has(\"<employer>S00</employer>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Tributaria2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:taxStatusNormalize>\r\n         <!--Optional:-->\r\n         <condtribNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xCuit>\r\n               <!--Optional:-->\r\n               <cuit>30707171282</cuit>\r\n               <!--Optional:-->\r\n               <denomination> </denomination>\r\n            </xCuit>\r\n         </condtribNormalize>\r\n      </soap:taxStatusNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d70e37d4-31a1-a20a-cb09-4b05e4f1b4a0",
-          "name": "CondTributaria VA Monotributo",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Condicion Tributaria OK-status\"] = responseBody.has(\"<status>VA</status>\");",
-                  "tests[\"Condicion Tributaria OK-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuit>27165525413</cuit>\");",
-                  "tests[\"Condicion Tributaria OK-denomination\"] = responseBody.has(\"<denomination>SOSA MARTA INES               </denomination>\");",
-                  "tests[\"Condicion Tributaria OK-denominationFlg\"] = responseBody.has(\"<denominationFlg></denominationFlg>\");",
-                  "tests[\"Condicion Tributaria OK-aernings\"] = responseBody.has(\"<aernings>AC</aernings>\");",
-                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>AC</iva>\");",
-                  "tests[\"Condicion Tributaria OK-uniqueTribute\"] = responseBody.has(\"<uniqueTribute>NI</uniqueTribute>\");",
-                  "tests[\"Condicion Tributaria OK-uniqueTributeActivity\"] = responseBody.has(\"<uniqueTributeActivity>27165525413</uniqueTributeActivity>\");",
-                  "tests[\"Condicion Tributaria OK-employer\"] = responseBody.has(\"<employer>N00</employer>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Tributaria2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:taxStatusNormalize>\r\n         <!--Optional:-->\r\n         <condtribNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xCuit>\r\n               <!--Optional:-->\r\n               <cuit>27165525413</cuit>\r\n               <!--Optional:-->\r\n               <denomination> </denomination>\r\n            </xCuit>\r\n         </condtribNormalize>\r\n      </soap:taxStatusNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3b909494-3ddd-ae4e-0d09-7527234c1484",
-          "name": "CondTributaria NE Estandar",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Condicion Tributaria OK-status\"] = responseBody.has(\"<status>NE</status>\");",
-                  "tests[\"Condicion Tributaria OK-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Condicion Tributaria OK-cuit\"] = responseBody.has(\"<cuit></cuit>\");",
-                  "tests[\"Condicion Tributaria OK-denomination\"] = responseBody.has(\"<denomination></denomination>\");",
-                  "tests[\"Condicion Tributaria OK-denominationFlg\"] = responseBody.has(\"<denominationFlg></denominationFlg>\");",
-                  "tests[\"Condicion Tributaria OK-aernings\"] = responseBody.has(\"<aernings></aernings>\");",
-                  "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva></iva>\");",
-                  "tests[\"Condicion Tributaria OK-uniqueTribute\"] = responseBody.has(\"<uniqueTribute></uniqueTribute>\");",
-                  "tests[\"Condicion Tributaria OK-uniqueTributeActivity\"] = responseBody.has(\"<uniqueTributeActivity></uniqueTributeActivity>\");",
-                  "tests[\"Condicion Tributaria OK-employer\"] = responseBody.has(\"<employer></employer>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{Tributaria2}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.condtribonline.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:taxStatusNormalize>\r\n         <!--Optional:-->\r\n         <condtribNormalize>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapters> </customAdapters>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xCuit>\r\n               <!--Optional:-->\r\n               <cuit>30709013196</cuit>\r\n               <!--Optional:-->\r\n               <denomination> </denomination>\r\n            </xCuit>\r\n         </condtribNormalize>\r\n      </soap:taxStatusNormalize>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },
