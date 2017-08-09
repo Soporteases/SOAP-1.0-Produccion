@@ -694,7 +694,7 @@
                 "exec": [
                   "tests[\"Domicilio NE-status\"] = responseBody.has(\"<status>NE</status>\");",
                   "tests[\"Domicilio NE-statusReason\"] = responseBody.has(\"<statusReason>AI</statusReason>\");",
-                  "tests[\"Domicilio NE-Status\"] = responseBody.has(\"<geoType>3</geoType>\");",
+                  "tests[\"Domicilio NE-geoType\"] = responseBody.has(\"<geoType>3</geoType>\");",
                   "tests[\"Domicilio NE-level1\"] = responseBody.has(\"<level1></level1>\");",
                   "tests[\"Domicilio NE-level2\"] = responseBody.has(\"<level2>CAPITAL FEDERAL</level2>\");",
                   "tests[\"Domicilio NE-level3\"] = responseBody.has(\"<level3>CAPITAL FEDERAL</level3>\");",
