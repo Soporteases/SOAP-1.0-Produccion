@@ -2501,7 +2501,7 @@
                   "tests[\"Telefono OK1-characteristic\"] = responseBody.has(\"<characteristic></characteristic>\");",
                   "tests[\"Telefono OK1-phoneNumber\"] = responseBody.has(\"<phoneNumber>123</phoneNumber>\");",
                   "tests[\"Telefono OK1-postalCode\"] = responseBody.has(\"<postalCode>0</postalCode>\");",
-                  "tests[\"Telefono OK1-validated\"] = responseBody.has(\"<validated></validated>\");",
+                  "tests[\"Telefono OK1-validated\"] = responseBody.has(\"<validated>NO</validated>\");",
                   "tests[\"Telefono OK1-doNotCallRegistry\"] = responseBody.has(\"<name>doNotCallRegistry</name><value>NO</value>\");",
                   "tests[\"Telefono OK1-fullPhone\"] = responseBody.has(\"<name>fullPhone</name><value>123</value>\");",
                   "",
