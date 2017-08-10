@@ -2287,10 +2287,10 @@
                   "tests[\"Telefono OK1-ddn\"] = responseBody.has(\"<ddn>011</ddn>\");",
                   "tests[\"Telefono OK1-characteristic\"] = responseBody.has(\"<characteristic>4442</characteristic>\");",
                   "tests[\"Telefono OK1-phoneNumber\"] = responseBody.has(\"<phoneNumber>0390</phoneNumber>\");",
-                  "tests[\"Telefono OK1-validated\"] = responseBody.has(\"<validated>ok</validated>\");",
-                  "tests[\"Telefono OK1-directory\"] = responseBody.has(\"<name>directory</name><value>F</value>\");",
+                  "tests[\"Telefono OK1-validated\"] = responseBody.has(\"<validated>SI</validated>\");",
+                  "tests[\"Telefono OK1-directory\"] = responseBody.has(\"<name>directory</name><value>SI</value>\");",
                   "tests[\"Telefono OK1-doNotCallRegistry\"] = responseBody.has(\"<name>doNotCallRegistry</name><value>SI</value>\");",
-                  "tests[\"Telefono OK1-fullPhone\"] = responseBody.has(\"<name>fullPhone</name><value>44420390</value>\");",
+                  "tests[\"Telefono OK1-fullPhone\"] = responseBody.has(\"<name>fullPhone</name><value>01144420390</value>\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
