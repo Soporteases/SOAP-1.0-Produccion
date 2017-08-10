@@ -2419,10 +2419,10 @@
                   "tests[\"Telefono OK1-ddn\"] = responseBody.has(\"<ddn>011</ddn>\");",
                   "tests[\"Telefono OK1-characteristic\"] = responseBody.has(\"<characteristic>6175</characteristic>\");",
                   "tests[\"Telefono OK1-phoneNumber\"] = responseBody.has(\"<phoneNumber>5152</phoneNumber>\");",
-                  "tests[\"Telefono OK1-validated\"] = responseBody.has(\"<validated>ce</validated>\");",
-                  "tests[\"Telefono OK1-directory\"] = responseBody.has(\"<name>directory</name><value>Ce</value>\");",
+                  "tests[\"Telefono OK1-validated\"] = responseBody.has(\"<validated>NO</validated>\");",
+                  "tests[\"Telefono OK1-directory\"] = responseBody.has(\"<name>directory</name><value>CE</value>\");",
                   "tests[\"Telefono OK1-doNotCallRegistry\"] = responseBody.has(\"<name>doNotCallRegistry</name><value>NO</value>\");",
-                  "tests[\"Telefono OK1-fullPhone\"] = responseBody.has(\"<name>fullPhone</name><value>1561755152</value>\");",
+                  "tests[\"Telefono OK1-fullPhone\"] = responseBody.has(\"<name>fullPhone</name><value>0111561755152</value>\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
