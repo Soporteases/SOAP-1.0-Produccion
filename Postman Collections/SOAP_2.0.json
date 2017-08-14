@@ -1670,7 +1670,7 @@
                   "tests[\"Domicilio NE-level4\"] = responseBody.has(\"<level4>PILAR</level4>\");",
                   "tests[\"Domicilio NE-level5\"] = responseBody.has(\"<level5>BOCA RATON</level5>\");",
                   "tests[\"Domicilio NE-streetType\"] = responseBody.has(\"<streetType></streetType>\");",
-                  "tests[\"Domicilio NE-street\"] = responseBody.has(\"<street>BOCA RATON PILAR</street>\");",
+                  "tests[\"Domicilio NE-street\"] = responseBody.has(\"<street>BO BOCA RATON</street>\");",
                   "tests[\"Domicilio NE-houseNumber\"] = responseBody.has(\"<houseNumber></houseNumber>\");",
                   "tests[\"Domicilio NE-floor\"] = responseBody.has(\"<floor></floor>\");",
                   "tests[\"Domicilio NE-unit\"] = responseBody.has(\"<unit></unit>\");",
