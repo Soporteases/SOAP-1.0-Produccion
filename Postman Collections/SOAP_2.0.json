@@ -2574,7 +2574,7 @@
       "item": [
         {
           "_postman_id": "0132b17a-0f72-0875-b390-6ccac45aba19",
-          "name": "CO Domicilios AR",
+          "name": "Domicilios CO",
           "request": {
             "url": "{{Geo2}}",
             "method": "POST",
