@@ -757,10 +757,10 @@
                 "type": "text/javascript",
                 "exec": [
                   "tests[\"UY-Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
-                  "tests[\"UY-Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-56.119535</value>\");",
+                  "tests[\"UY-Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-56.118210</value>\");",
                   "tests[\"UY-Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
                   "tests[\"UY-Domicilio CO-MatchLevel\"] = responseBody.has(\"<name>MatchLevel</name><value></value>\");",
-                  "tests[\"UY-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.848090</value>\");",
+                  "tests[\"UY-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.848410</value>\");",
                   "tests[\"UY-Domicilio CO-calle\"] = responseBody.has(\"<calle>CELIAR</calle>\");",
                   "tests[\"UY-Domicilio CO-numero\"] = responseBody.has(\"<numero>3137</numero>\");",
                   "tests[\"UY-Domicilio CO-piso\"] = responseBody.has(\"<piso></piso>\");",
