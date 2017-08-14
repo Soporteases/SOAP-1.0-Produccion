@@ -2318,7 +2318,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Telefono OK1-TelCompleto\"] = responseBody.has(\"<name>TEL_COMPLETO</name><value>1561755152</value>\");",
+                  "tests[\"Telefono OK1-TelCompleto\"] = responseBody.has(\"<name>TEL_COMPLETO</name><value>0111561755152</value>\");",
                   "tests[\"Telefono OK1-Validado\"] = responseBody.has(\"<name>validado</name><value>ce</value>\");",
                   "tests[\"Telefono OK1-NoLlame\"] = responseBody.has(\"<name>registroNoLlame</name><value>NO</value>\");",
                   "tests[\"Telefono OK1-Nivel2\"] = responseBody.has(\"<nivel2></nivel2>\");",
