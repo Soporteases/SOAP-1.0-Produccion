@@ -1293,9 +1293,9 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"UY-Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-57.561535</value>\");",
+                  "tests[\"UY-Domicilio CO-longitud\"] = responseBody.has(\"<name>longitud</name><value>-57.554210</value>\");",
                   "tests[\"UY-Domicilio CO-MatchLevel\"] = responseBody.has(\"<name>MatchLevel</name><value></value>\");",
-                  "tests[\"UY-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.374641</value>\");",
+                  "tests[\"UY-Domicilio CO-latitud\"] = responseBody.has(\"<name>latitud</name><value>-34.386670</value>\");",
                   "tests[\"UY-Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
                   "tests[\"UY-Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
                   "",
