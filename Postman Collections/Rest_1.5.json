@@ -8,6 +8,69 @@
   },
   "item": [
     {
+      "_postman_id": "f4cfb82f-fc1a-ce98-168a-f5da34c029f1",
+      "name": "Busqueda Predictiva",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "651b867b-942c-5a73-7cd4-18d39e0d4ed0",
+          "name": "Caso VA Telefonica",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Predictiva CO-estado\"] = responseBody.has(\"<estado>LISTADO_CORRECTO</estado>\");",
+                  "tests[\"Predictiva CO-motivo\"] = responseBody.has(\"<motivo>SM</motivo>\");",
+                  "tests[\"Predictiva CO-totalRecords\"] = responseBody.has(\"<totalRecords>4</totalRecords>\");",
+                  "tests[\"Predictiva CO-calle\"] = responseBody.has(\"<calle>AVENIDA GENERAL JOSE DE SAN MARTIN</calle>\");",
+                  "tests[\"Predictiva CO-nivel2\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
+                  "tests[\"Predictiva CO-nivel4\"] = responseBody.has(\"<nivel4>VICENTE LOPEZ</nivel4>\");",
+                  "tests[\"Predictiva CO-desde\"] = responseBody.has(\"<desde>301</desde>\");",
+                  "tests[\"Predictiva CO-hasta\"] = responseBody.has(\"<hasta>1500</hasta>\");",
+                  "tests[\"Predictiva CO-cp\"] = responseBody.has(\"<cp>1638</cp>\");",
+                  "tests[\"Predictiva CO-calle/2\"] = responseBody.has(\"<calle>DOCTOR LISANDRO DE LA TORRE</calle>\");",
+                  "tests[\"Predictiva CO-nivel2/2\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
+                  "tests[\"Predictiva CO-nivel4/2\"] = responseBody.has(\"<nivel4>VICENTE LOPEZ</nivel4>\");",
+                  "tests[\"Predictiva CO-desde/2\"] = responseBody.has(\"<desde>151</desde>\");",
+                  "tests[\"Predictiva CO-hasta/2\"] = responseBody.has(\"<hasta>2000</hasta>\");",
+                  "tests[\"Predictiva CO-cp/2\"] = responseBody.has(\"<cp>1638</cp>\");",
+                  "tests[\"Predictiva CO-calle/3\"] = responseBody.has(\"<calle>FLORENCIO SANCHEZ</calle>\");",
+                  "tests[\"Predictiva CO-nivel2/3\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
+                  "tests[\"Predictiva CO-nivel4/3\"] = responseBody.has(\"<nivel4>VICENTE LOPEZ</nivel4>\");",
+                  "tests[\"Predictiva CO-desde/3\"] = responseBody.has(\"<desde>1901</desde>\");",
+                  "tests[\"Predictiva CO-hasta/3\"] = responseBody.has(\"<hasta>2000</hasta>\");",
+                  "tests[\"Predictiva CO-cp/3\"] = responseBody.has(\"<cp>1638</cp>\");",
+                  "tests[\"Predictiva CO-calle/4\"] = responseBody.has(\"<calle>SANTA ROSA</calle>\");",
+                  "tests[\"Predictiva CO-nivel2/4\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
+                  "tests[\"Predictiva CO-nivel4/4\"] = responseBody.has(\"<nivel4>VICENTE LOPEZ</nivel4>\");",
+                  "tests[\"Predictiva CO-desde/4\"] = responseBody.has(\"<desde>1201</desde>\");",
+                  "tests[\"Predictiva CO-hasta/4\"] = responseBody.has(\"<hasta>1500</hasta>\");",
+                  "tests[\"Predictiva CO-cp/4\"] = responseBody.has(\"<cp>1638</cp>\");",
+                  "",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{RestService}}",
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<reqMaestrosCalle>\r\n <nivel1>AR</nivel1>\r\n <nivel2>BUENOS AIRES</nivel2>\r\n <nivel3></nivel3>\r\n <nivel4>VICENTE LOPEZ</nivel4>\r\n <calle>SAN</calle>\r\n <clientAccessCode>af36223848761cba417718921cd2f9df</clientAccessCode>\r\n</reqMaestrosCalle>"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "75747203-6685-1bb7-be11-e4c1d3d93f0d",
       "name": "Domicilio",
       "description": "",
@@ -195,69 +258,6 @@
       ]
     },
     {
-      "_postman_id": "f4cfb82f-fc1a-ce98-168a-f5da34c029f1",
-      "name": "Busqueda Predictiva",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "651b867b-942c-5a73-7cd4-18d39e0d4ed0",
-          "name": "Caso VA Telefonica",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Predictiva CO-estado\"] = responseBody.has(\"<estado>LISTADO_CORRECTO</estado>\");",
-                  "tests[\"Predictiva CO-motivo\"] = responseBody.has(\"<motivo>SM</motivo>\");",
-                  "tests[\"Predictiva CO-totalRecords\"] = responseBody.has(\"<totalRecords>4</totalRecords>\");",
-                  "tests[\"Predictiva CO-calle\"] = responseBody.has(\"<calle>AVENIDA GENERAL JOSE DE SAN MARTIN</calle>\");",
-                  "tests[\"Predictiva CO-nivel2\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
-                  "tests[\"Predictiva CO-nivel4\"] = responseBody.has(\"<nivel4>VICENTE LOPEZ</nivel4>\");",
-                  "tests[\"Predictiva CO-desde\"] = responseBody.has(\"<desde>301</desde>\");",
-                  "tests[\"Predictiva CO-hasta\"] = responseBody.has(\"<hasta>1500</hasta>\");",
-                  "tests[\"Predictiva CO-cp\"] = responseBody.has(\"<cp>1638</cp>\");",
-                  "tests[\"Predictiva CO-calle/2\"] = responseBody.has(\"<calle>DOCTOR LISANDRO DE LA TORRE</calle>\");",
-                  "tests[\"Predictiva CO-nivel2/2\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
-                  "tests[\"Predictiva CO-nivel4/2\"] = responseBody.has(\"<nivel4>VICENTE LOPEZ</nivel4>\");",
-                  "tests[\"Predictiva CO-desde/2\"] = responseBody.has(\"<desde>151</desde>\");",
-                  "tests[\"Predictiva CO-hasta/2\"] = responseBody.has(\"<hasta>2000</hasta>\");",
-                  "tests[\"Predictiva CO-cp/2\"] = responseBody.has(\"<cp>1638</cp>\");",
-                  "tests[\"Predictiva CO-calle/3\"] = responseBody.has(\"<calle>FLORENCIO SANCHEZ</calle>\");",
-                  "tests[\"Predictiva CO-nivel2/3\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
-                  "tests[\"Predictiva CO-nivel4/3\"] = responseBody.has(\"<nivel4>VICENTE LOPEZ</nivel4>\");",
-                  "tests[\"Predictiva CO-desde/3\"] = responseBody.has(\"<desde>1901</desde>\");",
-                  "tests[\"Predictiva CO-hasta/3\"] = responseBody.has(\"<hasta>2000</hasta>\");",
-                  "tests[\"Predictiva CO-cp/3\"] = responseBody.has(\"<cp>1638</cp>\");",
-                  "tests[\"Predictiva CO-calle/4\"] = responseBody.has(\"<calle>SANTA ROSA</calle>\");",
-                  "tests[\"Predictiva CO-nivel2/4\"] = responseBody.has(\"<nivel2>BUENOS AIRES</nivel2>\");",
-                  "tests[\"Predictiva CO-nivel4/4\"] = responseBody.has(\"<nivel4>VICENTE LOPEZ</nivel4>\");",
-                  "tests[\"Predictiva CO-desde/4\"] = responseBody.has(\"<desde>1201</desde>\");",
-                  "tests[\"Predictiva CO-hasta/4\"] = responseBody.has(\"<hasta>1500</hasta>\");",
-                  "tests[\"Predictiva CO-cp/4\"] = responseBody.has(\"<cp>1638</cp>\");",
-                  "",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{RestService}}",
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<reqMaestrosCalle>\r\n <nivel1>AR</nivel1>\r\n <nivel2>BUENOS AIRES</nivel2>\r\n <nivel3></nivel3>\r\n <nivel4>VICENTE LOPEZ</nivel4>\r\n <calle>SAN</calle>\r\n <clientAccessCode>af36223848761cba417718921cd2f9df</clientAccessCode>\r\n</reqMaestrosCalle>"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "c7f4938a-d51d-bad4-257e-4a8eb7ff3b22",
       "name": "Telefonos",
       "description": "",
@@ -278,7 +278,7 @@
                   "tests[\"Telefono CO-numero\"] = responseBody.has(\"<numero>6966</numero>\");",
                   "tests[\"Telefono CO-validado\"] = responseBody.has(\"<validado>NO</validado>\");",
                   "tests[\"Telefono CO-observaciones\"] = responseBody.has(\"<observaciones>NULL</observaciones>\");",
-                  "tests[\"Telefono CO-TEL_COMPLETO\"] = responseBody.has(\"<TEL_COMPLETO>426966</TEL_COMPLETO>\");",
+                  "tests[\"Telefono CO-TEL_COMPLETO\"] = responseBody.has(\"<TEL_COMPLETO>03471426966</TEL_COMPLETO>\");",
                   "tests[\"Telefono CO-validado\"] = responseBody.has(\"<validado></validado>\");",
                   "tests[\"Telefono CO-registroNoLlame\"] = responseBody.has(\"<registroNoLlame>NO</registroNoLlame>\");",
                   "",
