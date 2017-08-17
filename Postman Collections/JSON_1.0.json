@@ -3734,7 +3734,7 @@
                   "tests[\"ddn\"] = jsonData.nPhone.ddn == \"011\";",
                   "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"6175\";",
                   "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"5152\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"NO\";",
                   "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
                   "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
                   "tests[\"fullPhone\"] = responseBody.has(\"fullPhone\");",
@@ -3747,7 +3747,31 @@
             }
           ],
           "request": {
-            "url": "{{phoneJSON}}?phoneNumber=1161755152&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+            "url": {
+              "raw": "{{phoneJSON}}?phoneNumber=1161755152&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{phoneJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "phoneNumber",
+                  "value": "1161755152",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
