@@ -4009,7 +4009,7 @@
                   "tests[\"ddn\"] = jsonData.nPhone.ddn == \"\";",
                   "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"\";",
                   "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"123\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"NO\";",
                   "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
                   "",
                   "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
