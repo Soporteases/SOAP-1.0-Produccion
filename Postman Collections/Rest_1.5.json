@@ -279,7 +279,7 @@
                   "tests[\"Telefono CO-validado\"] = responseBody.has(\"<validado>NO</validado>\");",
                   "tests[\"Telefono CO-observaciones\"] = responseBody.has(\"<observaciones>NULL</observaciones>\");",
                   "tests[\"Telefono CO-TEL_COMPLETO\"] = responseBody.has(\"<TEL_COMPLETO>03471426966</TEL_COMPLETO>\");",
-                  "tests[\"Telefono CO-figuraEnGuia\"] = responseBody.has(\"<figuraEnGuia></figuraEnGuia>\");",
+                  "tests[\"Telefono CO-validado\"] = responseBody.has(\"<validado></validado>\");",
                   "tests[\"Telefono CO-registroNoLlame\"] = responseBody.has(\"<registroNoLlame>NO</registroNoLlame>\");",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
