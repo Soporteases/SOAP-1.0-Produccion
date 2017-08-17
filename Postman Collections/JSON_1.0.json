@@ -3658,7 +3658,7 @@
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"status\"] = jsonData.status === \"SD\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"domain\"] = jsonData.nVehicle.domain == \"\";",
+                  "tests[\"domain\"] = jsonData.nVehicle.domain == \"AA048TN\";",
                   "tests[\"vehicleBrand\"] = jsonData.nVehicle.vehicleBrand == \"\";",
                   "tests[\"model\"] = jsonData.nVehicle.model == \"\";",
                   "tests[\"motor\"] = jsonData.nVehicle.motor == \"\";",
