@@ -4144,7 +4144,7 @@
                   "tests[\"ddn\"] = jsonData.nPhone.ddn == \"0351\";",
                   "tests[\"characteristic\"] = jsonData.nPhone.characteristic == \"309\";",
                   "tests[\"phoneNumber\"] = jsonData.nPhone.phoneNumber == \"1850\";",
-                  "tests[\"validated\"] = jsonData.nPhone.validated == \"ce\";",
+                  "tests[\"validated\"] = jsonData.nPhone.validated == \"NO\";",
                   "tests[\"additionalData\"] = jsonData.nPhone.additionalData == \"\";",
                   "",
                   "tests[\"doNotCallRegistry\"] = responseBody.has(\"doNotCallRegistry\");",
