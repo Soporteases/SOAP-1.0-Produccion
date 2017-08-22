@@ -2617,6 +2617,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "0b00fb5d-4754-2e03-d1c6-070cb068ffeb",
+      "name": "Busqueda Predictiva",
+      "description": "",
+      "item": []
     }
   ]
 }
