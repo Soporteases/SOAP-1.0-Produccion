@@ -4225,16 +4225,22 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"status\"] = jsonData.status === \"VA\";",
+                  "tests[\"status\"] = jsonData.status === \"CO\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"30707171282\";",
-                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"ODFJELL ARGENTINA S.A.        \";",
-                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
-                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"AC\";",
-                  "tests[\"iva\"] = jsonData.nCuit.iva == \"AC\";",
-                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"NI\";",
-                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"30707171282\";",
-                  "tests[\"employer\"] = jsonData.nCuit.employer == \"S00\";",
+                  "tests[\"level1\"] = jsonData.nGeoReverse.level1 == \"AR\";",
+                  "tests[\"level2\"] = jsonData.nGeoReverse.level2 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level3\"] = jsonData.nGeoReverse.level3 == \"CAPITAL FEDERAL\";",
+                  "tests[\"level4\"] = jsonData.nGeoReverse.level4 == \"CIUDAD AUTONOMA BUENOS AIRES\";",
+                  "tests[\"level5\"] = jsonData.nGeoReverse.level5 == \"\";",
+                  "tests[\"streetType\"] = jsonData.nGeoReverse.streetType == \"\";",
+                  "tests[\"street\"] = jsonData.nGeoReverse.street == \"AVENIDA DOCTOR RICARDO BALBIN\";",
+                  "tests[\"approximateStreetNumber\"] = jsonData.nGeoReverse.approximateStreetNumber == \"2332\";",
+                  "tests[\"postalCode\"] = jsonData.nGeoReverse.postalCode == \"1428\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nGeoReverse.additionalPostalCode == \"\";",
+                  "tests[\"fromStreetNumber\"] = jsonData.nGeoReverse.fromStreetNumber == \"2301\";",
+                  "tests[\"toStreetNumber\"] = jsonData.nGeoReverse.toStreetNumber == \"2400\";",
+                  "tests[\"betweenStreet1\"] = jsonData.nGeoReverse.betweenStreet1 == \"AVENIDA FELIX DE OLAZABAL\";",
+                  "tests[\"betweenStreet2\"] = jsonData.nGeoReverse.betweenStreet2 == \"ALMIRANTE MANUEL BLANCO ENCALADA\";",
                   "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
@@ -4244,10 +4250,10 @@
           ],
           "request": {
             "url": {
-              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30707171282",
+              "raw": "{{Geo2JSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30707171282&latitude=-34.563153&longitude=-58.464091&level1=AR",
               "auth": {},
               "host": [
-                "{{TributariaJSON}}"
+                "{{Geo2JSON}}"
               ],
               "path": [
                 ""
@@ -4262,6 +4268,24 @@
                 {
                   "key": "cuit",
                   "value": "30707171282",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "latitude",
+                  "value": "-34.563153",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "longitude",
+                  "value": "-58.464091",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level1",
+                  "value": "AR",
                   "equals": true,
                   "description": ""
                 }
