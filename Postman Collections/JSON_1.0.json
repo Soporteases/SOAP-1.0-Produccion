@@ -4214,67 +4214,68 @@
       "_postman_id": "224df253-22b5-cbbb-fcdb-bb37a09b67b5",
       "name": "Georeverse",
       "description": "",
-      "item": []
-    },
-    {
-      "_postman_id": "fd172f58-9ea7-bf1f-5fb9-0104ae6ce7a0",
-      "name": "Georeverse CO",
-      "event": [
+      "item": [
         {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"status\"] = jsonData.status === \"VA\";",
-              "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
-              "tests[\"cuit\"] = jsonData.nCuit.cuit == \"30707171282\";",
-              "tests[\"denomination\"] = jsonData.nCuit.denomination == \"ODFJELL ARGENTINA S.A.        \";",
-              "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
-              "tests[\"aernings\"] = jsonData.nCuit.aernings == \"AC\";",
-              "tests[\"iva\"] = jsonData.nCuit.iva == \"AC\";",
-              "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"NI\";",
-              "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"30707171282\";",
-              "tests[\"employer\"] = jsonData.nCuit.employer == \"S00\";",
-              "",
-              "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-              "tests[\"Status code is 200\"] = responseCode.code === 200; "
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": {
-          "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30707171282",
-          "auth": {},
-          "host": [
-            "{{TributariaJSON}}"
-          ],
-          "path": [
-            ""
-          ],
-          "query": [
+          "_postman_id": "fd172f58-9ea7-bf1f-5fb9-0104ae6ce7a0",
+          "name": "Georeverse CO",
+          "event": [
             {
-              "key": "clientAccessCode",
-              "value": "aea243aba41084aa098b3a70eeb63ddf",
-              "equals": true,
-              "description": ""
-            },
-            {
-              "key": "cuit",
-              "value": "30707171282",
-              "equals": true,
-              "description": ""
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"status\"] = jsonData.status === \"VA\";",
+                  "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
+                  "tests[\"cuit\"] = jsonData.nCuit.cuit == \"30707171282\";",
+                  "tests[\"denomination\"] = jsonData.nCuit.denomination == \"ODFJELL ARGENTINA S.A.        \";",
+                  "tests[\"denominationFlg\"] = jsonData.nCuit.denominationFlg == \"\";",
+                  "tests[\"aernings\"] = jsonData.nCuit.aernings == \"AC\";",
+                  "tests[\"iva\"] = jsonData.nCuit.iva == \"AC\";",
+                  "tests[\"uniqueTribute\"] = jsonData.nCuit.uniqueTribute == \"NI\";",
+                  "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"30707171282\";",
+                  "tests[\"employer\"] = jsonData.nCuit.employer == \"S00\";",
+                  "",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200; "
+                ]
+              }
             }
           ],
-          "variable": []
-        },
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "description": ""
-      },
-      "response": []
+          "request": {
+            "url": {
+              "raw": "{{TributariaJSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30707171282",
+              "auth": {},
+              "host": [
+                "{{TributariaJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "cuit",
+                  "value": "30707171282",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
