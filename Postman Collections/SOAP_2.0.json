@@ -2656,12 +2656,12 @@
             }
           ],
           "request": {
-            "url": "{{Geo2}}",
+            "url": "{{Predictiva2}}",
             "method": "POST",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.geo.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:geoReverse>\r\n         <!--Optional:-->\r\n         <geoReverse>\r\n            <!--Optional:-->\r\n            <clientAccessCode>a1edeae2a5bd4cde241fdfdb193ca13c</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xGeoReverse>\r\n               <!--Optional:-->\r\n               <level1>AR</level1>\r\n               <!--Optional:-->\r\n               <latitude>-34.563153</latitude>\r\n               <!--Optional:-->\r\n               <longitude>-58.464091</longitude>\r\n            </xGeoReverse>\r\n         </geoReverse>\r\n      </soap:geoReverse>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+              "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:soap=\"http://soap2.geo.ases.com/\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <soap:geoReverse>\r\n         <!--Optional:-->\r\n         <geoReverse>\r\n            <!--Optional:-->\r\n            <clientAccessCode>aea243aba41084aa098b3a70eeb63ddf</clientAccessCode>\r\n            <!--Optional:-->\r\n            <customAdaptersKeys>\r\n               <!--Zero or more repetitions:-->\r\n               <customAdapter> </customAdapter>\r\n            </customAdaptersKeys>\r\n            <!--Optional:-->\r\n            <xGeoReverse>\r\n               <!--Optional:-->\r\n               <level1>AR</level1>\r\n               <!--Optional:-->\r\n               <latitude>-34.563153</latitude>\r\n               <!--Optional:-->\r\n               <longitude>-58.464091</longitude>\r\n            </xGeoReverse>\r\n         </geoReverse>\r\n      </soap:geoReverse>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
             },
             "description": ""
           },
