@@ -2626,35 +2626,6 @@
         {
           "_postman_id": "61c45bce-093c-a983-ec41-3f3dcae84407",
           "name": "Busqueda Calle CO",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Domicilio CO-status\"] = responseBody.has(\"<status>CO</status>\");",
-                  "tests[\"Domicilio CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
-                  "tests[\"Domicilio CO-level1\"] = responseBody.has(\"<level1>AR</level1>\");",
-                  "tests[\"Domicilio CO-level2\"] = responseBody.has(\"<level2>CAPITAL FEDERAL</level2>\");",
-                  "tests[\"Domicilio CO-level3\"] = responseBody.has(\"<level3>CAPITAL FEDERAL</level3>\");",
-                  "tests[\"Domicilio CO-level4\"] = responseBody.has(\"<level4>CIUDAD AUTONOMA BUENOS AIRES</level4>\");",
-                  "tests[\"Domicilio CO-level5\"] = responseBody.has(\"<level5></level5>\");",
-                  "tests[\"Domicilio CO-streetType\"] = responseBody.has(\"<streetType></streetType>\");",
-                  "tests[\"Domicilio CO-street\"] = responseBody.has(\"<street>AVENIDA DOCTOR RICARDO BALBIN</street>\");",
-                  "tests[\"Domicilio CO-approximateStreetNumber\"] = responseBody.has(\"<approximateStreetNumber>2332</approximateStreetNumber>\");",
-                  "tests[\"Domicilio CO-postalCode\"] = responseBody.has(\"<postalCode>1428</postalCode>\");",
-                  "tests[\"Domicilio CO-additionalPostalCode\"] = responseBody.has(\"<additionalPostalCode></additionalPostalCode>\");",
-                  "tests[\"Domicilio CO-fromStreetNumber\"] = responseBody.has(\"<fromStreetNumber>2301</fromStreetNumber>\");",
-                  "tests[\"Domicilio CO-toStreetNumber\"] = responseBody.has(\"<toStreetNumber>2400</toStreetNumber>\");",
-                  "tests[\"Domicilio CO-betweenStreet1\"] = responseBody.has(\"<betweenStreet1>AVENIDA FELIX DE OLAZABAL</betweenStreet1>\");",
-                  "tests[\"Domicilio CO-betweenStreet2\"] = responseBody.has(\"<betweenStreet2>ALMIRANTE MANUEL BLANCO ENCALADA</betweenStreet2>\");",
-                  "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
-              }
-            }
-          ],
           "request": {
             "url": "{{Predictiva2}}",
             "method": "POST",
