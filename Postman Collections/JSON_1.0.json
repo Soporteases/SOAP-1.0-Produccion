@@ -956,7 +956,43 @@
             }
           ],
           "request": {
-            "url": "{{addresJSON}}?level1=AR&street=APECECHEA  87&level4=BURZACO&clientAccessCode=0584ef48a0282697e836e15c6a62d91a",
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=APECECHEA  87&level4=BURZACO&clientAccessCode=f35c5a599b268a499da6e4cae7f7a265",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "APECECHEA  87",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level4",
+                  "value": "BURZACO",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "f35c5a599b268a499da6e4cae7f7a265",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
