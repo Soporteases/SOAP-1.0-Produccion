@@ -2126,7 +2126,7 @@
                   "tests[\"fabricationPlace OK\"] = responseBody.has(\"<fabricationPlace></fabricationPlace>\");",
                   "tests[\"year OK\"] = responseBody.has(\"<year>2016</year>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
                   "",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
