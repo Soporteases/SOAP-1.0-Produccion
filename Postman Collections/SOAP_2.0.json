@@ -1419,7 +1419,7 @@
                   "tests[\"Domicilio CO-cpa\"] = responseBody.has(\"<name>cpa</name><value></value>\");",
                   "tests[\"Domicilio CO-longitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-65.28306</value>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
