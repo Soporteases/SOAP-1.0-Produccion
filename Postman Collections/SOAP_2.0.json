@@ -2600,7 +2600,7 @@
                   "tests[\"Domicilio CO-betweenStreet1\"] = responseBody.has(\"<betweenStreet1>AVENIDA FELIX DE OLAZABAL</betweenStreet1>\");",
                   "tests[\"Domicilio CO-betweenStreet2\"] = responseBody.has(\"<betweenStreet2>ALMIRANTE MANUEL BLANCO ENCALADA</betweenStreet2>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
                 ]
               }
