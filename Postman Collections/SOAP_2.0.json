@@ -867,7 +867,7 @@
                   "tests[\"Domicilio CO-nivelRiesgo\"] = responseBody.has(\"<name>nivelRiesgo</name><value></value>\");",
                   "tests[\"Domicilio CO-inhibido\"] = responseBody.has(\"<name>inhibido</name><value>N</value>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
