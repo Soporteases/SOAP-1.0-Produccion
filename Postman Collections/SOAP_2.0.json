@@ -1835,7 +1835,7 @@
                   "tests[\"Enriquecimiento CO-Email2\"] = responseBody.has(\"<name>Email</name><label></label><value></value><index>55</index><dataType></dataType>\");",
                   "tests[\"Enriquecimiento CO-TipoEmail2\"] = responseBody.has(\"<name>Tipo</name><label></label><value></value><index>56</index><dataType></dataType>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
