@@ -211,7 +211,7 @@
                   "tests[\"Filiatorios CO-birthDate\"] = responseBody.has(\"<birthDate>12/07/1936</birthDate>\");",
                   "tests[\"Filiatorios CO-birthDateFlg\"] = responseBody.has(\"<birthDateFlg>AP</birthDateFlg>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
                 ]
               }
