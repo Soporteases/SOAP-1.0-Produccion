@@ -930,7 +930,7 @@
                   "tests[\"Domicilio NP-PORTAL\"] = responseBody.has(\"<name>PORTAL</name><value>PORTAL</value>\");",
                   "tests[\"Domicilio NP-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value></value>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
