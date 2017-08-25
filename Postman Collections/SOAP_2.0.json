@@ -70,7 +70,7 @@
                   "tests[\"Condicion Tributaria OK-uniqueTributeActivity\"] = responseBody.has(\"<uniqueTributeActivity>27165525413</uniqueTributeActivity>\");",
                   "tests[\"Condicion Tributaria OK-employer\"] = responseBody.has(\"<employer>N00</employer>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
