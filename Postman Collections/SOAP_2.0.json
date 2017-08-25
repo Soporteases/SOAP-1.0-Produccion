@@ -1634,7 +1634,7 @@
                   "tests[\"Domicilio CO-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-34.607161</value>\");",
                   "tests[\"Domicilio CO-inMaq\"] = responseBody.has(\"<name>inMaq</name><value>0</value>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
