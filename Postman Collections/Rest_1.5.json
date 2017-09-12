@@ -117,7 +117,7 @@
                   "tests[\"Predictiva CO-latitudLocalidad\"] = responseBody.has(\"<latitudLocalidad>-34.607161</latitudLocalidad>\");",
                   "tests[\"Predictiva CO-entreCalle2\"] = responseBody.has(\"<entreCalle2>GENERAL JUAN LAVALLE</entreCalle2>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
