@@ -3129,7 +3129,7 @@
                   "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"01/10/1993\";",
                   "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; ",
                   ""
                 ]
@@ -3137,7 +3137,37 @@
             }
           ],
           "request": {
-            "url": "{{FiliatoriosJSON}}?tributaryNumber=30676235309&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "url": {
+              "raw": "{{FiliatoriosJSON}}?tributaryNumber=30676235309&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+              "auth": {},
+              "host": [
+                "{{FiliatoriosJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "tributaryNumber",
+                  "value": "30676235309",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "3bddda6de3a51e8a6fcbd325d9576cd2",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "name",
+                  "value": "",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
@@ -3599,19 +3629,25 @@
                   "tests[\"status\"] = jsonData.status === \"EN\";",
                   "tests[\"statusReason\"] = jsonData.statusReason == \"SM\";",
                   "tests[\"service1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].service == \"PERSONAS\";",
-                  "tests[\"name/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].name == \"TipoCUIT\";",
+                  "tests[\"name/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].name == \"TipoTributario\";",
                   "tests[\"label/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].label == \"\";",
                   "tests[\"value/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].value == \"CUIT PERSONA FISICA\";",
                   "tests[\"index/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].index == \"0\";",
                   "tests[\"dataType/1.0\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[0].dataType == \"\";",
                   "",
-                  "tests[\"name/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].name == \"CUIT\";",
+                  "tests[\"name/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].name == \"NumeroTributario\";",
                   "tests[\"label/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].label == \"\";",
                   "tests[\"value/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].value == \"27104774755\";",
                   "tests[\"index/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].index == \"1\";",
                   "tests[\"dataType/1.2\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].dataType == \"\";",
                   "",
-                  "tests[\"name/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].name == \"DNI\";",
+                  "tests[\"name/1.2.1\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].name == \"TipoDocumento\";",
+                  "tests[\"label/1.2.1\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].label == \"\";",
+                  "tests[\"value/1.2.1\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].value == \"DNI\";",
+                  "tests[\"index/1.2.1\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].index == \"2\";",
+                  "tests[\"dataType/1.2.1\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[1].dataType == \"\";",
+                  "",
+                  "tests[\"name/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].name == \"NroDocumento\";",
                   "tests[\"label/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].label == \"\";",
                   "tests[\"value/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].value == \"10477475\";",
                   "tests[\"index/1.3\"] = jsonData.nPersonEnrichment.dataRows.row[0].element[2].index == \"2\";",
