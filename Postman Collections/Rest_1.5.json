@@ -177,7 +177,7 @@
                   "tests[\"Predictiva CO-longitudLocalidad\"] = responseBody.has(\"<longitudLocalidad>-58.445288</longitudLocalidad>\");",
                   "tests[\"Predictiva CO-cpa\"] = responseBody.has(\"<cpa>C1439FLD</cpa>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
