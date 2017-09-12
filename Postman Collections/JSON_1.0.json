@@ -360,7 +360,7 @@
                   "tests[\"NISE\"] = responseBody.has(\"NISE\");",
                   "tests[\"zonaRiesgo\"] = responseBody.has(\"zonaRiesgo\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; ",
                   ""
                 ]
