@@ -2170,14 +2170,38 @@
                   "tests[\"gender\"] = jsonData.nName.gender == \"\";",
                   "tests[\"merlinCustomValue\"] = jsonData.nName.merlinCustomValue == null;",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
             }
           ],
           "request": {
-            "url": "{{nombresJSON}}?name=ROSA MARIA ROSA MARIA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf\n",
+            "url": {
+              "raw": "{{nombresJSON}}?name=ROSA MARIA ROSA MARIA&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf",
+              "auth": {},
+              "host": [
+                "{{nombresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "ROSA MARIA ROSA MARIA",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf\n",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
