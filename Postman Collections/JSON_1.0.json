@@ -1406,7 +1406,7 @@
                   "tests[\"calleEntrada\"] = responseBody.has(\"calleEntrada\");",
                   "tests[\"latitudLocalidad\"] = responseBody.has(\"latitudLocalidad\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; ",
                   ""
                 ]
@@ -1414,7 +1414,49 @@
             }
           ],
           "request": {
-            "url": "{{addresJSON}}?level1=AR&street=BO CLUB DE CAMPO EL PASO &level4=Santo Tome&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=Santa Fe",
+            "url": {
+              "raw": "{{addresJSON}}?level1=AR&street=BO CLUB DE CAMPO EL PASO &level4=Santo Tome&clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&level2=Santa Fe",
+              "auth": {},
+              "host": [
+                "{{addresJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "level1",
+                  "value": "AR",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "street",
+                  "value": "BO CLUB DE CAMPO EL PASO ",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level4",
+                  "value": "Santo Tome",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "aea243aba41084aa098b3a70eeb63ddf",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "level2",
+                  "value": "Santa Fe",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
