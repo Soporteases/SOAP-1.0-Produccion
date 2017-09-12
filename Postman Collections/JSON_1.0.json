@@ -4452,7 +4452,7 @@
                   "tests[\"uniqueTributeActivity\"] = jsonData.nCuit.uniqueTributeActivity == \"30707171282\";",
                   "tests[\"employer\"] = jsonData.nCuit.employer == \"S00\";",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
