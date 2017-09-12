@@ -1765,7 +1765,7 @@
                   "tests[\"Enriquecimiento CO-status\"] = responseBody.has(\"<status>DU</status>\");",
                   "tests[\"Enriquecimiento CO-statusReason\"] = responseBody.has(\"<statusReason>SM</statusReason>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
