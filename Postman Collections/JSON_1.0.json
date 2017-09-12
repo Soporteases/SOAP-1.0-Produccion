@@ -3052,7 +3052,7 @@
                   "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"\";",
                   "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"NO\";",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; ",
                   ""
                 ]
@@ -3060,7 +3060,37 @@
             }
           ],
           "request": {
-            "url": "{{FiliatoriosJSON}}?documentNumber=92808826&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "url": {
+              "raw": "{{FiliatoriosJSON}}?documentNumber=92808826&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+              "auth": {},
+              "host": [
+                "{{FiliatoriosJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "documentNumber",
+                  "value": "92808826",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "3bddda6de3a51e8a6fcbd325d9576cd2",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "name",
+                  "value": "",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
@@ -3099,7 +3129,7 @@
                   "tests[\"birthDate\"] = jsonData.nFiliation.birthDate == \"01/10/1993\";",
                   "tests[\"birthDateFlg\"] = jsonData.nFiliation.birthDateFlg == \"AP\";",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; ",
                   ""
                 ]
@@ -3107,7 +3137,37 @@
             }
           ],
           "request": {
-            "url": "{{FiliatoriosJSON}}?tributaryNumber=30676235309&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+            "url": {
+              "raw": "{{FiliatoriosJSON}}?tributaryNumber=30676235309&clientAccessCode=3bddda6de3a51e8a6fcbd325d9576cd2&name=",
+              "auth": {},
+              "host": [
+                "{{FiliatoriosJSON}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "tributaryNumber",
+                  "value": "30676235309",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "clientAccessCode",
+                  "value": "3bddda6de3a51e8a6fcbd325d9576cd2",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "name",
+                  "value": "",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [],
             "body": {},
