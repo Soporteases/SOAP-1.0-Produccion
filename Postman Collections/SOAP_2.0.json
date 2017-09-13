@@ -1586,7 +1586,7 @@
         },
         {
           "_postman_id": "1a711d1c-0473-e2ea-cd26-53af1cab426d",
-          "name": "AR-Domicilios CO Tarjeta Naranja copy",
+          "name": "AR-Domicilios CO TN Zona Riesgo",
           "event": [
             {
               "listen": "test",
