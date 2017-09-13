@@ -1330,7 +1330,7 @@
                   "tests[\"Domicilio CO-longitudLocalidad\"] = responseBody.has(\"<name>longitudLocalidad</name><value>-55.894215</value>\");",
                   "tests[\"Domicilio CO-latitudLocalidad\"] = responseBody.has(\"<name>latitudLocalidad</name><value>-27.368742</value>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
