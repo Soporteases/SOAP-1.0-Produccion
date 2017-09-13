@@ -2069,7 +2069,7 @@
                   "tests[\"Nombres CO-personType\"] = responseBody.has(\"<personType>PF</personType>\");",
                   "tests[\"Nombres CO-gender\"] = responseBody.has(\"<gender>M</gender>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
                 ]
               }
