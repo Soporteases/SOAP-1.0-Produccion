@@ -204,7 +204,7 @@
                   "tests[\"Condicion Tributaria OK-iva\"] = responseBody.has(\"<iva>AC</iva>\");",
                   "tests[\"Condicion Tributaria OK-monotributo\"] = responseBody.has(\"<monotributo>NI</monotributo>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
