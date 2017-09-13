@@ -2027,7 +2027,7 @@
                   "tests[\"Nombres CO-tipoPersona\"] = responseBody.has(\"<tipoPersona></tipoPersona>\");",
                   "tests[\"Nombres CO-creditosRestantes\"] = responseBody.has(\"<customValues><name>creditosRestantes</name>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
                 ]
               }
