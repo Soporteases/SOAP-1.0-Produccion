@@ -441,7 +441,7 @@
                   "tests[\"Filiatorio OK-tributaryType\"] = responseBody.has(\"<tributaryType></tributaryType>\");",
                   "tests[\"Filiatorio OK-tributaryTypeFlg\"] = responseBody.has(\"<tributaryTypeFlg>NV</tributaryTypeFlg>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
