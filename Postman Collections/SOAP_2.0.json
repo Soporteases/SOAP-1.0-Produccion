@@ -665,7 +665,7 @@
                   "tests[\"Domicilio CO-MatchLevel\"] = responseBody.has(\"<name>MatchLevel</name><value></value>\");",
                   "tests[\"Domicilio CO-Relevance\"] = responseBody.has(\"<name>Relevance</name><value></value>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
