@@ -1614,7 +1614,7 @@
         },
         {
           "_postman_id": "333c0f98-66b9-65fb-eed7-cae1d3e79c17",
-          "name": "AR-Domicilios CO TN copy",
+          "name": "AR-Domicilios CO TN ZonaRiesgo",
           "event": [
             {
               "listen": "test",
