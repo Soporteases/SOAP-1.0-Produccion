@@ -1867,7 +1867,7 @@
                   "tests[\"Enriquecimiento CO-cp2\"] = responseBody.has(\"<name>cp</name><value>1428</value>\");",
                   "tests[\"Enriquecimiento CO-DIRECCIONES\"] = responseBody.has(\"<mandatory>false</mandatory><name>DIRECCIONES</name>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
