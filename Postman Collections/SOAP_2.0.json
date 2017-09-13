@@ -1069,7 +1069,7 @@
                   "tests[\"Domicilio DU-toStreetNumber/7\"] = responseBody.has(\"<toStreetNumber>6199</toStreetNumber>\");",
                   "",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1200;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
