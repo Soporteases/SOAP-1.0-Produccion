@@ -2354,7 +2354,7 @@
                   "tests[\"Telefono OK1-Estado\"] = responseBody.has(\"<estado>CO</estado>\");",
                   "tests[\"Telefono OK1-Motivo\"] = responseBody.has(\"<motivo></motivo>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
                 ]
               }
