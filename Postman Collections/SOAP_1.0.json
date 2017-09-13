@@ -1568,7 +1568,7 @@
                   "tests[\"Domicilio CO-cpa\"] = responseBody.has(\"<name>cpa</name><value>C1429BMS</value>\");",
                   "tests[\"Domicilio CO-NISE\"] = responseBody.has(\"<name>NISE</name><value>9</value>\");",
                   "tests[\"Domicilio CO-tipoGeo\"] = responseBody.has(\"<name>tipoGeo</name><value>1</value>\");",
-                  "tests[\"Domicilio CO-zonaRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>Oficina ASES</value>\");",
+                  "tests[\"Domicilio CO-zonaRiesgo\"] = responseBody.has(\"<name>zonaRiesgo</name><value>N</value>\");",
                   "tests[\"Domicilio CO-calleAbreviada\"] = responseBody.has(\"<name>calleAbreviada</name><value>AVDA DEL LIBERTADOR</value>\");",
                   "tests[\"Domicilio CO-inMaq\"] = responseBody.has(\"<name>inMaq</name><value>0</value>\");",
                   "tests[\"Domicilio CO-puerta\"] = responseBody.has(\"<name>puerta</name><value>SI</value>\");",
