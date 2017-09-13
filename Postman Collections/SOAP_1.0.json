@@ -85,7 +85,7 @@
                   "tests[\"Predictiva CO-x/4\"] = responseBody.has(\"<x>-59.780174</x>\");",
                   "tests[\"Predictiva CO-y/4\"] = responseBody.has(\"<y>-36.696678</y>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
