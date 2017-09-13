@@ -1266,7 +1266,7 @@
                   "tests[\"Domicilio CO-Motivo\"] = responseBody.has(\"<motivo>AI</motivo>\");                ",
                   "tests[\"Domicilio CO-Nivel1\"] = responseBody.has(\"<nivel1></nivel1>\");",
                   "",
-                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1000;",
+                  "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; "
                 ]
               }
