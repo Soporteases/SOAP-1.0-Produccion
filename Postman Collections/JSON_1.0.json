@@ -432,7 +432,7 @@
                   "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.602308\";",
                   "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.373966\";",
                   "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1004\";",
-                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"C1004AAJ\";",
                   "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1\";",
                   "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"1400\";",
                   "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
