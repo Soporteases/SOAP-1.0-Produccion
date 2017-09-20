@@ -331,7 +331,7 @@
                   "tests[\"latitude\"] = jsonData.nAddress.latitude == \"-34.646470\";",
                   "tests[\"longitude\"] = jsonData.nAddress.longitude == \"-58.435449\";",
                   "tests[\"unipostalCodet\"] = jsonData.nAddress.postalCode == \"1437\";",
-                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"\";",
+                  "tests[\"additionalPostalCode\"] = jsonData.nAddress.additionalPostalCode == \"C1437HIU\";",
                   "tests[\"fromStreetNumber\"] = jsonData.nAddress.fromStreetNumber == \"1101\";",
                   "tests[\"toStreetNumber\"] = jsonData.nAddress.toStreetNumber == \"6350\";",
                   "tests[\"additionalData\"] = jsonData.nAddress.additionalData == \"\";",
