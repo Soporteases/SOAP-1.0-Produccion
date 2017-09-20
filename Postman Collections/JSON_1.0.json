@@ -1752,9 +1752,6 @@
                   "tests[\"placeType\"] = jsonData.nAddress.placeType == \"\";",
                   "tests[\"place\"] = jsonData.nAddress.place == \"\";",
                   "",
-                  "tests[\"MatchLevel\"] = responseBody.has(\"MatchLevel\");",
-                  "tests[\"Relevance\"] = responseBody.has(\"Relevance\");",
-                  "",
                   "tests[\"El tiempo de respuesta es menor a 1000ms\"] = responseTime < 1500;",
                   "tests[\"Status code is 200\"] = responseCode.code === 200; ",
                   ""
