@@ -5009,7 +5009,7 @@
           ],
           "request": {
             "url": {
-              "raw": "{{Geo2JSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&cuit=30707171282&latitude=-34.563153&longitude=-58.464091&level1=AR",
+              "raw": "{{Geo2JSON}}?clientAccessCode=aea243aba41084aa098b3a70eeb63ddf&latitude=-34.563153&longitude=-58.464091&level1=AR",
               "auth": {},
               "host": [
                 "{{Geo2JSON}}"
@@ -5021,12 +5021,6 @@
                 {
                   "key": "clientAccessCode",
                   "value": "aea243aba41084aa098b3a70eeb63ddf",
-                  "equals": true,
-                  "description": ""
-                },
-                {
-                  "key": "cuit",
-                  "value": "30707171282",
                   "equals": true,
                   "description": ""
                 },
